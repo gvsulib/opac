@@ -1,0 +1,987 @@
+/*
+	III Default Styles from Skyline 2007 package
+	I've streamlined and de-duplicated the styles, and run them through CSSLint.net
+	And modified for GVSU's purposes.
+	
+	(I've removed many of the generic styles since our template covers those)
+	
+	Questions? Ask Matthew Reidsma at reidsmam@gvsu.edu or @mreidsma
+	See the full code repository at http://github.com/gvsulib/opac
+	
+*/
+
+/*controls display of authority redirect information */
+.authorityRedirect { border:2px solid; padding:5px; text-align:center; }
+
+/* This is used in the Materials Booking calendar */
+.available { font-weight:bold; color:green; }
+
+.availLimMessage { font-style:italic; text-align:left; }
+
+/* classes for bib display */
+
+.bibBookingsHeader { font-weight:bold; text-decoration:none; padding:3px; border:1px solid #00437f; background: #FFFBC6; margin-bottom:8px;}
+.bibContent { margin-right:15%; padding-right:3px;}
+* html .bibContent{ margin-right:10px; float:left;}
+.bibDetail {width:80%; }
+#bibDisplayContent a,
+#bibDisplayContent .bibTabs a:link, 
+#bibDisplayContent .bibTabs a:visited, 
+#bibDisplayContent .bibTabs a:active { color: #000; text-decoration: underline;}
+#bibDisplayContent div {padding-top:.2em}
+.bibHistoryRow {margin:2px 0 8px 0;}
+.bibHoldings { border:none; }
+.bibHoldingsEntry,
+.bibHoldingsLabel { border:1px solid #eee;}
+.bibHolds,
+.bibHoldsEntry { border: 1px solid #00437f; }
+.bibInfoLabel { width:15%; font-weight:bold;padding:.25em; }
+.bibItems { border:none;padding:0 .25em .25em .25em; margin:0; }
+.bibItemsEntry { color: #000; text-align: left; }
+.bibItemsEntry td {border-bottom:2px solid #eee; }
+.bibItemsHeader { font-weight:bold; text-align:left;border-bottom:1px solid #eee; }
+.bibVol { border:1px solid; }
+.bibVolLabel { font-weight:bold; text-align:center; }
+.bibLicenseEntry { color: #000; background: #FFF8EF; text-align: left; }
+.bibLicenseHeader { font-weight:bold; text-align:left;color: #fff; background: #00437f; }
+.bibLinks,
+.bibOrder { border: 1px solid #00437f; }
+#bibNavColumn {float:right; width:94px;}
+.bibPager { text-align:right; padding:5px 5px 0 0;margin:0 3px 0 5px; float:right;}
+.bibRecordLink { font-style:italic;width:98%;text-align:right;}
+.bibRecordLink a { padding-right: 2%; }
+.bibResourceEntry td { font-weight:bold; }
+.bibResourceLicense td { padding-bottom: 1.67em;}
+.bibResourceSubEntry {border-bottom: 1px solid blue; background-color: #FFFBC6; font-style: italic; }
+.bibResourceTable { margin: 0; border: none; }
+.browseResourceTable {margin-top:1.67em; border:none; }
+.bibResourceTableEntry, 
+.browseResourceTableEntry { text-align:center; font-weight:bold; }
+.bibResourceTableHeader, 
+.browseResourceTableHeader,
+.bibResourceTableHeader { background:#001848;color:#fff;padding:3px;border-bottom:1px solid #bdbdbd;font-weight:bold; text-align:center; }
+.bibScreen { text-align:center; margin:10px; padding:2px; }
+.bibSearch form {margin:auto; padding:5px 10px;text-align:center;}
+
+.bibSearch {display:block; background:#d2e0e7; border: none;; border-right:1px solid #BDBDBD; padding:8px 3px; border-bottom:1px solid #BDBDBD; margin:5px; }
+.bibSearchtoolMessage {text-align:center;}
+.bibSearchHistory { float:left; margin:0 0 5px 0; padding: 0 0 5px 0}
+.bibSearchtool { background:#DEE3E7;padding:3px; margin:0 3% 1% 3%; }
+.bibSearchtoolMessage a:visited { color:#000;  }
+.bibMediaTable td img {max-width: 60px; width: 60px;}
+.bibTabs { margin:5px 0 4px 0; clear:both;}
+.bibTabs span { border: 1px solid #D1D8DD; border-left:0;background-color:#f0f4f5; padding: .2em .7em; }
+.bibTabs .firstTab { border: 1px solid #D1D8DD; background-color:#f0f4f5; padding: .2em .7em; }
+.bibTabs .selected { background-color: #fff; border: 1px solid #D1D8DD; border-bottom: 1px solid #fff;margin: 0 0 0 -1px;}
+.bibTabs .firstSelected { background-color: #fff; border: 1px solid #D1D8DD; border-bottom: 1px solid #fff;}
+.bibTabs #printView {border: none;; background-color:#fff; padding: .2em 0; text-align:right;  margin:0 5px 0 0;}
+.bibTabs #printView a {color:#000;text-decoration:underline;}
+.bibTabs #webView {display:none}
+.bibTOC { width:90%; margin-left:30px; border:1px solid  #00437f; padding:3px; margin-bottom:3px; }
+.bibTOC td { border-bottom:1px solid #00437f; }
+.additionalCopies { text-align:center; clear:both; }
+.additionalCopiesNav { text-align:center; clear:both; }
+
+/* These are used for Materials Self-Booking */
+.bookingsConfirmMsg { font-weight:bold; text-decoration:none; padding-bottom:5px; }
+.bookingsRepeat { margin-left:15px; margin-right:15px; border:1px solid; padding:3px; }
+.bookingsRepeatWeeklyDay { margin-left:30px; }
+.bookingsSelect { width:90%; margin-left:5%; margin-bottom:1em; }
+.bookingsSelectCal { width:90%; margin-left:5%; text-align:center; border:2px solid; margin-bottom:1em; }
+.bookingsSelectCal table { margin:auto; border:none; }
+.bookingsSelectCal th { text-align:center; border:none; }
+.bookingsSelectCal td { border:1px solid; }
+.bookingsSelectEndtime { margin-left:10px; }
+.bookingsSelectRepeat { margin-top:5px; margin-bottom:5px; }
+.bookingsSelectTime { border:2px solid; padding:3px; }
+
+/* Brief Citation display styles */
+.briefcitActions { text-align:center; }
+.briefcitDetail img { padding-top:2px; }
+.briefcitExtras { text-align:center; white-space:nowrap; }
+.briefcitExtras img { padding-bottom:2px; }
+.briefcitStatus { font-weight:bold; }
+.briefcitTitle { font-weight:bold; }
+
+/* classes for browse displays */
+.browseEntry td { border-top:1px solid; }
+.browseEntryData { text-align:left; }
+.browseEntryEntries { text-align:center; }
+.browseEntryMedia { vertical-align:middle; }
+.browseEntryNum { text-align:center; }
+.browseEntryYear {text-align:center; }
+.browseHeader { font-weight:bold; vertical-align:middle; }
+.browseHeaderData { font-weight:bold; vertical-align:middle; }
+.browseHeaderEntries { font-weight:bold; vertical-align:middle; }
+.browseHeaderMark { font-weight:bold; vertical-align:middle; width:5%; }
+.browseHeaderMedia {font-weight:bold; vertical-align:middle; }
+.browseHeaderNum { font-weight:bold; vertical-align:middle; width:5%; }
+.browseHeaderRelevance { font-weight:bold; vertical-align:middle; }
+.browseHeaderYear { font-weight:bold; vertical-align:middle; width:5%; }
+.browseResourceTableEntry { text-align:center; }
+.browseSaveJump { text-align:left; }
+.browseSaveJump form { display:inline; }
+.browseSearchtool { margin-left:auto; margin-right:auto; margin-bottom:-3px; padding-left:3px; padding-right:3px; border:1px solid; }
+.browseSuperEntry {font-weight:bold;  }
+.button { vertical-align:middle; }
+
+/* This is used in the Materials Booking calendar */
+.closed { font-weight:bold; color:red; }
+.errormessage { color:#FF0000; }
+.errormessage h2 { display:inline; }
+.exportProgressMessage { text-align: left; }
+
+/* External Patron Authentication product style */
+.extpat div { line-height:1.66em; width:90%; border:2px solid; padding:3px; margin-left:auto; margin-right:auto; text-align:right; }
+
+/* External Patron Authentication product style */
+.extpat strong { display:block; text-align:left; }
+
+/* used for search help pages tabbed navigation */
+.fields td { padding:2px; }
+.helpNote { font-style:italic; }
+.hideElem { display:none; }
+.holdingsDivider { border:2px solid; margin:-3px; }
+
+/* Used in Related Searches display */
+#instructions { font-style:italic; }
+
+/* External Patron Authentication product style */
+.libpat div { line-height:1.66em; width:90%; border:2px solid; padding:3px; margin-left:auto; margin-right:auto; text-align:right; }
+
+/* External Patron Authentication product style */
+.libpat strong { display:block; text-align:left; }
+
+/* Styles used in Limit/Sort Search page - srchmod.html */
+.limitEntriesFoundNum { font-style:italic; }
+.limitEntriesFoundText { font-style:italic; }
+.limitSearchTerm { font-weight:bold; }
+.loggedInMessage {	padding-left:6px; font-style:italic; color:red; }
+
+.main { margin-left:20px; margin-right:20px; }
+.msg { color:#FF0000; }
+.navigationRow select { vertical-align:top; }
+.navSearchHistory { display:inline; }
+.nowrap {white-space:nowrap; }
+.nowrapAll { white-space:pre-wrap; white-space:-moz-pre-wrap; white-space:-pre-wrap; white-space:-o-pre-wrap; word-wrap:break-word; }
+
+/* classes for patron record display */
+/* see also Web options TABLEPARAM_PATDISP, TABLEPARAM_PATFUNC, */
+/* and the various BUT_PAT_ graphics options. */
+
+.patActionsLinks { text-align:center; clear:both; padding:10px; }
+.patActionsLinks img { vertical-align:middle; }
+.patFunc { border-top:2px solid; border-spacing:0; width:100%; }
+.patFunc td { padding:5px; border-bottom:1px solid; }
+.patFuncArea { border:2px solid; margin:3px; }
+.patFuncArea form { display:inline; }
+.patFuncArea img { padding-top:2px; }
+.patFuncCancel { text-align:center; }
+.patFuncFinesEntryDetail td { border-bottom:1px solid; }
+.patFuncFinesTotalAmt { font-weight:bold; }
+.patFuncHeaders { padding-left:3px; padding-right:3px; }
+.patFuncTitle { font-weight:bold; }
+.patHelpLinks { border:1px solid; border-top:none; width:300px; padding:3px; margin-left:5px; margin-right:5px; }
+.patHelpLinks a { text-align:right; display:block; border-bottom:1px solid; padding:2px; }
+.patMainFuncs { float:left; }
+.patNameAddress { text-align:left; border:1px solid; width:350px; float:left; padding:5px; }
+.patStatusLinks { border: none;; border-right: 1px solid #477295;border-bottom:1px solid #477295;padding: 3px; margin:0 0 5px 0; width:90%; float: left;}
+.patStatusLinks a { text-align:left; display:block; border-bottom:1px solid; padding:2px; }
+.paymentPage { margin:10px; }
+.paymentPage h2 { font-weight:bold; }
+.paymentPageFinestable { width:80%; border:2px solid; }
+.reqFillTimeMsg { font-style:italic; }
+.reserveBibs { border:2px solid; }
+.reserveBibs td { border-bottom:1px solid; }
+
+/* Resource Record display */
+.resourceBibEntry { text-align:left; }
+.resourceBibHeader {font-weight:bold; text-align:left; }
+.resourceInfoLabel {font-style:italic; }
+.resourceLicenseEntry { text-align:left; }
+.resourceLicenseHeader {font-weight:bold; text-align:left; }
+.resourceTableDiv {width:15%; float:right; text-align:center;}
+* html .resourceTableDiv{ width:0;}
+.rssChannelEntries { padding:10px; }
+.rssChannelEntry { padding:4px; }
+.rssChannelEntryDate { font-style:italic; }
+.rssChannelEntryHead { font-weight:bold; display:list-item; padding-bottom:2px; }
+.rssChannelImage img { border: none;; margin-top:2px; }
+.rssChannelTitle { font-weight:bold; }
+.rssFeed { padding:5px; margin:2px; border:1px solid; }
+.sectionHeading { font-weight:bold; }
+
+/*used in search tool */
+.showInlineElem { display:inline; }
+
+/* This is used in reviews */
+.showReview{display:block; border:solid #c1c1c1 1px; padding:2px; margin:2px;}
+
+/* This is used in the Materials Booking calendar */
+.unavailable { font-weight:bold; color:black; background:#D7D7D7; }
+.unpadded { margin-bottom:auto; margin-top:auto; }
+.wamCalcDate{ background:#ECECEC; border:1px silver dashed; }
+.xmlframe { width:100%; height:600px; border-width:0; }
+.yourEntryWouldBeHereData { border:2px solid #F5D9A3; }
+
+/* Patron Reviews && External Contents */
+.hide {display:none;}
+.show {display:block;}
+.briefhide {display:none;}
+.briefshow {width:80%;display:block;}
+.statichide {display:none;}
+.staticshow {display:block;position:absolute; left:inherit; top:inherit; width:70%;background:#fff;border:1px solid #000;z-index:50;}
+.overlayhide {display:none;}
+.overlayshow {display:block;position:absolute; left:25%; top:10%; width:50%;background:#fff;border:1px solid #000;z-index:100;}
+
+/* Brief External Contents */
+.briefshow .extContOverlayTitle {display:none;}
+
+/* Brief Patreviews */
+.briefshow .reviewOverlayTitle {display:none;}
+.briefshow .reviewLinks { padding-bottom:10px; }
+
+/* overlay External contents */
+.overlayshow .extContOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.overlayshow .extContOverlayTitle table {color:#fff;font-weight:bold;}
+.overlayshow .extContOverlayTitle table a {color:#fff;font-weight:bolder;text-decoration:none;}
+.overlayshow .extContOverlayTitle table a img {border: none;;}
+.overlayshow .extContOverlayTitle table td {vertical-align:middle;}
+.overlayshow .externalContent {margin:5px 10px;}
+.overlayshow .extContOverlayClose {height:14px;width:14px;}
+
+/* overlay Patreview */
+.overlayshow .reviewOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.overlayshow .reviewOverlayTitle table {color:#fff;font-weight:bold;}
+.overlayshow .reviewOverlayTitle table a {color:#fff;font-weight:bolder;text-decoration:none;}
+.overlayshow .reviewOverlayTitle table a img {border: none;;}
+.overlayshow .reviewOverlayTitle table td {vertical-align:middle;}
+.overlayshow .reviewContent {margin:5px 10px;}
+.overlayshow .reviewOverlayClose {height:14px;width:14px;}
+
+#OverlayDiv {position:absolute;top:0;left:0;z-index:90;width:100%;height:100%;background-color:#000;opacity:0.7;}
+
+/* Static External contents */
+.staticshow .extContOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.staticshow .extContOverlayTitle table {color:#fff;font-weight:bold;}
+.staticshow .extContOverlayTitletable a {color:#fff;font-weight:bolder;text-decoration:none;}
+.staticshow .extContOverlayTitle table a img {border: none;;}
+.staticshow .extContOverlayTitle table td {vertical-align:middle;}
+.staticshow .externalContent {margin:5px 10px;}
+.staticshow .extContOverlayClose {height:16px;width:16px;}
+
+/* Patreview static */
+.staticshow .reviewOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.staticshow .reviewOverlayTitle table {color:#fff;font-weight:bold;}
+.staticshow .reviewOverlayTitle table a {color:#fff;font-weight:bolder;text-decoration:none;}
+.staticshow .reviewOverlayTitle table a img {border: none;;}
+.staticshow .reviewOverlayTitle table td {vertical-align:middle;}
+.staticshow .reviewContent {margin:5px 10px;}
+.staticshow .reviewOverlayClose {height:16px;width:16px;}
+
+/* Default (full) shared */
+.default {width:80%;color:#444;display:block;margin:10px;}
+/* Default (full) external content */
+.default .extContOverlayTitle {display:none;}
+.default .extContBody{ width:80%;color:#444;}
+/* Default (full) patreview */
+.default .reviewOverlayTitle {display:none;}
+.default .reviewBody{ width:80%;color:#444;}
+
+/* used by progreg */
+.briefshow .sectionOverlayTitle {display:none;}
+.briefshow .sectionContent {margin:5px 10px 0 10px}
+
+.overlayhide {display:none;}
+.overlayshow {display:block;position:absolute; left:25%; top:10%; width:50%;background:#fff;border:1px solid #000;z-index:100;}
+.overlayshow .sectionOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.overlayshow .sectionOverlayTitle table {color:#fff;font-weight:bold;}
+.overlayshow .sectionOverlayTitletable a {color:#fff;font-weight:bolder;text-decoration:none;}
+.overlayshow .sectionOverlayTitle table a img {border: none;;}
+.overlayshow .sectionOverlayTitle table td {vertical-align:middle;}
+.overlayshow .sectionContent {margin:5px 10px;}
+.overlayshow .sectionOverlayClose {height:14px;width:14px;color:white;}
+.sectionOverlayClose a:link, .sectionOverlayClose a:visited {height:14px;width:14px;color:white;text-decoration:none;}
+
+.statichide {display:none;}
+.staticshow {display:block;position:absolute; left:inherit; top:inherit; width:70%;background:#fff;border:1px solid #000;z-index:50;}
+
+.staticshow .sectionOverlayTitle {display:block;padding:3px 10px;margin:0;background:#000;}
+.staticshow .sectionOverlayTitle table {color:#fff;font-weight:bold;}
+.staticshow .sectionOverlayTitle table a {color:#fff;font-weight:bolder;text-decoration:none;}
+.staticshow .sectionOverlayTitle table a img {border: none;;}
+.staticshow .sectionOverlayTitle table td {vertical-align:middle;}
+.staticshow .sectionContent {margin:5px 10px;}
+.staticshow .sectionOverlayClose {height:16px;width:16px;color:#fff;}
+
+.default {width:80%;color:#444;display:block;margin:10px;}
+.default .sectionOverlayTitle {display:none;}
+.default .sectionBody{ width:80%;color:#444;}
+
+/* CUSTOMREC2- c973089 */
+.checkinExpected { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinLate { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinClaimed { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinPartiallyReceived { background-color:white; border:1px solid #000; margin:1px; }
+.checkinArrived { background-color:white; border:1px solid #000; margin:1px; }
+.checkinBinderyPrep { background-color:white; border:1px solid #000; margin:1px; }
+.checkinAtBindery { background-color:white; border:1px solid #000; margin:1px;}
+.checkinBound { background-color:white; border:1px solid #000; margin:1px; }
+.checkinMissing { background-color:white; border:1px solid #000; margin:1px; }
+.checkinRemoved { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinUnavailable { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinOutOfPrint { background-color:gray; border:1px solid #000; margin:1px;}
+.checkinNotPublished { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinNull { background-color:gray; border:1px solid #000; margin:1px; }
+.checkinExpectedStatus { color:black; }
+.checkinLateStatus { color:black; }
+.checkinClaimedStatus { color:black; }
+.checkinPartiallyReceivedStatus { color:black; }
+.checkinArrivedStatus { color:green; }
+.checkinBinderyPrepStatus { color:red; }
+.checkinAtBinderyStatus { color:red; }
+.checkinBoundStatus { color:red; }
+.checkinMissingStatus { color:red; }
+.checkinRemovedStatus { color:black; }
+.checkinUnavailableStatus { color:black; }
+.checkinOutOfPrintStatus { color:black; }
+.checkinNotPublishedStatus { color:black; }
+.checkinNullStatus { color:black; }
+.checkinInfoLabel { float:left; width:20%; height:15pt; }
+.checkinInfoData { float:right; width:80%; height:15pt; }
+.checkinInfoHoldingsLabel { float: left; width: 20%; }
+.checkinInfoHoldingsData { float: left; width: 80%;  }
+.checkinCard { clear: both; margin-top:10px}
+
+.confirmationprompt { color:#FF0000; }
+#webirnr_request{padding-left:1%;}
+
+.lineBreak { display:block; height:10px; }
+
+#elContent {list-style:none; padding:0; margin:0;}
+#elContent form {display:none;}
+.ecTitleCollapse, .ecTitleOpen {cursor:pointer; color:#014184;}
+.ecTitleCollapse {background:url(elcontent-arrows-closed.png) no-repeat right; padding-right:.75em}
+.ecTitleOpen {background:url(elcontent-arrows-open.png) no-repeat right; padding-right:1em;}
+.ecContentShow {display:block; margin-bottom:1em;}
+.ecContentHide {display:none;}
+
+input[type="checkbox"] { background-color: #FFF8EF; }
+strong { font-weight: bold; }
+ul.srchhelpList {list-style:disc;}
+
+/* Section 2 */
+/* named styles listed in alphabetical order */
+.additionalCopies {padding:0 15px 0 15px;}
+.additionalCopies th.bibItemsHeader { color: #000; font-weight: bold; text-align: center; background:#DEE3E7; border: none;; }
+.advSrchtool form {margin:auto; padding:5px 10px;}
+.advSrchtool {display:block; background:#d2e0e7;border-right:1px solid #BDBDBD; padding:3px; border-bottom:1px solid #BDBDBD; margin:0 3% 1% 3%;}
+.advSrchtool form table {width:450px}
+.alphaERM {text-align:center;}
+
+/*controls display of authority redirect information */
+.authorityRedirect { display:block; background:#FFFBD6; border-right:1px solid #999; padding:10px; border-bottom:1px solid #999; border-top:0; border-left:0;margin:2% 10% 1% 10%; text-align:center;}
+.authPublicNote { background: #F7F4F4; } 
+
+/* This is used in the Materials Booking calendar */
+.available { font-weight: bold; color: green; }
+.availLimMessage { font-style: italic; text-align: left; }
+
+/* These are used for Materials Self-Booking */
+
+.booking {text-align:center; margin:0 0 5px 0; }
+
+.bookingsConfirmMsg { font-weight: bold; text-decoration: none; padding-bottom: 5px; background: #FFFBC6; }
+
+
+.bookingsRepeat { margin-left: 15px; margin-right: 15px; border: 1px solid #00437f; padding: 3px; }
+
+.bookingsRepeatWeeklyDay { margin-left: 30px; }
+
+.bookingsSelect { width: 90%; margin-left: 5%; margin-bottom: 1em; }
+
+.bookingsSelectCal { width: 90%; margin-left: 5%; text-align: center; background: #00437f; border: 2px solid #00437f; margin-bottom: 1em; }
+
+.bookingsSelectCal table { margin: auto; border: none;  } 
+
+.bookingsSelectCal th { text-align: center; border: none; } 
+
+.bookingsSelectCal td { border: 1px solid #00437f; }
+
+.bookingsSelectEndtime { margin-left: 10px; }
+
+.bookingsSelectRepeat { margin-top: 5px; margin-bottom: 5px; }
+
+.bookingsSelectTime { background: #00437f; border: 2px solid #00437f; padding: 3px; }
+
+/* Brief Citation display styles */
+.briefcitActions { padding:5px 0 5px 0;text-align: left; }
+
+.briefcitDetail { padding:0 0 0 8px; }
+
+.briefcitDetail img { padding-top: 2px; }
+
+.briefcitEntryNum {text-align:center; font-weight:bold;}
+
+.briefcitExtras { text-align: center; white-space: nowrap; }
+
+.briefcitExtras img { padding-bottom: 2px; }
+
+
+.briefcitItems table {width:90%;margin:0;padding:0; }
+
+.briefcitItems .bibItemsHeader { padding:0; }
+
+.briefcitMedia img {height:20px; width:20px;}
+
+.briefcitResultInfo { text-align: left; }
+
+.briefcitRequest { text-align:left; padding:3px 5px; }
+
+.briefCitRow { border-top:1px solid #D1D8DD; }
+
+.briefCitRow a {color:#202020;}
+
+.briefcitStatus { font-weight: bold; }
+
+.briefcitTitle { font-weight: bold; }
+
+/* classes for browse displays */
+/* See also Web options BROWSE_HEADERS, TABLEPARAM_BROWSE..., TABLEPARAM_BRIEFCIT */
+.browseEntry { color: #000000; font-weight: normal; }
+
+.browseEntry td { border-top:1px solid #d0d0d0;}
+
+.browseEntryData { text-align: left;  }
+
+.browseEntryEntries { text-align: center; }
+
+.browseEntryMark { font-weight: bold; }
+
+.browseEntryMedia { vertical-align: middle; }
+
+.browseEntryNum { text-align: center; }
+
+.browseEntryRelevance { background:#d7e3ff;}
+
+.browseEntryYear {text-align: center; }
+
+.browseHeader { text-align:left; background:#001848;color:#fff;}
+
+.browseHeaderData { text-align:left; padding:3px; border-bottom:1px solid #BDBDBD ;}
+
+.browseHeaderEntries { padding:3px; border-bottom:1px solid #BDBDBD;  }
+
+.browseHeaderMark {padding:3px; border-bottom:1px solid #BDBDBD }
+
+.browseHeaderMedia {padding:3px; border-bottom:1px solid #BDBDBD; }
+
+.browseHeaderNum { padding:3px; border-bottom:1px solid #BDBDBD; }
+
+.browseHeaderRelevance { padding:3px; border-bottom:1px solid #BDBDBD; }
+
+.browseHeaderYear { padding:3px; border-bottom:1px solid #BDBDBD;}
+
+.browsePager { font-weight:bold;padding-bottom:10px;}
+
+.browsePager strong {border:1px solid #9FBECE;padding:3px;margin:2px 1px;color:#fff;background:#9FBECE;}
+
+.browsePager a {color:#202020;text-decoration:none;border:1px solid #9FBECE;padding:3px;margin:2px 1px}
+
+.browsePager a:hover {background:#9FBECE;color:#fff;}
+
+.browseResourceTableEntry { color: #000000;  text-align: center; }
+
+.browseSaveJump { color: #000000; background: #FFFFFF; text-align: left; }
+
+.browseSaveJump form { display: inline; }
+
+.browseSearchtool {display:block; background:#d2e0e7; border: none;; border-right:1px solid #BDBDBD; padding:8px 3px; border-bottom:1px solid #BDBDBD; margin:5px; }
+
+.browseSearchtoolMessage { text-align:center;} 
+
+.browseSubEntry { color: #000000; font-weight: normal;  }
+
+.browseSuperEntry td {background:#FFFBD6; text-align:left; padding:3px; font-weight:bold;  }
+
+.button { vertical-align: top; }
+
+.clear {clear:both; margin-bottom:5px;}
+
+.clear2 {clear:both;}
+
+.displayBody {background:#fff; border-bottom:1px solid #d0d0d0;border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0;clear:both;}
+
+.errormessage { color: #FF0000; }
+
+.errormessage h2 { display:inline; }
+
+/* External Patron Authentication product style */
+.extpat div,
+.libpat div { line-height: 1.66em; width: 90%; background: #00437f; border: 2px solid #00437f; padding: 3px; margin: 0 auto; text-align: right; }
+
+/* External Patron Authentication product style */
+.extpat strong { display: block; text-align: left; }
+
+/* Feed styles */
+
+#feeds {margin:10px 15px; }
+
+#feeds a:link { color: #000; }
+
+#feeds a:hover { text-decoration: underline; }
+
+#feeds a:visited { color: #000;  } 
+
+#feeds div {padding-top:.2em;}
+
+#feeds .tabs a:link, #feeds .tabs a:visited, #feeds .tabs a:active { color: #000; text-decoration: none;  }
+
+#feeds .tabs a:hover { text-decoration: underline; }
+
+.feedtable a:link, .feedtable a:visited, .feedtable a:active  {color:#000; text-decoration:underline;}
+
+.feedtable a:hover  {color:red; text-decoration:underline;}
+
+/* used for search help pages tabbed navigation */
+.fields td { padding: 2px; }
+
+#helpCenter {margin-left:15px; margin-right:15px; }
+
+#helpCenter a:link { color: #000; }
+
+#helpCenter a:hover { text-decoration: underline; }
+
+#helpCenter a:visited { color: #000;  }
+
+#helpCenter div {padding-top:.2em}
+
+#helpCenter .tabs a:link, #helpCenter .tabs a:visited, #helpCenter .tabs a:active { color: #000; text-decoration: none;  }
+
+#helpCenter .tabs a:hover { text-decoration: underline; }
+
+.helpNote { font-style: italic; }
+
+.helpspan {padding-right:.5em; margin:5px 0 0 0;}
+
+.holdingsDivider { display:none; margin:-3px}
+
+.holdingsItemsBookings { margin:0 0 8px 0; }
+
+.InnovativeCredit {  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-style: italic}
+
+/* Used in Related Searches display */
+#instructions { font-style: italic; }
+
+.leftSide  {width:80%; float:left; padding:5px 5px 5px 10px;border-right:2px dashed #d0d0d0;margin:5px 0;}
+
+
+/* External Patron Authentication product style */
+.libpat strong { display: block; text-align: left; }
+
+
+/* Styles used in Limit/Sort Search page - srchmod.html */
+.limitEntriesFoundNum { font-style: italic; }
+
+.limitEntriesFoundText { font-style: italic; }
+
+.limitSearchTerm { font-weight: bold; }
+
+.loggedInMessage {	padding-left: 6px; font-style: italic; color: red;  }
+
+.magLayoutOne {border-top: 1px solid #F2F2F2; margin:8px 0; padding: 10px 0 0 0 ;clear:both;}
+
+.magLayoutTwo {float:left; border-right:1px solid #F2F2F2; margin:0 10px 5px 0; padding:0 5px; width:50%;}
+
+.magLayoutThree {float:left; margin:0 0 5px 0;padding:0 5px; width:45%;}
+
+.magFour {float:left; margin:0 6px 0 2px;}
+
+.magFive {float:right; margin:0 0 0 2px;}
+
+.magSix { float:left; margin:3px 6px 0 2px; }
+
+.magSeven {float:right; margin:3px 0 0 2px;}
+
+.msg { color: #FF0000; }
+
+.navHeader { 
+        font-family: Georgia,"Times New Roman",serif;
+	font-weight: bold;
+	color: #802e3f;
+	line-height: 22px;
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top:5px; }
+
+.navigationRow { margin: -3px; }
+
+.navigationRow select { vertical-align: top; }
+
+.navRow {padding:0;margin:10px 0 0 0;text-align:right; }
+
+.navRow li {list-style:none;display:inline;padding:2px 5px;}
+
+.nowrap {white-space: nowrap; }
+
+.pageDirectoryArea { color: #000000; text-align: left;  }
+
+.pageInfoAreaHeader { color: #0132A7; background: #FFF8EF; font-weight: bolder; text-align: left;  }
+
+.pageMainArea { color: #000000; background: #FFF8EF; padding-left: 3px; }
+
+.pageMainAreaHeader { color: #0132A7; font-weight: bolder; text-align: left; }
+
+.pageMainAreaSubHeader { font-weight: bold; font-style: italic}
+
+.pageNavArea { color: #FFFFFF; background: #00437f; }
+
+.pageNavAreaBorder { background: #0132A7; }
+
+.pageNavAreaText {  color: #FFFFFF; text-decoration: none; font-weight: bold; background-color: #00437f; }
+
+
+/* classes for patron record display */
+/* see also Web options TABLEPARAM_PATDISP, TABLEPARAM_PATFUNC, */
+/* and the various BUT_PAT_ graphics options. */
+
+.patActionsLinks { text-align: center; padding: 10px; }
+
+.patActionsLinks img { vertical-align: middle; }
+
+.patFunc { border:1px solid #D1D8DD; border-bottom:0;border-spacing: 0; width: 100%; }
+
+span.patFunc {border: none;;}
+
+.patFunc td { padding: 5px; border-bottom: 1px solid #D1D8DD ; }
+
+.patFuncArea { border: none;;margin: 3px;clear:both; }
+
+.patFuncArea form { display: inline;  }
+
+.patFuncArea img { padding-top: 2px; } 
+
+.patFuncBtns { color: #000000; background: #FFF8EF; }
+
+.patFuncCancel { text-align: center; }
+
+.patFuncEntry { color: #000000; font-weight: normal;  }
+
+.patFuncFinesDetailAmt {font-weight:bold;}
+
+.patFuncFinesDetailDate {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+.patFuncFinesDetailDateLabel {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+.patFuncFinesDetailType {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+.patFuncFinesEntryDetail td { border-bottom: 1px solid #eee;}
+
+.patFuncFinesEntryTitle { color: #202020;background:#F8F8F8;  }
+
+.patFuncFinesEntryTitle em {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+td.patFuncFinesTotal {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+tr.patFuncFinesTotal {background:#EDF2F6;}
+
+.patFuncFinesTotalAmt em {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+.patFuncFinesTotalLabel em {font-style:normal;text-transform:uppercase;letter-spacing:1px;word-spacing:.5em;font-weight:bold;}
+
+.patFuncHeaders { color: #000; background:#EDF2F6; padding:3px; border-bottom:1px solid #D1D8DD ;}
+
+.patFuncHeaders a {color:#202020;}
+
+.patFuncRenewCount { font-style: italic; color: red; }
+
+tr.patFuncTitle { font-weight: bold;color: #000; background:#EDF2F6; padding:3px; border-bottom:1px solid #D1D8DD ; }
+
+th.patFuncTitle { font-weight: bold;color: #000; background:#EDF2F6; padding:5px; border-bottom:1px solid #D1D8DD ; }
+
+.patFuncTitle { font-weight: bold; }
+
+.patFuncTitle a {color:#202020}
+
+.patMainFuncs { float:left;border: none;;width:350px; margin:0;}
+
+.patNameAddress { text-align: left;border: none;; border-right: 1px solid #477295;border-bottom:1px solid #477295; padding: 5px;width:350px; margin:0 10px 0 2px;}
+
+.patnameAddress div {margin:3px 0;}
+
+.patnameAddress a {color:#202020}
+
+
+.patStatusLinks a { color:#000;text-align: left; border: none;;padding:2px 0 2px 0;text-decoration:none;}
+
+.patStatusLinks a:link, .patStatusLinks a:visited, .patStatusLinks a:active { color:#000;text-decoration:none; }
+
+.patStatusLinks a:hover { color:#000;text-decoration:underline;background:#FFFFE4;}
+
+.paymentPage { margin: 10px; }
+
+.paymentPage h2 { font-weight: bold; }
+
+.paymentPageFinestable { width: 80%; border: 2px solid #00437f; }
+
+.popupForm { margin:1% 3%;}
+
+.popupFormHeader {border-bottom:1px solid #000;margin:1% 2%;}
+
+/* These are used in the Related Searches display in the Search Tool */
+
+.rateLabel {color:#00437f;display:none;}
+
+.rateLabel a:active, .rateLabel a:visited ,.rateLabel a:link {color:#00437f;text-decoration:none}
+
+.rateLabel a:hover {color:#00437f;text-decoration:underline}
+
+.recordPager {text-align:right; }
+
+.relSearch {margin:2%;padding:8px;background:#fff;border:2px solid #f9f9f9}
+
+.relSearch a {color:#202020; padding:2px 0;}
+
+.relSearch p {margin:3px 0;padding:2px 5px;}
+
+.relSearch h4 {margin:3px 0;border-bottom:1px solid #202020;}
+
+.relSearch .none {color:#000099;border: none;;}
+
+.reqFillTimeMsg { font-style: italic; }
+
+.reserveBibs { border: 2px solid #00437f; }
+
+.reserveBibs td { border-bottom: 1px solid #00437f; }
+
+.reserveBibs input { background-color: #FFF8EF; }
+
+.resourceBibHeader { text-align:left; background:#F7F4F4; } 
+
+.resourceBibHeader th {padding:3px; border-bottom:1px solid #D1D8DD ;}
+
+.resourceHistory { float:left; margin:0 0 5px 0; padding: 0 0 5px 0;}
+
+.resourceInfoLabel {width:22%; text-align: right; padding-right: 3px; background-color:#F7F4F4; font-weight: bold; font-style: italic;border-right:1px solid #999; padding:3px; border-bottom:1px solid #999; }
+
+.resourceLicenseEntry { background:#fff7d6  }
+
+.resourceLicenseHeader {text-align:left; padding:3px; }
+
+.resourcePager { text-align:right; padding:5px 5px 0 0;margin:0 3px 0 5px; float:right; width:50%;}
+
+.rightNav {padding:0;margin:0; }
+
+.rightNav li {list-style:none;padding:2px;display:block;}
+
+.rightNav li a:link, .rightNav li a:visited, .rightNav li a:active {display:block; color:#81AACF;text-decoration:none;padding:0;margin:0 0 0 3px; }
+
+.rightNav li a:hover {display:block;color:#000;text-decoration:underline;background:#DAECFC;}
+
+.rightSide {width:15%;float:right; padding:0 5px 0 10px;  margin:5px 13px 5px 0;}
+
+* html .rightSide {width:15%;float:right; padding:0 5px 0 10px;  margin:5px 5px 5px 0;}
+
+.rssChannelEntries { padding:0;margin:0; }
+
+.rssChannelEntry { padding:4px 0 2px 0;border-bottom:1px dotted #eee;}
+
+.rssChannelEntryDate { line-height:1.4em; font-style: italic; }
+
+.rssChannelEntryDesc { line-height:1em;display:block;clear:both; }
+
+.rssChannelEntryHead { font-weight: bold; display: block; padding-bottom: 2px; }
+
+.rssChannelImage img { border: none;; margin-top: 2px; }
+
+.rssChannelTitle { font-weight: bold; }
+
+.srchhelpHeader {border-bottom:1px solid #000;}
+
+.searchTipsNavAreaText {  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none; font-weight: bold; background-color: #0132A7; }
+
+.searchTipsHeaderText {  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; color: #0132A7; text-decoration: none; font-weight: bold; background-color: #FFF8EF; }
+
+.searchTipTable {margin:1% 3%;letter-spacing:1px;line-height:1.2em;}
+
+#searchTipMain {display:none; margin:12px}
+
+.searchTipContentInfo {display:block; background:#fff; border: none; padding:2px 5px;color:#000;}
+
+#searchTipsLink {text-align:center}
+
+#searchTipsLink a:link, #searchTipsLink a:visited, #searchTipsLink a:active {color:#000; text-decoration:none;}
+
+#searchTipsLink a:hover {color:#000; text-decoration:underline;}
+
+.sectionHeading { font-weight: bold; }
+
+.spacer {margin:1% 2%; background:#fff; border:1px solid #d0d0d0; }
+
+.srchhelpList li {margin:2px 5px;}
+
+.srchhelpText {margin:1% 5px;letter-spacing:1px;line-height:1.2em;}
+
+.srchhelpEBody {margin:2% 5%}
+
+.tabBody { background-color: #ffffff ; border: 1px solid #ccc; padding: .7em; margin-top:0; }
+
+.tabBody div {margin:0 1%; }
+
+.tabs { margin-bottom: 4px; }
+
+.tabs span { border: 1px solid #D1D8DD; border-left:0;background-color:#f0f4f5; padding: .2em .7em;}
+
+.tabs .firstTab { border: 1px solid #D1D8DD; background-color:#f0f4f5; padding: .2em .7em; }
+
+.tabs .selected { background-color: #fff; border: 1px solid #D1D8DD; border-bottom: 1px solid #fff;margin: 0 0 0 -1px;}
+
+.tabs .firstSelected { background-color: #fff; border: 1px solid #D1D8DD; border-bottom: 1px solid #fff;}
+
+.tool form {margin:auto; padding:5px 10px;}
+
+.tool {display:block; background:#d2e0e7; border-right:1px solid #BDBDBD; padding:3px; border-bottom:1px solid #BDBDBD; margin:0 10% 1% 10%;}
+
+.topicFeeds { clear: none; float: right; width: 60%; padding: 5px; }
+
+.topicLinks { clear: none; float: left; padding: 5px; width: 35%; }
+
+.topicLinks ul { padding: 5px; padding-left: 20px; margin: 2px; border: 1px solid #00437f; }
+
+.topLogo {background:url(top_back.jpg) top left no-repeat;width:100%;height:100px;}
+
+/* This is used in the Materials Booking calendar */
+.unavailable { font-weight: bold; color: black; background: #D7D7D7; }
+
+.unpadded { margin-bottom:auto; margin-top:auto; }
+
+.wamCalcDate{ background: #ECECEC; border: 1px silver dashed;  }
+
+.xmlframe { width:100%; height:600px; border:1px solid #000; }
+
+.yourEntryWouldBeHereData { border: 2px solid #F5D9A3; }
+
+.mainSpacer {margin:0 1em 1em 1em;}
+
+/* table striping styles */
+/* for brief citation */
+td.odd { background:#F8F8F8; }
+td.highlight {background:#FFFFE4;}
+
+/* for browse entries */
+tr.odd { background:#F8F8F8; }
+tr.highlight {background:#FFFFE4;}
+
+/* styles for print view and web view toggle */
+
+#printView {text-align:right; margin:0 5px 0 0;padding-top:15px;height:15px;}
+
+#printView a {color:#162a6d;}
+
+#webView {display:none}
+
+/* styles for Skyline design */
+.leftCol {padding:0;margin:0; }
+
+.leftCol li {list-style:none;padding:2px;display:block;}
+
+.leftCol li a:link, .leftCol li a:visited, .leftCol li a:active {display:block; color:#444;text-decoration:none;padding:0;margin:0 0 0 3px; }
+
+.leftCol li a:hover {display:block;color:#000;text-decoration:underline;background:#fff;}
+
+.navHeader { font-family: Arial,"Times New Roman",serif;
+	font-weight: bold;
+	color: #5E5D5D;
+	line-height: 22px;
+	margin: 10px 0 0 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+margin-top:5px;
+border-bottom:1px solid #fedace; }
+
+.mainMenuSrchText {width:55%; margin:auto; letter-spacing:1px;}
+
+.mainMenuSrchTool form {margin:auto; padding:5px 10px;}
+
+.mainMenuSrchTool {display:block; margin:40px 5px; padding:0 ;border-bottom:1px solid #D1D8DD;text-align:center;}
+
+h2 {margin:0 0 3px 3px;padding:0;}
+
+.headerNav {padding:0;margin:2px 10px 0 0; text-align:right;letter-spacing:1px; color:#999;}
+
+.headerNav li {list-style:none;padding:0 2px 2px 2px;display:inline;}
+
+.headerNav li a:link, .headerNav li a:active, .headerNav li a:visited {color:#fff;text-decoration:none;padding:0;margin:0;}
+
+.headerNav li a:hover {color:#fff;text-decoration:underline;}
+
+.holder img {float:left; margin:0 1%;}
+
+a img {border: none;}
+
+#rightSideCont {padding:10px;border:5px solid #ededed;float:right;margin:1% 1% 1% 1%;width:73%;background:#f6f6f6;}
+
+#rightSideCont li {margin:0 0 0 25px;}
+
+.unpadded {margin:0; padding:0;}
+
+.topLog {color:#000;}
+
+.topLogoDiv {margin:0;padding:0 0 3px 5px; background:#fff; background-image:url(/screens/header_bg.jpg); background-repeat:repeat-x; background-position:bottom;}
+
+.floatRight {float:right;}
+
+.clear {clear:both;}
+
+.leftnavDiv {float:right; margin:1% 1% 1% 0;background:#FFFFE4;padding:5px;border:5px solid #FFFFE8;width:15%;}
+
+.mainMenuContentDiv {background:#fff;padding:5px;border:2px solid #f9f9f9;clear:both;color:#202020}
+
+.bareBib {clear:both;}
+
+.bareBib .bibInfoLabel {display:none;}
+
+.bareLable {font-weight:bold;}
+
+.bareCaption {font-weight:bold;}
+
+.bareBreaker {border-top:1px dashed #477295; margin:5px 5px 5px 0; padding:5px 0; font-weight:bold;color: #FF0808;}
+
+#bareRes .bibResourceTableHeader {display:none}
+
+.pinReset {margin:2%;padding:8px;background:#fff;border:2px solid #f9f9f9}
+
+.pinReset input {display:block;}
+
+#bibDisplayLayout {width:100%;}
+
+#bibDisplayLayout .bibInfoData {padding:3px 0;}
+
+.illOtherLists {margin:0 0 0 5px;padding:0;width:45%;float:left;}
+
+.illOtherLists li {text-transform:lowercase;padding:3px 0;margin:0;list-style-type:circle;}
+
+.illOtherLists li a {color:#202020;}
+
+.srchhelpHeader {margin:10px 15px;}
+
+/* imprved table row strip CSS */
+
+.outline {border: none;;border-top:2px solid #F5D9A3;border-bottom:2px solid #F5D9A3}
+
+.outlineSub {border: none;;border-top:2px solid #F5D9A3;}
+
+.topLine {border: none;;border-top:2px solid #F5D9A3;}
+
+.botLine {border: none;;border-bottom:2px solid #F5D9A3;}
+
+.rightCap {border:2px solid #F5D9A3;border-left:0;}
+
+.rightSide {padding-right:2px;border-right:2px solid #F5D9A3;}
+
+.leftCap {border:2px solid #F5D9A3;border-right:0;}
+
+.rightTopCap {border-right:2px solid #F5D9A3;}
+
+.rightBotCap {border-right:2px solid #F5D9A3;}
