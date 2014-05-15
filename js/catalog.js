@@ -200,7 +200,7 @@ if($('.yourEntryWouldBeHere').length > 0) {
 
 /* Script to capture search terms */
 
-	var path = "http://gvsuliblabs.com/labs/opac/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
+	var path = "http://gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
 
 	recordBasicSearch();
 
