@@ -73,11 +73,11 @@ td.browsePager {
 
 @font-face {
     font-family: 'AlternateGothicFSNo3';
-    src: url('../fonts/AlternateGothicNo3-webfont.eot');
-    src: url('../fonts/AlternateGothicNo3-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/AlternateGothicNo3-webfont.woff') format('woff'),
-         url('../fonts/AlternateGothicNo3-webfont.ttf') format('truetype'),
-         url('../fonts/AlternateGothicNo3-webfont.svg#AlternateGothicFSNo3') format('svg');
+    src: url('http://labs.library.gvsu.edu/libs/fonts/AlternateGothicNo3-webfont.eot');
+    src: url('http://labs.library.gvsu.edu/libs/fonts/AlternateGothicNo3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://labs.library.gvsu.edu/libs/fonts/AlternateGothicNo3-webfont.woff') format('woff'),
+         url('http://labs.library.gvsu.edu/libs/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'),
+         url('http://labs.library.gvsu.edu/libs/fonts/AlternateGothicNo3-webfont.svg#AlternateGothicFSNo3') format('svg');
     font-weight: normal;
     font-style: normal;
 

@@ -1,0 +1,387 @@
+/*
+GVSU CMS Navigation Styles, normally inlined
+Moved into this file to enable compression and de-duplication
+*/
+
+#navigation {
+	}
+	#navigation ul, #navigation ul li, #navigation ul ul {
+	}
+	#navigation ul li {
+	}
+	#navigation ul li a {
+		border-bottom: 1px solid #CCC;
+		background-color: #006599;
+		color: #FFF;
+	}
+	/*
+	#navigation ul li a.navselected {
+		background-color: #70A9C6;
+		color: #FFF;
+	}
+	*/
+	/*
+	#navigation ul li li a {
+		border-bottom: 1px solid #CCC;
+		background-color: #004E81;
+		color: #FFF;
+	}
+	*/
+	/*
+	#navigation ul li li a.navselected {
+		background-color: #70A9C6;
+		color: #FFF;
+	}
+	*/
+	/*
+	#navigation ul li li li a {
+		border-bottom: 1px solid #CCC;
+		background-color: #EEE;
+		color: #006599;
+	}
+	*/
+	/*
+	#navigation ul li li li a.navselected {
+		background-color: #70A9C6;
+		color: #FFF;
+	}
+	*/
+	#navigation-footer {
+		border-top: 1px solid #CCC;
+	}
+	#navigation-contact {
+		border-bottom: 1px solid #CCC;
+	}
+	#navigation li .navparent {
+		background-image: url(http://gvsu.edu/cms3/skeleton_32/files/img/arrow_white.gif);
+	}
+	#navigation li li .navparent {
+		background-image: url(http://gvsu.edu/cms3/skeleton_32/files/img/arrow_white.gif);
+	}
+	
+	/* For IE 6/7's lack of compliance. It works in IE8 without this */
+	#navigation-menu {
+		.z-index: 1;
+	}
+	#blue-header-bar {
+		.z-index: 2;
+	}
+
+	/* Here is an awesome comment */
+	
+	/* Root Menu Hover Persistence */
+	#navigation ul#navigation-menu a:hover,
+	#navigation ul#navigation-menu li:hover a,
+	#navigation ul#navigation-menu li.iehover a {
+		background-color: #70A9C6;
+		color: #FFF;
+	}
+	
+	/* 2nd Menu */
+	#navigation ul#navigation-menu li:hover li a,
+	#navigation ul#navigation-menu li.iehover li a {
+		border-bottom: 1px solid #CCC;
+		background-color: #004E81;
+		color: #FFF;
+	}
+	
+	/* 2nd Menu Hover Persistence */
+	#navigation ul#navigation-menu li:hover li a:hover,
+	#navigation ul#navigation-menu li:hover li:hover a,
+	#navigation ul#navigation-menu li.iehover li a:hover,
+	#navigation ul#navigation-menu li.iehover li.iehover a {
+		background-color: #70A9C6;
+		color: #FFF;
+		
+	}
+	
+	/* 3rd Menu */
+	#navigation ul#navigation-menu li:hover li:hover li a,
+	#navigation ul#navigation-menu li.iehover li.iehover li a {
+		border-bottom: 1px solid #CCC;
+		background-color: #EEE;
+		color: #006599;
+	}
+	
+	/* 3rd Menu Hover Persistence */
+	#navigation ul#navigation-menu li:hover li:hover li a:hover,
+	#navigation ul#navigation-menu li:hover li:hover li:hover a,
+	#navigation ul#navigation-menu li.iehover li.iehover li a:hover,
+	#navigation ul#navigation-menu li.iehover li.iehover li.iehover a {
+		background-color: #70A9C6;
+		color: #FFF;
+	}
+	
+	/* 4th Menu */
+	#navigation ul#navigation-menu li:hover li:hover li:hover li a,
+	#navigation ul#navigation-menu li.iehover li.iehover li.iehover li a {
+	}
+	
+	/* 4th Menu Hover */
+	#navigation ul#navigation-menu li:hover li:hover li:hover li a:hover,
+	#navigation ul#navigation-menu li.iehover li.iehover li.iehover li a:hover {
+	}
+	/*
+	#navigation ul li a.navselected {
+		font-weight: bold;
+	}
+	*/
+
+	/* -- html5doctor.com/html-5-reset-stylesheet/ -- */
+#gvsu-header-wrapper div,#gvsu-header-wrapper span,#gvsu-header-wrapper object,#gvsu-header-wrapper iframe,#gvsu-header-wrapper h1,#gvsu-header-wrapper h2,#gvsu-header-wrapper h3,#gvsu-header-wrapper h4,#gvsu-header-wrapper h5,#gvsu-header-wrapper h6,#gvsu-header-wrapper p,#gvsu-header-wrapper blockquote,#gvsu-header-wrapper pre,#gvsu-header-wrapper abbr,#gvsu-header-wrapper address,#gvsu-header-wrapper cite,#gvsu-header-wrapper code,#gvsu-header-wrapper del,#gvsu-header-wrapper dfn,#gvsu-header-wrapper em,#gvsu-header-wrapper img,#gvsu-header-wrapper ins,#gvsu-header-wrapper kbd,#gvsu-header-wrapper q,#gvsu-header-wrapper samp,#gvsu-header-wrapper small,#gvsu-header-wrapper strong,#gvsu-header-wrapper sub,#gvsu-header-wrapper sup,#gvsu-header-wrapper var,#gvsu-header-wrapper b,#gvsu-header-wrapper i,#gvsu-header-wrapper dl,#gvsu-header-wrapper dt,#gvsu-header-wrapper dd,#gvsu-header-wrapper ol,#gvsu-header-wrapper ul,#gvsu-header-wrapper li,#gvsu-header-wrapper fieldset,#gvsu-header-wrapper form,#gvsu-header-wrapper label,#gvsu-header-wrapper legend,#gvsu-header-wrapper table,#gvsu-header-wrapper caption,#gvsu-header-wrapper tbody,#gvsu-header-wrapper tfoot,#gvsu-header-wrapper thead,#gvsu-header-wrapper tr,#gvsu-header-wrapper th,#gvsu-header-wrapper td,#gvsu-header-wrapper time,#gvsu-header-wrapper mark,#gvsu-header-wrapper audio,#gvsu-header-wrapper video { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent; } 
+#gvsu-header-wrapper { line-height:1; }
+#gvsu-header-wrapper article,#gvsu-header-wrapper aside,#gvsu-header-wrapper details,#gvsu-header-wrapper figcaption,#gvsu-header-wrapper figure,#gvsu-header-wrapper footer,#gvsu-header-wrapper header,#gvsu-header-wrapper hgroup,#gvsu-header-wrapper menu,#gvsu-header-wrapper nav,#gvsu-header-wrapper section { display:block; }
+#gvsu-header-wrapper nav ul { list-style:none; }
+#gvsu-header-wrapper blockquote, #gvsu-header-wrapper q { quotes:none; }
+#gvsu-header-wrapper blockquote:before,#gvsu-header-wrapper blockquote:after,#gvsu-header-wrapper q:before,#gvsu-header-wrapper q:after { content:'';content:none; }
+#gvsu-header-wrapper a { margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent; }
+#gvsu-header-wrapper table { border-collapse:collapse;border-spacing:0; }
+/* ------------ end html5 reset ------------ */
+
+
+/* base styles */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#gvsu-header-wrapper {
+    background: #0065a4;
+    color: #363636;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+#gvsu-header-wrapper #gvsu-search_bar {
+					display: none;
+				}
+
+.gvsu-clear {
+	clear: both;
+}
+
+#gvsu-header-wrapper #gvsu-header {
+	width: 979px;
+	margin: 0 auto;
+}
+
+/* ------------ header ------------ */
+#gvsu-header-wrapper #gvsu-logo {
+	padding: 1.167em 0 0.75em 0.25em; /* 14 0 9 3 */
+	margin: 0;
+	float: left;
+	margin-left: .5em;
+	
+}
+
+#gvsu-header-wrapper #gvsu-index_contact { /* site index & contact us links */
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+#gvsu-header-wrapper #gvsu-index_contact ul {
+	list-style: none;
+	margin: 1.0em 0 0 0;
+	padding: 0;
+}
+#gvsu-header-wrapper #gvsu-index_contact li {
+	display: inline;
+}
+#gvsu-header-wrapper #gvsu-index_contact a {
+	padding: 0 .417em 0 1.5em; /* 0 5 0 18 */
+	color: #fff;
+	text-decoration: none;
+}
+#gvsu-header-wrapper #gvsu-search_bar form p {
+	float: right;
+	white-space: nowrap;
+}
+#gvsu-header-wrapper #gvsu-search_bar form label {
+	float: left;
+	padding: .5em 0 .5em 1em;
+	margin: 0;
+	color: #FFF;
+	white-space: nowrap;
+	height: auto;
+	overflow: hidden;
+	display: inline-block;
+
+}
+#gvsu-header-wrapper #gvsu-search_bar-search {
+	color: #A9A9A9;
+	display: block;
+}
+#gvsu-header-wrapper #gvsu-search_bar-search.gvsu-active {
+	color: #000 !important;
+}
+#gvsu-header-wrapper #gvsu-search_bar-submit {
+	position: absolute;
+	right: 0;
+	top: 3.6em;
+	width: 3em;
+	height: 2.5em;
+	background: transparent;
+	border: none;
+}
+#gvsu-search_bar form #gvsu-search_bar-field label {
+	display: none;
+}
+
+#gvsu-header-wrapper .gvsu-search_box {
+	display: none;
+} 
+
+/* ------------ audience navigation bar ------------ */
+#gvsu-header-wrapper #gvsu-navigation_bar {
+	clear: both;
+	background-color: #004875;
+	width: 100%;
+	position: relative;
+}
+#gvsu-header-wrapper #gvsu-navigation_bar ul {
+	list-style: none;
+}
+#gvsu-header-wrapper #gvsu-navigation_bar ul.gvsu-audiences li {
+	display: inline;
+	line-height: 2.095em; /* 44 */
+	font-family: 'AlternateGothicFSNo3', Arial, sans-serif;
+	font-size: 1.75em; /* 21 */
+	padding: 0 .7em;
+}
+#gvsu-header-wrapper #gvsu-navigation_bar a {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+body {
+		background-color: #88b3da;
+	}
+	#header-left {
+		visibility: hidden;
+		background: none;
+	}
+	#header-right {
+		visibility: hidden;
+		background: none;
+	}
+	#navigation ul#navigation-menu li a {
+		background-color: #0065a4; /*004875;*/
+	}
+	
+
+/* ------------ footer ------------ */
+#gvsu-footer-wrapper #gvsu-footer {
+	width: 100%; /* 919/979 */
+	margin: 0;
+	background-color: #535353;
+	color: #c3c2c2;
+}
+
+#gvsu-footer-wrapper #gvsu-contact_info, 
+#gvsu-footer-wrapper #gvsu-footer_links {
+	float: left;
+	width: 23.49336057201226%; /* 230/919 */
+	line-height: 1.6em;
+	padding: 3.33em 0; /* 28 0 */
+}
+#gvsu-footer-wrapper #gvsu-contact_info {
+	padding-left: 2.5em;
+}
+#gvsu-footer-wrapper #gvsu-footer_links p {
+	line-height: 1.8em;
+}
+#gvsu-footer-wrapper #gvsu-footer a {
+	color: #fff;
+}
+
+#gvsu-footer-wrapper #gvsu-ad_squares {
+	float: right;
+	width: 46.98672114402451%; /* 430/919 */
+	margin: 2em 0;
+	padding: 0;
+}
+#gvsu-footer-wrapper #gvsu-ad_squares .gvsu-right {
+	padding: 0 2.5em; /* 30 */
+}
+
+#gvsu-footer-wrapper #gvsu-footer_secondary {
+	width: 100%;
+	margin: 0;
+	padding: 1.417em 0; /* 17 0 */
+	background-color: #3d3d3d;
+	color: #fff;
+	height: 1.417em; /* 17 */
+}
+
+#gvsu-footer-wrapper #gvsu-social_media {
+	padding-left: 2.5em; /* 30 */
+	width: 27.57916241062308%; 	/* 270/979 */
+	float: left;
+}
+#gvsu-footer-wrapper #gvsu-social_media ul {
+	list-style: none;
+}
+#gvsu-footer-wrapper #gvsu-social_media li {
+	display: inline;
+}
+#gvsu-footer-wrapper #gvsu-social_media a {
+	padding: 1.417em .417em 1.417em 0;/* 17 5 17 0 */
+}
+
+#gvsu-footer-wrapper #gvsu-disclaimers_copyright {
+	float: right;
+	padding: 0.25em 0.833em 0 0; /* 3 10 0 0 */
+	margin: 0;
+	text-align: right;
+	width: 65.5%;
+	color: #b3b3b3;
+}
+#gvsu-footer-wrapper .gvsu-disclaimer {
+	padding-right: 1.667em; /* 20 */
+}
+#gvsu-footer-wrapper .gvsu-disclaimer a {
+	color: #b3b3b3;
+	text-decoration: none;
+}
+
+#gvsu-footer-wrapper td.gvsu-mobile,
+#gvsu-footer-wrapper th.gvsu-mobile,
+#gvsu-footer-wrapper td.gvsu-tablet,
+#gvsu-footer-wrapper th.gvsu-tablet,
+#gvsu-footer-wrapper .gvsu-mobile,
+#gvsu-footer-wrapper .gvsu-tablet,
+#gvsu-footer-wrapper #gvsu-navigation_bar #gvsu-navigation_icons li.gvsu-tablet,
+#gvsu-footer-wrapper #gvsu-navigation_bar #gvsu-navigation_icons li.gvsu-mobile {
+	display: none;
+}
+#gvsu-footer-wrapper .gvsu-desktop {
+	display: inline;
+	display: inherit;
+}
+#gvsu-footer-wrapper td.gvsu-desktop,
+#gvsu-footer-wrapper th.gvsu-desktop {
+	display: table-cell;
+}
+#gvsu-footer-wrapper table.gvsu-desktop {
+	display: table;
+}
+#gvsu-footer-wrapper .gvsu-desktop,
+#gvsu-footer-wrapper #gvsu-navigation_bar #gvsu-navigation_icons li.gvsu-desktop {
+	display: inline;
+}
+#gvsu-footer-wrapper .gvsu-clear {
+	clear: both;
+}
+#gvsu-library_title h1 { font-size: 1em; font-weight: normal; margin: 0; }
+
+.lib-simple-form input[type="text"] { height: 2.5em !important; }
+#gvsu-library_search { padding: 0; }
+.lib-horizontal-list li { float: right !important; margin-right: 1em !important; font-size: 1.125em;}
+
+a.status-button { padding: .333em .75em;font-size:1em;line-height:1.3125em;background:#eee;border: 1px solid #aaa;border-top: 1px solid #ccc;border-left: 1px solid #ccc;-moz-border-radius:.25em;-webkit-border-radius:.25em;border-radius:.25em;color: #444 !important;display: inline-block;font-weight:bold;text-decoration:none;cursor: pointer;margin-bottom:1.25em;font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+.chat { display: inline-block; padding-left: 1.45em; }
+.chat-online { background-image: url(//gvsu.edu/cms3/assets/741ECAAE-BD54-A816-71DAF591D1D7955C/chat-online.png); background-repeat:no-repeat;background-position:middle left;  }
+.chat-offline { background-image: url(//gvsu.edu/cms3/assets/741ECAAE-BD54-A816-71DAF591D1D7955C/chat-offline.png); background-repeat:no-repeat;background-position:middle left; color: #575757 !important;}
