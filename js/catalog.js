@@ -273,7 +273,7 @@ if($('.yourEntryWouldBeHere').length > 0) {
 
 	(function() {
 	    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
-	    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
+	    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?multi,poll";
 	    var y = document.getElementsByTagName("body")[0]; y.appendChild(x);
 	  })();
 	
