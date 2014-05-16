@@ -70,3 +70,7 @@ td.browsePager {
 }
 
 .bib_links a { color: #093A6D; }
+
+#gvsu-library_search {
+	padding: 0;
+}
