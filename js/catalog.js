@@ -2,10 +2,10 @@ $(document).ready(function() {
 
 	// Patch trim function for IE
 	if(typeof String.prototype.trim !== 'function') {
-  String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g, '');
-  }
-}
+ 	 String.prototype.trim = function() {
+	    return this.replace(/^\s+|\s+$/g, '');
+	  }
+	}
 
 	//Helper function for recordBasicSearch()
 		function getSelectedText(elementId) {
@@ -49,12 +49,6 @@ $(document).ready(function() {
 				document.body.appendChild(iFrame);
 			}
 		}
-
-  (function() {
-    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
-    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
-    var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
-  })();
 
 	if($("#bibDisplayBody").length > 0) {
 
@@ -277,6 +271,12 @@ if($('.yourEntryWouldBeHere').length > 0) {
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
 
+	(function() {
+	    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+	    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
+	    var y = document.getElementsByTagName("body")[0]; y.appendChild(x);
+	  })();
+	
 	/* Show alert that ASRS is down */
 	/*
 	if(($(".bibItemsEntry").find("a.top-row-buttons").length > 0) && ($(".bibItemsEntry").find("a.top-row-buttons").find('img').attr("alt") == "ARS Request")) {
