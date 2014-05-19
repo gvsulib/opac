@@ -74,3 +74,147 @@ td.browsePager {
 #gvsu-library_search {
 	padding: 0;
 }
+
+.libicon-001, .libicon-002, .libicon-003, .libicon-004, .libicon-005, .libicon-006, .libicon-007, .libicon-008, .libicon-009, .libicon-010, .libicon-011, .libicon-012, .libicon-013, .libicon-014, .libicon-015, .libicon-016, .libicon-017, .libicon-018, .libicon-019, .libicon-020, .libicon-021, .libicon-022, .libicon-023{
+	background: url(//library.catalog.gvsu.edu/screens/sprites.png) no-repeat;
+}
+
+.libicon-001{
+	background-position: 0 -1px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-002{
+	background-position: 0 -28px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-003{
+	background-position: 0 -50px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-004{
+	background-position: 0 -77px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-005{
+	background-position: 0 -100px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-006{
+	background-position: 0 -127px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-007{
+	background-position: -51px -128px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-008{
+	background-position: -78px -128px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-009{
+	background-position: -28px 0;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-010{
+	background-position: -28px -28px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-011{
+	background-position: -28px -50px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-012{
+	background-position: -28px -78px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-013{
+	background-position: -28px -100px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-014{
+	background-position: -51px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.libicon-015{
+	background-position: -70px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.libicon-016{
+	background-position: -29px -128px ;
+	width: 20px;
+	height: 21px;
+}
+
+.libicon-017{
+	background-position: -52px -21px ;
+	width: 16px;
+	height: 7px;
+}
+
+.libicon-018{
+	background-position: -50px -50px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-019{
+	background-position: -78px -50px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-020{
+	background-position: -50px -78px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-021{
+	background-position: -77px -78px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-022{
+	background-position: -50px -100px ;
+	width: 21px;
+	height: 21px;
+}
+
+.libicon-023{
+	background-position: -78px -100px ;
+	width: 21px;
+	height: 21px;
+}
+
+
