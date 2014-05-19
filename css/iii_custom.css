@@ -77,7 +77,8 @@ td.browsePager {
 
 .libicon-001, .libicon-002, .libicon-003, .libicon-004, .libicon-005, .libicon-006, .libicon-007, .libicon-008, .libicon-009, .libicon-010, .libicon-011, .libicon-012, .libicon-013, .libicon-014, .libicon-015, .libicon-016, .libicon-017, .libicon-018, .libicon-019, .libicon-020, .libicon-021, .libicon-022, .libicon-023{
 	background: url(//library.catalog.gvsu.edu/screens/sprites.png) no-repeat;
-	padding-left: 1.5em;
+	display:inline-block;
+	padding-left: .25em;
 }
 
 .libicon-001{
