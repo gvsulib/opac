@@ -222,3 +222,16 @@ td.browsePager {
 table.patfunc {
 	margin-bottom: 1.5em;
 }
+
+.melbutton {
+	padding-left: 1.6em;
+	background: url('//library.gvsu.edu/screens/libicon-016.png') no-repeat 1% 30%;
+	background-color: #eee;
+	height: 21px;
+}
+
+.navigationRow {
+	margin: 0;
+	text-align: left !important;
+	margin-top: 1em;
+}
