@@ -223,12 +223,7 @@ table.patfunc {
 	margin-bottom: 1.5em;
 }
 
-.melbutton {
-	padding-left: 1.6em;
-	background: url('//library.catalog.gvsu.edu/screens/libicon-016.png') no-repeat 1% 30%;
-	background-color: #eee;
-	height: 21px;
-}
+
 
 .navigationRow,
 .navigationrow {
@@ -252,4 +247,10 @@ table.patfunc {
 	margin-bottom: .5em;
 	font-size: 1.1em;
 	padding: .1em .75em;
+}
+.melbutton {
+	padding-left: 1.6em;
+	background: url('//library.catalog.gvsu.edu/screens/libicon-016.png') no-repeat 1% 30%;
+	background-color: #eee;
+	height: 21px;
 }
