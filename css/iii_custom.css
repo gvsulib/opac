@@ -230,8 +230,26 @@ table.patfunc {
 	height: 21px;
 }
 
-.navigationRow {
+.navigationRow,
+.navigationrow {
 	margin: 0;
 	text-align: left !important;
 	margin-top: 1em;
+}
+
+.msg {
+	display: block;
+	line-height: 1.5em;
+	margin: 1em .5em;
+	padding: 1em 1.6em;
+	background: none repeat scroll 0% 0% #FFFF7F;
+	border: 1px solid #CC6;
+	text-align: left;
+	color: #444;
+}
+
+.lib-button-small-grey {
+	margin-bottom: .5em;
+	font-size: 1.1em;
+	padding: .1em .75em;
 }
