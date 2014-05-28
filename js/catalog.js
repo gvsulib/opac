@@ -59,7 +59,7 @@ $(document).ready(function() {
 		// Create modal dialog for requesting journals
 		if($(".bib_items:contains('PERIODICALS')").length > 0 || $("#bib_items:contains('Periodicals')").length > 0) {
 
-			// This is a periodical.
+			console.log('This is a periodical.');
 
 			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
 			journalTitle = journalTitle.replace(/\s/g, '+');
