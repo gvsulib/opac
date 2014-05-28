@@ -57,7 +57,7 @@ $(document).ready(function() {
 		var requestURL, requestable;
 
 		// Create modal dialog for requesting journals
-		if(($(".bib_items:contains('PERIODICALS')").length > 0) || ($("#bib_items:contains('Periodicals')").length > 0)) {
+		if(($(".bib_items:contains('PERIODICALS')").length > 0) || ($(".bib_items:contains('Periodicals')").length > 0)) {
 
 			console.log('This is a periodical.');
 
