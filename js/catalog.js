@@ -57,7 +57,7 @@ $(document).ready(function() {
 		var requestURL, requestable;
 
 		// Create modal dialog for requesting journals
-		if($("#bib_items:contains('PERIODICALS')").length > 0 || $("#bib_items:contains('Periodicals')").length > 0) {
+		if($(".bib_items:contains('PERIODICALS')").length > 0 || $("#bib_items:contains('Periodicals')").length > 0) {
 
 			// This is a periodical.
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
 			console.log(journalIssn);
 			// alert(link);
 
-			$("#bib_items").find("tr").find("td:first").find("a").click(function(e) {
+			$(".bib_items").find("tr").find("td:first").find("a").click(function(e) {
 				e.preventDefault();
 				var link = $(this).attr("href"); // Get the URL of the ASRS request
 
