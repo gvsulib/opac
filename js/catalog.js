@@ -7,6 +7,7 @@ $(document).ready(function() {
 	  }
 	}
 
+
 	//Helper function for recordBasicSearch()
 		function getSelectedText(elementId) {
 			var elt = document.getElementById(elementId);
@@ -197,6 +198,15 @@ if($('.yourEntryWouldBeHere').length > 0) {
 	var path = "http://gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
 
 	recordBasicSearch();
+	
+// Try to head off syntax errors for Author searches
+	if($('select[name="searchtype"]').length > 0) {
+		$('select[name="searchtype"]').change(function() {
+			if($(this).val() == 'a') {
+				$("input#searcharg").attr("placeholder", "Last Name, First Name");
+			}
+		});
+	}
 
 /* Google Analytics Tracking Scripts */
 
