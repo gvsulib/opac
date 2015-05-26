@@ -197,7 +197,9 @@ if($('.yourEntryWouldBeHere').length > 0) {
 
 	var path = "http://gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
 
-	recordBasicSearch();
+	if(document.getElementById("searcharg").length > 0) { 
+		recordBasicSearch();
+	}
 	
 // Try to head off syntax errors for Author searches
 	if($('select[name="searchtype"]').length > 0) {
@@ -207,6 +209,25 @@ if($('.yourEntryWouldBeHere').length > 0) {
 			}
 		});
 	}
+
+// Fix the poor display of the error on failed renewals
+
+if(document.getElementById('renewfailmsg') != 'undefined' && document.getElementById('renewfailmsg') != null) {
+	// Renewal failed by III makes it hard to see
+
+	var renewalFailText = document.getElementById('renewfailmsg').innerText;
+	console.log(renewalFailText);
+
+	// Get rid of the see details below part.
+	var renewalMessage = renewalFailText.split('. ');
+	var renewalError = document.createElement('div');
+	renewalError.className = 'lib-error';
+	renewalError.style.clear = 'both';
+	renewalError.style.marginTop = '1em';
+	renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, or you&#8217;ve renewed it several times already.)';
+	var accountTools = document.getElementById('myaccount-tools');
+	accountTools.appendChild(renewalError);
+}
 
 /* Google Analytics Tracking Scripts */
 
