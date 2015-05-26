@@ -197,7 +197,7 @@ if($('.yourEntryWouldBeHere').length > 0) {
 
 	var path = "http://gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
 
-	if(document.getElementById("searcharg").length > 0) { 
+	if(document.getElementById("searcharg") != 'undefined' && document.getElementById("searcharg") != null ) { 
 		recordBasicSearch();
 	}
 	
