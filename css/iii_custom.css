@@ -229,6 +229,10 @@ table.patfunc {
 }
 
 .msg {
+	/*
+
+	These styles are conflicting with the no matches found script. Removing them
+
 	display: block;
 	line-height: 1.5em;
 	margin: 1em .5em;
@@ -236,7 +240,8 @@ table.patfunc {
 	background: none repeat scroll 0% 0% #FFFF7F;
 	border: 1px solid #CC6;
 	text-align: left;
-	color: #444;
+	color: #444;*/
+	font-size: 1.4em;
 }
 
 .lib-button-small-grey {
