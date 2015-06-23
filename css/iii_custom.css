@@ -283,7 +283,8 @@ table.bib_links a:hover {
 }
 
 /* MARC Button */
-.marc-link {
+#marc-link {
+	display: inline-block;
 	margin-left: 1%;
 }
 
