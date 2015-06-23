@@ -258,9 +258,7 @@ table.patfunc {
 
 /* Better styles for the 856 field */
 
-table.bib_links {
-  margin-top: -2em;
-}
+
 table.bib_links th {
   display: none;
 }

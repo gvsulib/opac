@@ -154,7 +154,7 @@ $(document).ready(function() {
 	if($('table.bib_links').length > 0) {
 
 		console.log('Hiding eBook call numbers...');		
-		$('table.bib_detail').find('td.bibInfoLanel:contains("Call #")').parent('tr').hide();
+		$('table.bib_detail').find('td.bibInfoLabel:contains("Call #")').parent('tr').hide();
 	}
 
 /* Script to make non-keyword results screens look better when no results */
