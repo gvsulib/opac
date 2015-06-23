@@ -85,11 +85,6 @@ $(document).ready(function() {
 
 		}
 
-		// If this is an eBook record, hide the call number
-		if($('table.bib_links').length > 0) {
-			$('table.bib_detail').find('td.bibInfoLanel:contains("Call #")').parent('tr').hide();
-		}
-
 		// Get the URL for the top request button, then hide it
 		$(".navigationrow.bibScreen a").each(function() {
 
@@ -146,11 +141,21 @@ $(document).ready(function() {
 
 /* Move the MARC button */
 
-if($('#marc-button').length > 0) { 
-	var marcUrl = $('#marc-button').parent('a').attr('href');
-	$('#marc-button').parent('a').hide();
-	$('.bibRecordLink').append('&nbsp;//&nbsp;<a id="marc-link" href="' + marcUrl + '<abbr title="Machine Readable Cataloging">MARC</abbr> View</a>');
-}
+	if($('#marc-button').length > 0) { 
+
+		console.log('Moving the MARC View link...');
+
+		var marcUrl = $('#marc-button').parent('a').attr('href');
+		$('#marc-button').parent('a').hide();
+		$('.bibRecordLink').append('&nbsp;//&nbsp;<a id="marc-link" href="' + marcUrl + '<abbr title="Machine Readable Cataloging">MARC</abbr> View</a>');
+	}
+
+// If this is an eBook record, hide the call number
+	if($('table.bib_links').length > 0) {
+
+		console.log('Hiding eBook call numbers...');		
+		$('table.bib_detail').find('td.bibInfoLanel:contains("Call #")').parent('tr').hide();
+	}
 
 /* Script to make non-keyword results screens look better when no results */
 
