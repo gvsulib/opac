@@ -293,7 +293,6 @@ table.bib_links tr[align="center"]:nth-child(3) td::before {
   content: 'Also Available In:\A\2022\0020';
   white-space: pre;
   font-weight: bold;
-  font-size: 1.3em;
 }
 
 table.bib_links tbody tr:nth-child(2) a:hover {
