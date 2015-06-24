@@ -257,23 +257,43 @@ table.patfunc {
 }
 
 /* Better styles for the 856 field */
-
+table.bib_links {
+	margin-bottom: 2em;
+}
 
 table.bib_links th {
   display: none;
 }
+
 table.bib_links tr[align="center"] {
   text-align: left;
+  line-height: 1.5em;
+  font-size: 1.2em;
 }
-table.bib_links a {
+table.bib_links tbody tr:nth-child(2) td a {
   display: block;
   background-color: #0065a4;
   width: 16em;
   padding: 1em 0;
   text-align: center;
   color: #fff !important;
-  font-size: 1.2em;
   transition: background-color 0.5s ease;
+}
+
+table.bib_links tr[align="center"] td::before {
+  content: '\2022\0020\0020';
+  font-weight: bold;
+}
+
+table.bib_links tr[align="center"]:nth-child(2) td::before {
+  content: '';
+}
+
+table.bib_links tr[align="center"]:nth-child(3) td::before {
+  content: 'Also Available In:\A\2022\0020';
+  white-space: pre;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
 table.bib_links a:hover {
