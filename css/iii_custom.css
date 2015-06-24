@@ -296,9 +296,11 @@ table.bib_links tr[align="center"]:nth-child(3) td::before {
   font-size: 1.3em;
 }
 
-table.bib_links a:hover {
+table.bib_links tbody tr:nth-child(2) a:hover {
   background-color: #004875;
 }
+
+
 
 /* MARC Button */
 #marc-link {
