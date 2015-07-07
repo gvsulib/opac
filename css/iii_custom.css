@@ -298,14 +298,11 @@ table.bib_links tbody tr:nth-child(2) td a {
   transition: background-color 0.5s ease;
 }
 
-table.bib_links tr[align="center"] td::before {
-  content: '\2022\0020\0020';
-  font-weight: bold;
+table.bib_links tr[align="center"] td {
+  padding: .5em 0;
 }
 
-table.bib_links tr[align="center"]:nth-child(2) td::before {
-  content: '';
-}
+
 
 table.bib_links tr[align="center"]:nth-child(3) td::before {
   content: 'Also Available In:\A\2022';
