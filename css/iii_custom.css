@@ -305,7 +305,7 @@ table.bib_links tr[align="center"] td {
 
 
 table.bib_links tr[align="center"]:nth-child(3) td::before {
-  content: 'Also Available In:\A\2022';
+  content: 'Also Available In:\A\A';
   white-space: pre;
   font-weight: bold;
 }
