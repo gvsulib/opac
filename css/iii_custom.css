@@ -272,7 +272,7 @@ table.bib_links tr[align="center"] {
 }
 table.bib_links tbody tr:nth-child(2) td a {
   display: inline-block;
-  margin-bottom: 0;
+  margin: 1em 0;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -292,7 +292,7 @@ table.bib_links tbody tr:nth-child(2) td a {
   -o-user-select: none;
   user-select: none;
   text-decoration: none;
-  color: #fff;
+  color: #fff !important
   background-color: #428bca;
   border-color: #357ebd;
   transition: background-color 0.5s ease;
