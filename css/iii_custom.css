@@ -320,6 +320,8 @@ table.bib_links tbody tr:nth-child(2) a:hover {
 table.bib_links tbody tr:nth-child(2) a.lib-puppets,
 table.bib_links tbody tr:nth-child(2) a.lib-puppets:hover {
 	background-color: #fff;
+	border: none;
+	transition: none;
 }
 
 /* MARC Button */
