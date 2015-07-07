@@ -292,7 +292,7 @@ table.bib_links tbody tr:nth-child(2) td a {
   -o-user-select: none;
   user-select: none;
   text-decoration: none;
-  color: #fff !important
+  color: #fff !important;
   background-color: #428bca;
   border-color: #357ebd;
   transition: background-color 0.5s ease;
