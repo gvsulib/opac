@@ -271,12 +271,30 @@ table.bib_links tr[align="center"] {
   font-size: 1.2em;
 }
 table.bib_links tbody tr:nth-child(2) td a {
-  display: block;
-  background-color: #0065a4;
-  width: 16em;
-  padding: 1em 0;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
   text-align: center;
-  color: #fff !important;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
   transition: background-color 0.5s ease;
 }
 
@@ -290,7 +308,7 @@ table.bib_links tr[align="center"]:nth-child(2) td::before {
 }
 
 table.bib_links tr[align="center"]:nth-child(3) td::before {
-  content: 'Also Available In:\A\2022\0020';
+  content: 'Also Available In:\A\2022';
   white-space: pre;
   font-weight: bold;
 }
@@ -299,7 +317,10 @@ table.bib_links tbody tr:nth-child(2) a:hover {
   background-color: #004875;
 }
 
-
+table.bib_links tbody tr:nth-child(2) a.lib-puppets,
+table.bib_links tbody tr:nth-child(2) a.lib-puppets:hover {
+	background-color: #fff;
+}
 
 /* MARC Button */
 #marc-link {

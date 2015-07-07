@@ -227,6 +227,12 @@ if($('.yourEntryWouldBeHere').length > 0) {
 		});
 	}
 
+// Don't style puppet or other image links like buttons
+
+if($('table.bib_links').find('img').length > 0) {
+	$('table.bib_links').find('a').addClass('lib-puppets');
+}
+
 // Fix the poor display of the error on failed renewals
 
 if(document.getElementById('renewfailmsg') != 'undefined' && document.getElementById('renewfailmsg') != null) {
