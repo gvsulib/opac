@@ -244,6 +244,8 @@ if($('#return-to-browse').length > 0) {
 			  newLine.appendChild(newLocation);
 			  newLine.appendChild(newCallNo);
 			  newLine.appendChild(requestButton);
+			  console.log('Reformating the availability table');
+			  $('#requestButton').hide();
 
 			  $('.bib-record-details').append(newLine);
 			  $(this).hide();
