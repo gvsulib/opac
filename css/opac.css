@@ -1,0 +1,195 @@
+#cms-content a { color: #1F65A0;}
+.lib-horizontal-list ul,
+ul.library-list {
+    list-style: none;
+    margin-left: 0 !important;
+}
+ul.library-list { margin-right: 1em;}
+.lib-horizontal-list ul li { display: inline-block; margin-left: 1.5em; float: right; font-size: .85em; }
+.lib-horizontal-list ul li a { text-decoration: none;}
+.library-list li { padding: .5em 0; margin: .5em 0; border-bottom: 1px solid #eee; }
+.library-list li a { text-decoration: none;}
+/*#searcharg { width: 55%;}*/
+#querybox { margin: 1em auto; text-align: center;}
+#querybox input[type="submit"] {}
+#adv-link { display: inline-block; margin: 1em 0;}
+
+.browseSuperEntry { display: none;} /* hide the relevence headings */
+.browseSearchtool, .bibSearch { background: #88b3da !important; margin-top: 1em !important;}
+.melbutton { background-color: #fff;}
+td.browsePager {
+    padding-top: 1em;
+    font-weight: normal;
+}
+.browsePager a { border: 1px solid #88b3da;}
+.browsePager strong {border: 1px solid #88b3da !important;background: #88b3da !important; }
+.browseHeader { background: #093a6d; }
+.browseHeaderData {font-weight:normal;    font-size: .8em;
+    padding: .5em;}
+.browseSaveJump { padding-bottom: .5em;}
+.briefcitEntryNum { float: right; padding-top: .25em; padding-right:.5em; font-weight: normal;}
+
+.briefcitDetail { padding: .5em 0; line-height: 1.4em; font-size:.85em; color: #555; }
+.briefcitTitle {display:block; font-size: 1.15em; font-weight: bold;}
+td.briefcitDetail br:nth-child(2) {
+    display: none;
+}
+.bibPager a,#bibDisplayContent a, #bibDisplayContent .bibTabs a:link, #bibDisplayContent .bibTabs a:visited, #bibDisplayContent .bibTabs a:active { text-decoration: none;}
+
+/* results table */
+/*.briefcitItems table, .briefcitItems td, .briefcitItems tr, .briefcitItems tbody, .briefcitItems th {
+    display: block !important;
+    color: #555;
+}
+*/
+
+.bibSearchtoolMessage { text-align: left;}
+.bibSearchtoolMessage i { display: block;}
+
+
+.bibRecordLink {
+    font-size: .75em;
+}
+.briefcitTitle a {
+	text-decoration: none;
+}
+.briefcitItems table {
+	margin-top:1.5em;
+}
+tr.bibItemsHeader {
+    display: none !important;
+}
+
+.briefcitItems table tbody tr.bibItemsEntry td {
+	width: auto !important;
+}
+/*
+tr.bibItemsEntry {
+    position: relative;
+    width: 100%;
+    font-size: .85em;
+}
+
+tr.bibItemsEntry td:nth-child(1) {
+    position: absolute;
+    left: 6.5em;
+}
+tr.bibItemsEntry td:nth-child(2) {
+    position: absolute;
+    left: 30em;
+}
+*/
+
+tr.bibItemsEntry {
+ color: #555;
+}
+
+.location br,
+.location { margin-right: 1em; }
+.bibItemsEntry td {
+	border-bottom: none;
+	padding-top: .25em;
+}
+span.text { display: none;}
+
+.avail {
+    padding: .25em .5em !important;
+    font-weight: normal !important;
+}
+.available {
+    background-color: #6c6;
+    color: #333;
+ }
+
+.bibItemsEntry td[width="38%"] a {
+     display: inline-block; 
+     margin: 0 !important;
+ }
+
+.unavailable {
+	background-color: #c00;
+	    color: #fff;
+
+ }
+ .bibSearch form { padding: 0; }
+form[name="searchtool"] div { text-align: left;}
+.bookjacket { min-width: 66px;min-height:60px;float: left; margin-right: 1em; }
+.bookjacket a { display:inline-block; }
+.bookjacket:after, .briefcitEntryNum:after{ content: ''; clear: both; visibility: hidden; }
+.briefcitTitle { display: block; font-size: 1.15em; }
+.briefcitTitle a { text-decoration: none; }
+.briefcitEntryNum { float: left;margin-right: 1em; }
+
+.citation-details { overflow: hidden; margin-left: 8.75em;}
+.briefCitRow {
+    border-top: 1px solid #eee;
+    padding: .5em 0;
+}
+.briefcitItems div,
+.bib_links div {
+    padding-top: .5em;
+    line-height: 1.5em;
+}
+.return-link { display: inline-block; float:left; font-size: .85em;}
+.return-link a { text-decoration: none;}
+.availability-table { margin-top: 1em;}
+.briefcitItems div span,
+.availability-table span { display: block;margin-bottom: .5em;}
+.coverimage { float: left; margin-right: 1em;}
+.bib-record-details { float: left;	width: 75%;}
+tr.bibInfoEntry > td > table > tbody > tr { padding: .5em; }
+tr.bibInfoEntry > td > table > tbody > tr > td.bibInfoData > a { padding: 0 !important;}
+.bibInfoLabel { padding: 0;}
+.bib-record-details .bibInfoLabel { display: none;}
+tr.bibInfoEntry td table tbody tr td { line-height: 1.4em; }
+.bibPager {
+    text-align: left;
+    float: none; 
+}
+.bib-record-details .bibInfoEntry td table tbody tr td {
+    display: none;
+}
+.bib-record-details .bibInfoEntry td table tbody tr td.bibInfoData
+ {
+    display: table-cell;
+}
+form[name="searchtool"] input, form[name="searchtool"] select { margin: 0 !important;}
+h2.bareBreaker { margin-top: .2em; padding-top: .5em; border-top: 1px solid #ddd;}
+
+.availLimMessage{ font-size: .8em; margin-bottom: 1em;}
+a.request-button { color: #fff !important; display:block;margin-top:1em;}
+.patFuncArea a:nth-child(5) {
+    display: inline-block;
+}
+#library-chat a {
+    padding: .65em .85em .65em 3em !important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVQ4y2NgoAWIPhHNl3I6xSH1TGoRkK5KPpXskXgoUZQYvYxATRmpp1M/pZ1J+4+Gf6WeSm323ObJjlNz2um0TVg0omCgBRdjd8ZyY+gGai4kpBnJkFkompOPJQsBJX4QawAIp5xIMYYbkHoy1Z0UzWADTqcUIDu/GqtTT6fi88YSZANySHUBUM8URBicTjYj2YAzafFwA0JXhbIBnXuP6FgAppOkI0lSqDFxOtkaKPGHqAA8lZKINSUBU1oqUMFXPDb/AQZeG960nHQ6SQmoaB1QwzukEP8CpPcBLTAlKVMlHE9QAGrUYGhgYGKgFQAAoot2F4Rm8VoAAAAASUVORK5CYII=') !important;
+    background-position: 10% 50%;
+    background-repeat: no-repeat;
+}
+
+
+@media screen and (min-width: 600px) {
+	.bib_links { margin-left: 20%;}
+.bibPager {
+    text-align: right; 
+    float: right; 
+}
+a.request-button { display:inline-block;margin-top:0;}
+
+.bibSearchtoolMessage { margin-top: -1em; text-align: center;}
+.bibSearchtoolMessage i { display: inline;}
+form[name="searchtool"] div br { display: none;}
+
+	#searcharg { width: 40%;}
+	select[name="HISTORY"] { display: inline-block; float: right;}
+	.briefcitItems div,
+	.bib_links div { margin-top: 1.5em; }
+	.briefcitItems div span,
+	.availability-table span { display: inline-block; margin-right: 1em;}
+	.coverimage { width: 20%; margin-right: 0;}
+form[name="searchtool"] div { text-align: center;}
+span.text { display: inline;}
+
+	/*td.bibInfoData { display: table-cell;}*/
+}

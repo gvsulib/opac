@@ -223,6 +223,8 @@ if($('.yourEntryWouldBeHere').length > 0) {
 		$('select[name="searchtype"]').change(function() {
 			if($(this).val() == 'a') {
 				$("input#searcharg").attr("placeholder", "Last Name, First Name");
+			} else {
+				$("input#searcharg").attr("placeholder", "");
 			}
 		});
 	}
@@ -325,11 +327,7 @@ if(document.getElementById('renewfailmsg') != 'undefined' && document.getElement
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
 
-	(function() {
-	    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
-	    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?multi,poll";
-	    var y = document.getElementsByTagName("body")[0]; y.appendChild(x);
-	  })();
+
 	
 	/* Show alert that ASRS is down */
 	/*

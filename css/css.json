@@ -1,8 +1,10 @@
 {
 "1":"http://gvsuliblabs.com/labs/opac/css/fonts.css",
-"2":"http://gvsuliblabs.com/labs/opac/css/iii_stock.css",
-"3":"http://gvsu.edu/cms3/skeleton_32/files/css/base.css",
-"4":"http://gvsuliblabs.com/labs/opac/css/gvsu-nav.css",
-"5":"http://gvsu.edu/cms3/assets/741ECAAE-BD54-A816-71DAF591D1D7955C/gvsu-lib-styles-new.css",
-"6":"http://gvsuliblabs.com/labs/opac/css/iii_custom.css"
+"2":"http://gvsu.edu/cms4/skeleton/0/files/css/cms4.0.min.css",
+"3":"http://gvsu.edu/library/files/css/base.css",
+"4":"http://gvsu.edu/includes/topbanner/3/header.min.css",
+"5":"http://labs.library.gvsu.edu/labs/cms4/lib-cms4.css",
+"6":"http://labs.library.gvsu.edu/labs/opac/css/iii_stock.css",
+"7":"http://labs.library.gvsu.edu/labs/opac/css/iii_custom.css",
+"8":"http://labs.library.gvsu.edu/labs/opac/css/opac.css"
 }
