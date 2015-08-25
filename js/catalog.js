@@ -228,7 +228,7 @@ if($('#return-to-browse').length > 0) {
 			    console.log('ASRS item');
 			  } else {
 			  	console.log('Stacks item');
-			  	var requestURL = $('#requestButton').attr('href');
+			  	var requestURL = $('#requestButton').parent('a').attr('href');
 			  }
 			  console.log(requestURL);
 			   
