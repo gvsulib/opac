@@ -225,8 +225,11 @@ if($('#return-to-browse').length > 0) {
 			  
 			  if($(this).find('td[width="24%"]').find('a').length > 0) {
 			    var requestURL = $(this).find('td[width="24%"]').find('a').attr('href');
+			    console.log('ASRS item');
 			  } else {
-			    var requestURL = $('.bibscreen.navigationrow').find('img[alt="Hold this item"]').parent('a').attr('href');
+			  	if($('.bibscreen.navigationrow').find("img").attr("alt") == "Hold this item") {
+			  		var requestURL = $(this).attr('href');
+			  	}
 			  }
 			  console.log(requestURL);
 			   
