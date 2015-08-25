@@ -56,7 +56,7 @@ $(document).ready(function() {
 		}
 
 /* Reformat the results page availability tables */
-if('.searchResultsPage').length > 0) {
+if($('.searchResultsPage').length > 0) {
 		$('tr.bibItemsEntry').each(function() {
 	  
 	  var availability = $(this).find('td[width="24%"]').text();
