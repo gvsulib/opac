@@ -7,6 +7,10 @@ $(document).ready(function() {
 	  }
 	}
 
+	String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
 
 	//Helper function for recordBasicSearch()
 		function getSelectedText(elementId) {
@@ -51,6 +55,56 @@ $(document).ready(function() {
 			}
 		}
 
+/* Reformat the results page availability tables */
+if('.searchResultsPage').length > 0) {
+		$('tr.bibItemsEntry').each(function() {
+	  
+	  var availability = $(this).find('td[width="24%"]').text();
+	  var location = $(this).find('td:nth-child(1)').text();
+	  var callnotext = $(this).find('td:nth-child(2)').text();
+	  var callno = callnotext.split('Browse Similar');
+	  locationText = location.split('<br>');
+	  console.log(availability);
+
+	  /* Create Availability Span */
+	  availability = availability.trim();
+	  var newAvailability = document.createElement('span');
+	  if(availability == 'AVAILABLE') {
+	    newAvailability.className = 'available avail';
+	  } else {
+	    newAvailability.className = 'unavailable avail';
+	  }
+	  newAvailability.innerText = availability.toProperCase();
+
+	  /* Create Location Span */
+	  var newLocation = document.createElement('span');
+	  newLocation.className = 'location';
+	  newLocation.innerText = locationText[0].trim();
+
+	  /* Create Call Number Span */
+	  var newCallNo = document.createElement('span');
+	  newCallNo.className = 'call-number';
+	  newCallNo.innerText = callno[0].trim();
+
+	  /* Create new availability line */
+	  var newLine = document.createElement('div');
+	  newLine.class = 'availability-table';
+	  newLine.appendChild(newAvailability);
+	  newLine.appendChild(newLocation);
+	  newLine.appendChild(newCallNo);
+
+	  $(this).closest('.briefcitItems').append(newLine);
+	  $(this).hide();
+
+	});
+	$('.bib_items').hide();
+}
+
+if($('#return-to-browse').length > 0) {
+	var returnButtonUrl = $('#return-to-browse').parent('a').attr('href');
+	$('#return-to-browse').parent('a').hide();
+	$('#cms-content .lib-horizontal-list:first').prepend('<span class="return-link"><a href="' + returnButtonUrl + '">&laquo;&nbsp;Return to Results</a></span>');
+}
 	if($("#bibDisplayBody").length > 0) {
 
 		// There are holdings for this item
@@ -137,6 +191,63 @@ $(document).ready(function() {
 			});
 
 		}
+
+		// Reformat the availability table
+
+		$('tr.bibItemsEntry').each(function() {
+  
+			  var availability = $(this).find('td[width="24%"]').text();
+			  var location = $(this).find('td:nth-child(1)').text();
+			  var callnotext = $(this).find('td:nth-child(2)').text();
+			  var callno = callnotext.split('Browse Similar');
+			  locationText = location.split('<br>');
+			  console.log(availability);
+
+			  /* Create Availability Span */
+			  availability = availability.trim();
+			  var newAvailability = document.createElement('span');
+			  if(availability == 'AVAILABLE') {
+			    newAvailability.className = 'available avail';
+			  } else {
+			    newAvailability.className = 'unavailable avail';
+			  }
+			  newAvailability.innerText = availability.toProperCase();
+
+			  /* Create Location Span */
+			  var newLocation = document.createElement('span');
+			  newLocation.className = 'location';
+			  newLocation.innerText = locationText[0].trim();
+
+			  /* Create Call Number Span */
+			  var newCallNo = document.createElement('span');
+			  newCallNo.className = 'call-number';
+			  newCallNo.innerText = callno[0].trim();
+			  
+			  if($(this).find('td[width="24%"]').find('a').length > 0) {
+			    var requestURL = $(this).find('td[width="24%"]').find('a').attr('href');
+			  } else {
+			    var requestURL = $('.bibscreen.navigationrow').find('img[alt="Hold this item"]').parent('a').attr('href');
+			  }
+			   
+			  var requestButton = document.createElement('a');
+			  requestButton.href = requestURL;
+			  requestButton.innerText = 'Request';
+			  requestButton.className = 'request-button btn btn-primary btn-sm';
+
+			  /* Create new availability line */
+			  var newLine = document.createElement('div');
+			  newLine.className = 'availability-table';
+			  newLine.appendChild(newAvailability);
+			  newLine.appendChild(newLocation);
+			  newLine.appendChild(newCallNo);
+			  newLine.appendChild(requestButton);
+
+
+
+			  $('.bib-record-details').append(newLine);
+			  $(this).hide();
+
+});
 	}
 
 /* Move the MARC button */
