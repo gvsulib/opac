@@ -168,8 +168,14 @@ a.request-button { color: #fff !important; display:block;margin-top:1em;}
     background-position: 10% 50%;
     background-repeat: no-repeat;
 }
-
-
+.advSrchtool form table { width: auto;}
+table, td, tr, tbody { font-family: Arial, sans-serif;}
+tr.browseEntry:nth-of-type(even) {
+    background: #ddd;
+}
+tr.browseEntry td {
+    padding: .5em 0;
+}
 @media screen and (min-width: 600px) {
 	.bib_links { margin-left: 20%;}
 .bibPager {

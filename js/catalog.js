@@ -315,7 +315,7 @@ if($('.yourEntryWouldBeHere').length > 0) {
 		}
 
 		// Write the new HTML
-		$('.msg').html('<div class="noResults lib-note line" style="padding:.25em 0;margin-bottom:.5em;"><div class="span2 unit left"><h4 style="font-weight:bold;text-align:center;font-size:1.2em;">No matches Found.</h4></div><div class="span2 unit left lastUnit" style="font-size:80%;">' + searchTips + '</div></div><p style="margin:0 !important;font-weight:bold;font-size:80%;text-transform:capitalize;">' + pageType[1] + '</p><style>.noResults ul li { padding-bottom:.4em;}.search-term{font-weight:bold;color:#333!important;}</style>');
+		$('.msg').html('<div class="noResults alert alert-info row" style="padding:.25em 0;margin-bottom:.5em;"><div class="span1"><h4 style="font-weight:bold;text-align:center;font-size:1.2em;">No matches Found.</h4></div><div class="span2" style="font-size:80%;">' + searchTips + '</div><div class="cms-clear"></div></div><p style="margin:0 !important;font-weight:bold;font-size:80%;text-transform:capitalize;">' + pageType[1] + '</p><style>.noResults ul li { padding-bottom:.4em;}.search-term{font-weight:bold;color:#333!important;}</style>');
 
 		// Hide the old weird links
 		$('tr.yourEntryWouldBeHere td').find('a').css('display', 'none');
@@ -326,7 +326,7 @@ if($('.yourEntryWouldBeHere').length > 0) {
 
 /* Script to capture search terms */
 
-	var path = "http://gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
+	var path = "//gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
 
 	if(document.getElementById("searcharg") != 'undefined' && document.getElementById("searcharg") != null ) { 
 		recordBasicSearch();
