@@ -224,7 +224,7 @@ if($('#return-to-browse').length > 0) {
 			  newCallNo.innerText = callno[0].trim();
 			  
 			  if($(this).find('td[width="24%"]').find('a').length > 0) {
-			    var requestURL = $(this).find('td[width="24%"]').find('a').attr('href');
+			    var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
 			    console.log('ASRS item');
 			  } else {
 			  	console.log('Stacks item');
