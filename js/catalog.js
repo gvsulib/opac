@@ -228,6 +228,7 @@ if($('#return-to-browse').length > 0) {
 			  } else {
 			    var requestURL = $('.bibscreen.navigationrow').find('img[alt="Hold this item"]').parent('a').attr('href');
 			  }
+			  console.log(requestURL);
 			   
 			  var requestButton = document.createElement('a');
 			  requestButton.href = requestURL;
@@ -241,8 +242,6 @@ if($('#return-to-browse').length > 0) {
 			  newLine.appendChild(newLocation);
 			  newLine.appendChild(newCallNo);
 			  newLine.appendChild(requestButton);
-
-
 
 			  $('.bib-record-details').append(newLine);
 			  $(this).hide();
