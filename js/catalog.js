@@ -223,7 +223,7 @@ if($('#return-to-browse').length > 0) {
 			  newCallNo.className = 'call-number';
 			  newCallNo.innerText = callno[0].trim();
 			  
-			  if($(this).find('td[width="24%"]').find('a').length > 0) {
+			  if($(this).find('td[width="38%"]:first').find('a').length > 0) {
 			    var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
 			    console.log('ASRS item');
 			  } else {
