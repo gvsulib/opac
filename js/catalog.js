@@ -57,10 +57,8 @@ $(document).ready(function() {
 
 /* Reformat the results page availability tables */
 if($('.searchResultsPage').length > 0) {
-	String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-};
-	
+
+
 		$('tr.bibItemsEntry').each(function() {
 	  
 	  var availability = $(this).find('td[width="24%"]').text();
@@ -77,18 +75,18 @@ if($('.searchResultsPage').length > 0) {
 	  } else {
 	    newAvailability.className = 'unavailable avail';
 	  }
-	  newAvailability.innerText = availability.toProperCase();
+	  newAvailability.innerHTML = availability.toProperCase();
 	  console.log(newAvailability);
 
 	  /* Create Location Span */
 	  var newLocation = document.createElement('span');
 	  newLocation.className = 'location';
-	  newLocation.innerText = locationText[0].trim();
+	  newLocation.innerHTML = locationText[0].trim();
 
 	  /* Create Call Number Span */
 	  var newCallNo = document.createElement('span');
 	  newCallNo.className = 'call-number';
-	  newCallNo.innerText = callno.trim();
+	  newCallNo.innerHTML = callno.trim();
 
 	  /* Create new availability line */
 	  var newLine = document.createElement('div');
