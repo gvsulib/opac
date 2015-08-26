@@ -89,7 +89,7 @@ if($('.searchResultsPage').length > 0) {
 
 	  /* Create new availability line */
 	  var newLine = document.createElement('div');
-	  newLine.class = 'availability-table';
+	  newLine.className = 'availability-table';
 	  newLine.appendChild(newAvailability);
 	  newLine.appendChild(newLocation);
 	  newLine.appendChild(newCallNo);
