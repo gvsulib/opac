@@ -64,6 +64,7 @@ if($('.searchResultsPage').length > 0) {
 	  var availability = $(this).find('td[width="24%"]').text();
 	  var location = $(this).find('td:nth-child(1)').text();
 	  var callno = $(this).find('td:nth-child(2)').text();
+	  var callnotext = callno.split('Browse Similar');
 	  locationText = location.split('<br>');
 	  //console.log(availability);
 
@@ -86,7 +87,7 @@ if($('.searchResultsPage').length > 0) {
 	  /* Create Call Number Span */
 	  var newCallNo = document.createElement('span');
 	  newCallNo.className = 'call-number';
-	  newCallNo.innerHTML = callno.trim();
+	  newCallNo.innerHTML = callnotext.trim();
 
 	  /* Create new availability line */
 	  var newLine = document.createElement('div');
