@@ -57,6 +57,10 @@ $(document).ready(function() {
 
 /* Reformat the results page availability tables */
 if($('.searchResultsPage').length > 0) {
+	String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+	
 		$('tr.bibItemsEntry').each(function() {
 	  
 	  var availability = $(this).find('td[width="24%"]').text();
