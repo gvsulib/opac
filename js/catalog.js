@@ -75,6 +75,7 @@ if($('.searchResultsPage').length > 0) {
 	    newAvailability.className = 'unavailable avail';
 	  }
 	  newAvailability.innerText = availability.toProperCase();
+	  console.log(availability);
 
 	  /* Create Location Span */
 	  var newLocation = document.createElement('span');
