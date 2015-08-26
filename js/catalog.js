@@ -87,7 +87,7 @@ if($('.searchResultsPage').length > 0) {
 	  /* Create Call Number Span */
 	  var newCallNo = document.createElement('span');
 	  newCallNo.className = 'call-number';
-	  newCallNo.innerHTML = callnotext.trim();
+	  newCallNo.innerHTML = callnotext[0].trim();
 
 	  /* Create new availability line */
 	  var newLine = document.createElement('div');
