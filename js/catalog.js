@@ -214,17 +214,17 @@ if($('#return-to-browse').length > 0) {
 			  } else {
 			    newAvailability.className = 'unavailable avail';
 			  }
-			  newAvailability.innerText = availability.toProperCase();
+			  newAvailability.innerHTML = availability.toProperCase();
 
 			  /* Create Location Span */
 			  var newLocation = document.createElement('span');
 			  newLocation.className = 'location';
-			  newLocation.innerText = locationText[0].trim();
+			  newLocation.innerHTML = locationText[0].trim();
 
 			  /* Create Call Number Span */
 			  var newCallNo = document.createElement('span');
 			  newCallNo.className = 'call-number';
-			  newCallNo.innerText = callno[0].trim();
+			  newCallNo.innerHTML = callno[0].trim();
 			  
 			  if($(this).find('td[width="38%"]:first').find('a').length > 0) {
 			    var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
@@ -237,7 +237,7 @@ if($('#return-to-browse').length > 0) {
 			   
 			  var requestButton = document.createElement('a');
 			  requestButton.href = requestURL;
-			  requestButton.innerText = 'Request';
+			  requestButton.innerHTML = 'Request';
 			  requestButton.className = 'request-button btn btn-primary btn-sm';
 
 			  /* Create new availability line */
