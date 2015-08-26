@@ -63,7 +63,7 @@ if($('.searchResultsPage').length > 0) {
 	  var location = $(this).find('td:nth-child(1)').text();
 	  var callno = $(this).find('td:nth-child(2)').text();
 	  locationText = location.split('<br>');
-	  console.log(availability);
+	  //console.log(availability);
 
 	  /* Create Availability Span */
 	  availability = availability.trim();
@@ -74,7 +74,7 @@ if($('.searchResultsPage').length > 0) {
 	    newAvailability.className = 'unavailable avail';
 	  }
 	  newAvailability.innerText = availability.toProperCase();
-	  console.log(availability);
+	  console.log(newAvailability);
 
 	  /* Create Location Span */
 	  var newLocation = document.createElement('span');
