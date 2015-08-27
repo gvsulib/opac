@@ -256,6 +256,19 @@ if($('#return-to-browse').length > 0) {
 });
 	}
 
+	// If there is an ebook, record the provider info if someone uses it
+if($('.bib_links').find('a:container("Access full text online")').length > 0) {
+	$('.bib_links').find('a:contains("Access full text online")').click(function(e) {
+		var eBookUrl = $(this).attr('href');
+		var provider = eBookUrl.split('/');
+		console.log(provider[5]);
+		var eBookTracker = document.createElement('img');
+		eBookTracker.src = '//labs.library.gvsu.edu/labs/eBooks/?source=catalog&amp;prov=' + provider[5];
+		document.body.appendChild(eBookTracker);
+	});
+}
+
+
 /* Move the MARC button */
 
 	if($('#marc-button').length > 0) { 
