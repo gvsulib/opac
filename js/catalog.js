@@ -263,7 +263,7 @@ if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
 		var provider = eBookUrl.split('/');
 		console.log(provider[5]);
 		var eBookTracker = document.createElement('img');
-		eBookTracker.src = '//labs.library.gvsu.edu/labs/eBooks/?source=catalog&amp;prov=' + provider[5];
+		eBookTracker.src = '//labs.library.gvsu.edu/labs/eBooks/?source=catalog&amp;prov=' + encodeURIComponent(provider[5]);
 		document.body.appendChild(eBookTracker);
 	});
 }
