@@ -257,7 +257,7 @@ if($('#return-to-browse').length > 0) {
 	}
 
 	// If there is an ebook, record the provider info if someone uses it
-if($('.bib_links').find('a:container("Access full text online")').length > 0) {
+if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
 	$('.bib_links').find('a:contains("Access full text online")').click(function(e) {
 		var eBookUrl = $(this).attr('href');
 		var provider = eBookUrl.split('/');
