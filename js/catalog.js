@@ -206,6 +206,31 @@ if($('#return-to-browse').length > 0) {
 			  locationText = location.split('<br>');
 			  console.log(availability);
 
+				if($('table.bib_holdings').length > 0) { 
+
+					var holdingsLabels = new Array();
+					var holdingsData = new Array();
+					var newHoldingTable;
+
+					$('table.bib_holdings').find('.bibHoldingsLabel').each(function() {
+						holdingsLabels.push($(this).text());
+					});
+
+					$('table.bib_holdings').find('.bibHoldingsEntry').each(function() {
+						holdingsData.push($(this).text());
+					});
+
+					// Move the holdings info to the top:
+					var arrayLength = holdingsLabels.length;
+					for (var i = 0; i < arrayLength; i++) {
+				    	var newHoldings = '<div class="holding"><span class="holdingLabel">' + holdingsLabels[i] + '</span> <span class="holdingsEntry">' + holdingsData[i] + '</span></div>';
+				    	newHoldingTable = newHoldingTable + newHoldings;
+					}
+
+					$('.bib-record-details').append(newHoldingTable);
+					$('table.bib_holdings').hide();
+				}
+
 			  /* Create Availability Span */
 			  availability = availability.trim();
 			  var newAvailability = document.createElement('span');
