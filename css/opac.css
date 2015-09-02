@@ -132,7 +132,7 @@ form[name="searchtool"] div { text-align: left;}
 }
 .return-link { display: inline-block; float:left; font-size: .85em;}
 .return-link a { text-decoration: none;}
-.availability-table { margin-top: 1em;}
+.availability-table { margin-top: 1em; font-size:.9em;}
 .briefcitItems div span,
 .availability-table span { display: block;margin-bottom: .5em;}
 .coverimage { float: left; margin-right: 1em;}
@@ -154,11 +154,13 @@ tr.bibInfoEntry td table tbody tr td { line-height: 1.4em; }
     display: table-cell;
 }
 .holding {
-    margin: .5em;
+    margin: .5em 0;
     background: #eee;
     padding: .25em;
 }
 .holding .holdingLabel { font-weight: bold; }
+.holding .holdingLabel::after { content: ":";}
+
 form[name="searchtool"] input, form[name="searchtool"] select { margin: 0 !important;}
 form[name="searchtool"] { font-size: .9em;}
 h2.bareBreaker { margin-top: .2em; padding-top: .5em; border-top: 1px solid #ddd;}
