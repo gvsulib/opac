@@ -197,16 +197,7 @@ if($('#return-to-browse').length > 0) {
 
 		// Reformat the availability table
 
-		$('tr.bibItemsEntry').each(function() {
-  
-			  var availability = $(this).find('td[width="24%"]').text();
-			  var location = $(this).find('td:nth-child(1)').text();
-			  var callnotext = $(this).find('td:nth-child(2)').text();
-			  var callno = callnotext.split('Browse Similar');
-			  locationText = location.split('<br>');
-			  console.log(availability);
-
-				if($('table.bib_holdings').length > 0) { 
+		if($('table.bib_holdings').length > 0) { 
 
 					var holdingsLabels = new Array();
 					var holdingsData = new Array();
@@ -230,6 +221,17 @@ if($('#return-to-browse').length > 0) {
 					$('.bib-record-details').append(newHoldingTable);
 					$('table.bib_holdings').hide();
 				}
+
+		$('tr.bibItemsEntry').each(function() {
+  
+			  var availability = $(this).find('td[width="24%"]').text();
+			  var location = $(this).find('td:nth-child(1)').text();
+			  var callnotext = $(this).find('td:nth-child(2)').text();
+			  var callno = callnotext.split('Browse Similar');
+			  locationText = location.split('<br>');
+			  console.log(availability);
+
+
 
 			  /* Create Availability Span */
 			  availability = availability.trim();
