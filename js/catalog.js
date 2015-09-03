@@ -270,16 +270,20 @@ if($('#return-to-browse').length > 0) {
 			  newLine.appendChild(newLocation);
 			  newLine.appendChild(newCallNo);
 
+			  console.log(locationText[0].indexOf('Reserve'));
+			  console.log(locationText[0].indexOf('Reference'));
+			  console.log(locationText[0].indexOf('Seidman'));
+
 			  // Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if(locationText[0].indexOf('Reference') || locationText[0].indexOf('Seidman') || locationText[0].indexOf('Reserve')) {
-			  	console.log('This item does not circulate');
-			  } else {
+			  if(locationText[0].indexOf('Reference') == -1 || locationText[0].indexOf('Seidman') == -1 || locationText[0].indexOf('Reserve') == -1) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
 			  	requestButton.innerHTML = 'Request';
 			  	requestButton.className = 'request-button btn btn-primary btn-sm';
 			  	newLine.appendChild(requestButton);
+			  } else {
+			  	console.log('This item does not circulate');
 			  }
 			  
 			  console.log('Reformating the availability table');
