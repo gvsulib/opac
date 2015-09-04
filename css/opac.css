@@ -158,7 +158,8 @@ tr.bibInfoEntry td table tbody tr td { line-height: 1.4em; }
     background: #eee;
     padding: .25em;
 }
-.holding .holdingLabel { font-weight: bold; }
+.holding .holdingLabel { font-weight: bold; display:inline-block; width: 12em; float: left; }
+.holding .holdingEntry { display: inline-block;}
 .holding .holdingLabel::after { content: ":";}
 
 form[name="searchtool"] input, form[name="searchtool"] select { margin: 0 !important;}
