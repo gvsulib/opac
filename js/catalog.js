@@ -208,7 +208,7 @@ if($('#return-to-browse').length > 0) {
 					});
 
 					$('table.bib_holdings').find('.bibHoldingsEntry').each(function() {
-						holdingsData.push($(this).text());
+						holdingsData.push($(this).html());
 					});
 
 					// Move the holdings info to the top:
