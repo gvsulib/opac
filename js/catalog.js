@@ -273,9 +273,10 @@ if($('#return-to-browse').length > 0) {
 			  console.log(locationText[0].indexOf('Reserve'));
 			  console.log(locationText[0].indexOf('Reference'));
 			  console.log(locationText[0].indexOf('Seidman'));
-
+			  console.log(newAvailability.indexOf('Billed'));
+			  
 			  // Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1)) {
+			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (newAvailability.indexOf('Billed') == -1)) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
