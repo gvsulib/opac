@@ -231,8 +231,6 @@ if($('#return-to-browse').length > 0) {
 			  locationText = location.split('<br>');
 			  console.log(availability);
 
-
-
 			  /* Create Availability Span */
 			  availability = availability.trim();
 			  var newAvailability = document.createElement('span');
@@ -273,10 +271,10 @@ if($('#return-to-browse').length > 0) {
 			  console.log(locationText[0].indexOf('Reserve'));
 			  console.log(locationText[0].indexOf('Reference'));
 			  console.log(locationText[0].indexOf('Seidman'));
-			  console.log(availability.indexOf('billed'));
+			  console.log(availability.indexOf('BILLED'));
 
 			  // Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (availability.indexOf('billed') == -1)) {
+			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (availability.indexOf('BILLED') == -1)) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
