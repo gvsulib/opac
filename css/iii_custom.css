@@ -324,3 +324,7 @@ table.bib_links tbody tr:nth-child(2) a.lib-puppets:hover {
 .bibRecordLink a {
   padding-right: 1%;
 }
+
+#bibDisplayContent > div:nth-of-type(4) table tr table tr td {
+	padding-bottom: 1em;
+}
