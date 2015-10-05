@@ -292,6 +292,125 @@ if($('#return-to-browse').length > 0) {
 			  $(this).hide();
 
 });
+
+
+
+// There are additional copies, make this less awful
+
+if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'View additional copies or search for a specific volume/copy') {
+
+	// Reformat new items into arrays
+	var availableHoldings = [], unavailableHoldings = [], allHoldings = [], periodicals;
+
+	console.log(allHoldings);
+	
+	console.log('There are more than 10 holdings for this item.');
+
+	// Get URL of additional copies
+	var loadUrl = $('#bibDisplayContent center').find('form').attr('action');
+
+	// Load additional copies into hidden div for processing
+	var hiddenDiv = document.createElement('div');
+	hiddenDiv.id = 'additionalCopies';
+	hiddenDiv.style.display = 'none';
+	document.body.appendChild(hiddenDiv);
+
+	$('#additionalCopies').load(loadUrl + ' .bib_items', function() {
+
+		console.log('The element has loaded');
+
+		// Hide the view additional button
+
+		$('#bibDisplayContent center').hide();
+
+		$(this).find('tr.bibItemsEntry').each(function() {
+
+				var availText = $(this).find('td:last-child').text().trim();
+				var newLocation = $(this).find('td:first').text().trim();
+				var splitLocation = newLocation.split('<br>');
+				var aLocation = splitLocation[0];
+				var aCallNo = $(this).find('td:nth-child(2)').text().trim();
+				if(aCallNo.indexOf('Browse Sim') > -1) {
+				  aCallNo = aCallNo.replace("Browse Similar", "");
+				}
+
+			  	if((aLocation.indexOf('Reference') == -1) && (aLocation.indexOf('Seidman') == -1) && (aLocation.indexOf('Resource') == -1) && (availText.indexOf('BILLED') == -1)) {
+			  		var requestAble = true;
+			  		var requestLink = $('#requestButton').parent('a').attr('href');
+			  	} else {
+			  		var requestAble = false;
+			  		var requestLink = '';
+			  	}
+
+				if(aLocation.indexOf('Periodicals').length > -1) {
+
+					periodicals = true;
+					console.log('This is a periodical');
+
+					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+
+				} else {
+
+					periodicals = false;
+					console.log('Not a periodical');
+
+					if(availText.indexOf('AVAILABLE') > -1) {
+						// Add to available object
+						availableHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+					} else {
+						// Add to unavailable object
+						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+					}
+				}
+
+			});
+
+			// Combine all items
+			if(periodicals === false) {
+				var allHoldings = availableHoldings.concat(unavailableHoldings);
+			}
+
+			// Now start inserting the additional items under the first ten
+			// Keep this DIV hidden, and also include a trigger to show additional items
+
+			$('.bib-record-details').append('<div id="top-results"></div>');
+			$('.bib-record-details').append('<div id="trigger">Show Additional Copies</div>');
+			$('.bib-record-details').append('<div id="additional-results" style="display:none;"></div>');
+
+			$('#trigger').css('color', '#1F65A0').css('cursor','pointer').css('margin-top','1em');
+
+			$('#trigger').click(function() {
+				$('#additional-results').slideToggle(400);
+				if($(this).text() == 'Show Additional Copies') {
+					$(this).text('Hide Additional Copies');
+				} else {
+					$(this).text('Show Additional Copies');
+				}
+			});
+
+			function addRequestButton(x) {
+
+				if(allHoldings[x].Requestable === true) {
+					var requestButton = '<a href="' + allHoldings[x].RequestURL + '" class="request-button btn btn-primary btn-sm">Request</a>';
+					return requestButton;
+				}
+			}
+
+			// Remove all existing reformatted copies
+			$('.availability-table').remove();
+
+			for(t=0;t < allHoldings.length; t++) {
+
+				if(t < 10) {
+					$('#top-results').append('<div class="availability-table"><span class="' + allHoldings[t].Classes + '">' + allHoldings[t].Availability + '</span> <span class="location">' + allHoldings[t].Location + '</span> <span class ="call-number">' + allHoldings[t].Callno + '</span> ' + addRequestButton(t) + '</div>');
+				} else {
+					$('#additional-results').append('<div class="availability-table"><span class="' + allHoldings[t].Classes + '">' + allHoldings[t].Availability + '</span> <span class="location">' + allHoldings[t].Location + '</span> <span class ="call-number">' + allHoldings[t].Callno + '</span> ' + addRequestButton(t) + '</div>');
+				}
+			}
+
+	});
+}
+
 	}
 
 	// If there is an ebook, record the provider info if someone uses it
