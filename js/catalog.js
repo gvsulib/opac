@@ -296,7 +296,7 @@ if($('#return-to-browse').length > 0) {
 
 
 // There are additional copies, make this less awful
-
+/*
 if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'View additional copies or search for a specific volume/copy') {
 
 	// Reformat new items into arrays
@@ -412,6 +412,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 }
 
 	}
+*/
 
 	// If there is an ebook, record the provider info if someone uses it
 if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
