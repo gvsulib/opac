@@ -296,13 +296,11 @@ if($('#return-to-browse').length > 0) {
 
 
 // There are additional copies, make this less awful
-/*
+
 if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'View additional copies or search for a specific volume/copy') {
 
 	// Reformat new items into arrays
-	var availableHoldings = [], unavailableHoldings = [], allHoldings = [], periodicals;
-
-	console.log(allHoldings);
+	var allHoldings = new Array(), availableHoldings = new Array, unavailableHoldings = new Array, periodicals;
 	
 	console.log('There are more than 10 holdings for this item.');
 
@@ -326,15 +324,27 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 		$(this).find('tr.bibItemsEntry').each(function() {
 
 				var availText = $(this).find('td:last-child').text().trim();
-				var newLocation = $(this).find('td:first').text().trim();
-				var splitLocation = newLocation.split('<br>');
-				var aLocation = splitLocation[0];
+				var aLocation = $(this).find('td:first').text().trim();
+				console.log(aLocation);
+				//var splitLocation = newLocation.split('<br>');
+				//var aLocation = splitLocation[0];
 				var aCallNo = $(this).find('td:nth-child(2)').text().trim();
+				// if ASRS item, grab ASRS URL
+				if($(this).find('td:first').find('a').length > 0) {
+					var asrs = true;
+					var asrsUrl = $(this).find('td:first').find('a').attr('href');
+					console.log('This is an ASRS item');
+				} else {
+					var asrs = false;
+					var asrsUrl = '';
+					console.log('This is not an ASRS item');
+				}
+
 				if(aCallNo.indexOf('Browse Sim') > -1) {
 				  aCallNo = aCallNo.replace("Browse Similar", "");
 				}
 
-			  	if((aLocation.indexOf('Reference') == -1) && (aLocation.indexOf('Seidman') == -1) && (aLocation.indexOf('Resource') == -1) && (availText.indexOf('BILLED') == -1)) {
+			  	if((aLocation.indexOf('Reference') == -1) && (aLocation.indexOf('Seidman') == -1) && (aLocation.indexOf('Resource') == -1) && (aLocation.indexOf('Reserves') == -1)  &&(availText.indexOf('BILLED') == -1)) {
 			  		var requestAble = true;
 			  		var requestLink = $('#requestButton').parent('a').attr('href');
 			  	} else {
@@ -342,12 +352,17 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			  		var requestLink = '';
 			  	}
 
-				if(aLocation.indexOf('Periodicals').length > -1) {
+			  	if(asrs === true) {
+			  		requestLink = asrsUrl;
+			  	}
+
+				if(aLocation.indexOf('Periodicals') > -1) {
 
 					periodicals = true;
 					console.log('This is a periodical');
 
-					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+					console.log(typeof allHoldings);
+					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 
 				} else {
 
@@ -356,19 +371,22 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 					if(availText.indexOf('AVAILABLE') > -1) {
 						// Add to available object
-						availableHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+						availableHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 					} else {
 						// Add to unavailable object
-						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink});
+						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 					}
 				}
 
 			});
 
+
 			// Combine all items
 			if(periodicals === false) {
-				var allHoldings = availableHoldings.concat(unavailableHoldings);
+				allHoldings = availableHoldings.concat(unavailableHoldings);
 			}
+
+
 
 			// Now start inserting the additional items under the first ten
 			// Keep this DIV hidden, and also include a trigger to show additional items
@@ -410,7 +428,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 	});
 }
-*/
+
 
 	}
 
