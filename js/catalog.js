@@ -410,9 +410,10 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 	});
 }
+*/
 
 	}
-*/
+
 
 	// If there is an ebook, record the provider info if someone uses it
 if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
