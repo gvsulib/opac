@@ -323,7 +323,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 		var periodicals = false;
 		var content = $(this).find('table tbody');
-		if(content.indexOf('Periodicals') > -1) {
+		if($(this).find('table tbody td:first:contains("Periodicals")').length > 0) {
 			periodicals = true;
 			console.log('This is a periodical');
 		}
