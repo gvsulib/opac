@@ -386,7 +386,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				allHoldings = availableHoldings.concat(unavailableHoldings);
 			}
 
-
+			console.log(allHoldings);
 
 			// Now start inserting the additional items under the first ten
 			// Keep this DIV hidden, and also include a trigger to show additional items
