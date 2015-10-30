@@ -322,7 +322,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 		$('#bibDisplayContent center').hide();
 
 		var periodicals = false;
-		if($(this).indexOf('Periodicals') > -1) {
+		var content = $(this);
+		if(content.indexOf('Periodicals') > -1) {
 			periodicals = true;
 			console.log('This is a periodical');
 		}
