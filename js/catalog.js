@@ -274,7 +274,7 @@ if($('#return-to-browse').length > 0) {
 			  console.log(availability.indexOf('BILLED'));
 
 			  // Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1)) {
+			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined')) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
@@ -300,7 +300,7 @@ if($('#return-to-browse').length > 0) {
 if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'View additional copies or search for a specific volume/copy') {
 
 	// Reformat new items into arrays
-	var allHoldings = new Array(), availableHoldings = new Array, unavailableHoldings = new Array, periodicals;
+	var allHoldings = new Array(), availableHoldings = new Array(), unavailableHoldings = new Array(), periodicals;
 	
 	console.log('There are more than 10 holdings for this item.');
 
