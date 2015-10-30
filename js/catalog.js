@@ -321,6 +321,12 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 		$('#bibDisplayContent center').hide();
 
+		var periodicals = false;
+		if($(this).indexOf('Periodicals') > -1) {
+			periodicals = true;
+			console.log('This is a periodical');
+		}
+
 		$(this).find('tr.bibItemsEntry').each(function() {
 
 				var availText = $(this).find('td:last-child').text().trim();
@@ -356,18 +362,11 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			  		requestLink = asrsUrl;
 			  	}
 
-				if(aLocation.indexOf('Periodicals') > -1) {
+				if(periodicals === true) {
 
-					periodicals = true;
-					console.log('This is a periodical');
-
-					console.log(typeof allHoldings);
 					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 
 				} else {
-
-					periodicals = false;
-					console.log('Not a periodical');
 
 					if(availText.indexOf('AVAILABLE') > -1) {
 						// Add to available object
