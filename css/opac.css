@@ -208,4 +208,13 @@ form[name="searchtool"] div { text-align: center;}
 span.text { display: inline;}
 
 	/*td.bibInfoData { display: table-cell;}*/
+
+.bib_order .bibOrderEntry td {
+        color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+        padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
