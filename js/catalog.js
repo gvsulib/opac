@@ -492,7 +492,7 @@ if(reformatted === false) {
 				$("body").append('<div class="overlay"><div class="modal-box"><p><strong>Are you looking for a specific article?</strong> <a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p><div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=" class="btn btn-lg btn-primary">Request an Article</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">Request the Journal</a></p></div></div><div class="close-button">[x]</div></div></div><style>.modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}.close-button{cursor:pointer;}@media screen and (max-width:700px){.modal-box{width:90%;left:0;}}body {height:100%;position:relative;}.overlay{position:absolute;left:0;top:0;background: rgba(0,0,0,.5);z-index:500;width:100%;height:100%;}.line{margin-top:2em;}.line div { text-align:center;}.close-button{margin-top:1.5em;color:#575757;}</style>');
 
 				$(".close-button").click(function() {
-					$(".modal-box").hide();
+					$(".overlay").hide();
 				});
 			});
 		}
