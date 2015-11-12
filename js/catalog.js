@@ -265,7 +265,7 @@ if($('#return-to-browse').length > 0) {
 	$('#cms-content .lib-horizontal-list:first').prepend('<span class="return-link"><a href="' + returnButtonUrl + '">&laquo;&nbsp;Return to Results</a></span>');
 }
 	
-if($("#bibDisplayBody").length > 0) {
+if($("#bibDisplayBody").length > 0 && reformatted === false) {
 
 		// There are holdings for this item
 
