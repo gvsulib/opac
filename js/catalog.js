@@ -55,7 +55,7 @@ $(document).ready(function() {
 			}
 		}
 
-var reformatted = false;
+		var reformatted = false;
 
 // There are additional copies, make this less awful
 
@@ -210,6 +210,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 }
 
 
+	}
 
 /* Reformat the results page availability tables */
 if($('.searchResultsPage').length > 0 && reformatted === false) {
