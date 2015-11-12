@@ -366,7 +366,7 @@ if(reformatted === false) {
 
 		var periodicals = false;
 		var content = $('table.bib_items').find('tbody');
-		if($(this).find('tr td:first:contains("Periodicals")').length > 0) {
+		if($(content).find('tr td:first:contains("Periodicals")').length > 0) {
 			periodicals = true;
 			console.log('This is a periodical');
 		}
