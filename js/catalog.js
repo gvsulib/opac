@@ -212,7 +212,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 
 /* Reformat the results page availability tables */
-if($('.searchResultsPage').length > 0 && reformatted === false) {
+if($('.searchResultsPage').length > 0) {
 
 
 		$('tr.bibItemsEntry').each(function() {
@@ -264,11 +264,14 @@ if($('#return-to-browse').length > 0) {
 	$('#return-to-browse').parent('a').hide();
 	$('#cms-content .lib-horizontal-list:first').prepend('<span class="return-link"><a href="' + returnButtonUrl + '">&laquo;&nbsp;Return to Results</a></span>');
 }
-	if($("#bibDisplayBody").length > 0) {
+	
+if($("#bibDisplayBody").length > 0) {
 
 		// There are holdings for this item
 
 		var requestURL, requestable;
+
+		/*
 
 		// Create modal dialog for requesting journals
 		if(($(".bib_items:contains('PERIODICALS')").length > 0) || ($(".bib_items:contains('Periodicals')").length > 0)) {
@@ -351,6 +354,7 @@ if($('#return-to-browse').length > 0) {
 
 		}
 
+*/
 		// Reformat the availability table
 
 		if($('table.bib_holdings').length > 0) { 
