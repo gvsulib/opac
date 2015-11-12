@@ -158,7 +158,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			$('.bib-record-details').append('<div id="top-results"></div>');
 			$('.bib-record-details').append('<div id="trigger">Show Additional Copies</div>');
 			$('.bib-record-details').append('<div id="additional-results" style="display:none;"></div>');
-
+			$('.bib-record-details').append('<div class="cms-clear"></div>');
 			$('#trigger').css('color', '#1F65A0').css('cursor','pointer').css('margin-top','1em');
 
 			$('#trigger').click(function() {
@@ -189,6 +189,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					$('#additional-results').append('<div class="availability-table"><span class="' + allHoldings[t].Classes + '">' + allHoldings[t].Availability + '</span> <span class="location">' + allHoldings[t].Location + '</span> <span class ="call-number">' + allHoldings[t].Callno + '</span> ' + addRequestButton(t) + '</div>');
 				}
 			}
+
+
 
 			// Hide the old table and request button
 			$('table.bib_items').hide();
