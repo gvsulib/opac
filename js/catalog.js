@@ -190,8 +190,9 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				}
 			}
 
-			// Hide the old table 
+			// Hide the old table and request button
 			$('table.bib_items').hide();
+			$('#requestButton').hide();
 
 
 			if(periodicals === true) {
