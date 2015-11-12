@@ -178,12 +178,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				}
 			}
 
-			// Remove all existing reformatted copies
-			$('.availability-table').remove();
 
 			for(t=0;t < allHoldings.length; t++) {
-				console.log(t);
-				console.log(allHoldings[t]);
 
 				if(t < 10) {
 					$('#top-results').append('<div class="availability-table"><span class="' + allHoldings[t].Classes + '">' + allHoldings[t].Availability + '</span> <span class="location">' + allHoldings[t].Location + '</span> <span class ="call-number">' + allHoldings[t].Callno + '</span> ' + addRequestButton(t) + '</div>');
@@ -191,6 +187,10 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					$('#additional-results').append('<div class="availability-table"><span class="' + allHoldings[t].Classes + '">' + allHoldings[t].Availability + '</span> <span class="location">' + allHoldings[t].Location + '</span> <span class ="call-number">' + allHoldings[t].Callno + '</span> ' + addRequestButton(t) + '</div>');
 				}
 			}
+
+			// Hide the old table 
+			$('table.bib_items').hide();
+
 
 			if(periodicals === true) {
 				$(".request-button").click(function(e) {
