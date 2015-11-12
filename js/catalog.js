@@ -369,6 +369,12 @@ if(reformatted === false) {
 		if($(content).find('tr td:first:contains("Periodicals")').length > 0) {
 			periodicals = true;
 			console.log('This is a periodical');
+			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
+			journalTitle = journalTitle.replace(/\s/g, '+');
+			console.log(journalTitle);
+			var journalIssn = $("td.bibInfoLabel:contains('ISSN')").first().next("td").text();
+			journalIssn = journalIssn.replace(/\-/g,"");
+			console.log(journalIssn);
 		}
 
 		if($('table.bib_holdings').length > 0) { 
@@ -472,7 +478,7 @@ if(reformatted === false) {
 	if(periodicals === true) {
 				$(".request-button").click(function(e) {
 				e.preventDefault();
-				console.log('Requesting a Journal');
+				console.log('Requesting a Journal from the ASRS');
 				var link = $(this).attr("href"); // Get the URL of the ASRS request
 
 				// Insert a modal dialog box to direct users to Document Delivery
