@@ -486,6 +486,8 @@ if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
 		$('table.bib_detail').find('td.bibInfoLabel:contains("Call #")').parent('tr').hide();
 	}
 
+}
+
 /* Script to make non-keyword results screens look better when no results */
 
 if($('.yourEntryWouldBeHere').length > 0) {
