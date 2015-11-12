@@ -267,7 +267,7 @@ if($('#return-to-browse').length > 0) {
 	$('#cms-content .lib-horizontal-list:first').prepend('<span class="return-link"><a href="' + returnButtonUrl + '">&laquo;&nbsp;Return to Results</a></span>');
 }
 	
-if($("#bibDisplayBody").length > 0 && reformatted === false) {
+if($("#bibDisplayBody").length > 0) {
 
 		// There are holdings for this item
 
@@ -357,6 +357,8 @@ if($("#bibDisplayBody").length > 0 && reformatted === false) {
 		}
 
 */
+
+if(reformatted === false) {
 		// Reformat the availability table
 
 		if($('table.bib_holdings').length > 0) { 
@@ -454,6 +456,7 @@ if($("#bibDisplayBody").length > 0 && reformatted === false) {
 			  $(this).hide();
 
 });
+}
 
 
 	// If there is an ebook, record the provider info if someone uses it
