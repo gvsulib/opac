@@ -208,6 +208,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 	});
 }
+});
 }
 
 
