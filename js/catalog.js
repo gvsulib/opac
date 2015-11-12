@@ -364,6 +364,13 @@ if($("#bibDisplayBody").length > 0) {
 if(reformatted === false) {
 		// Reformat the availability table
 
+		var periodicals = false;
+		var content = $('table.bib_items').find('tbody');
+		if($(this).find('tr td:first:contains("Periodicals")').length > 0) {
+			periodicals = true;
+			console.log('This is a periodical');
+		}
+
 		if($('table.bib_holdings').length > 0) { 
 
 					var holdingsLabels = new Array();
@@ -458,7 +465,23 @@ if(reformatted === false) {
 			  $('.bib-record-details').append(newLine);
 			  $(this).hide();
 
+
+
 });
+
+	if(periodicals === true) {
+				$(".request-button").click(function(e) {
+				e.preventDefault();
+				var link = $(this).attr("href"); // Get the URL of the ASRS request
+
+				// Insert a modal dialog box to direct users to Document Delivery
+				$("body").append('<div class="modal-box"><p><strong>Are you looking for a specific article?</strong> <a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p><div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=" class="btn btn-primary">Request an Article</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-default">Request the Journal</a></p></div></div><div class="close-button">[x]</div></div><style>.modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:39%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}.close-button{cursor:pointer;}@media screen and (max-width:700px){.modal-box{width:90%;left:0;}}</style>');
+
+				$(".close-button").click(function() {
+					$(".modal-box").hide();
+				});
+			});
+		}
 }
 
 

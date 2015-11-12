@@ -164,7 +164,7 @@ tr.bibInfoEntry td table tbody tr td { line-height: 1.4em; }
 
 form[name="searchtool"] input, form[name="searchtool"] select { margin: 0 !important;}
 form[name="searchtool"] { font-size: .9em;}
-h2.bareBreaker { margin-top: .2em; padding-top: .5em; border-top: 1px solid #ddd;}
+h2.bareBreaker { margin-top: .2em; padding-top: .5em;}
 
 .availLimMessage{ font-size: .8em; margin-bottom: 1em;}
 a.request-button { color: #fff !important; display:block;margin-top:1em;}
