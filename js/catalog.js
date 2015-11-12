@@ -209,7 +209,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 	});
 }
 });
-}
+
 
 
 /* Reformat the results page availability tables */
