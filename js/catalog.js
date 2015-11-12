@@ -204,13 +204,12 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					$(".modal-box").hide();
 				});
 			});
-			}
+		}
 
 	});
+});
 }
 
-
-	}
 
 /* Reformat the results page availability tables */
 if($('.searchResultsPage').length > 0 && reformatted === false) {
