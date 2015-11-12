@@ -472,6 +472,7 @@ if(reformatted === false) {
 	if(periodicals === true) {
 				$(".request-button").click(function(e) {
 				e.preventDefault();
+				console.log('Requesting a Journal');
 				var link = $(this).attr("href"); // Get the URL of the ASRS request
 
 				// Insert a modal dialog box to direct users to Document Delivery
