@@ -176,7 +176,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					var requestButton = '<a href="' + allHoldings[x].RequestURL + '" class="request-button btn btn-primary btn-sm">Request</a>';
 					return requestButton;
 				} else {
-					return false;
+					return '';
 				}
 			}
 
