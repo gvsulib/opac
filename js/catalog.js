@@ -493,7 +493,7 @@ function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, 
 		var link = $(this).attr("href"); // Get the URL of the ASRS request
 
 		// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4>' + modalTitle + '></h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>';);
+		$("body").append('<div class="overlay"><div class="modal-box"><h4>' + modalTitle + '></h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
 
 		$(".close-button").click(function() {
 			$(".overlay").hide();
