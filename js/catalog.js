@@ -57,38 +57,66 @@ $(document).ready(function() {
 
 		var reformatted = false;
 
-if (!Date.now) {
-  Date.now = function now() {
-    return new Date().getTime();
-  };
-}
-
-// Redirect the MeL button while MeLCat is down
 var now = Date.now();
-if(now < 1449810060){ // It's before December 11th
+console.log(now);
+if(now < 1449810095000){ // It's before December 11th
 
 	if($('#bibDisplayBody').length > 0) {
 
-		var title = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains["Title"]').next('td.bibInfoData').text();
-		var author = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains["Author"]').next('td.bibInfoData').text();
-		var isbn = $('table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains["ISBN"]').next('td.bibInfoEntry').text();
-		var imprint = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains["Imprint"]').next('td.bibInfoData').text();
+		var title = $('.bib-record-details .bibInfoEntry').find('td.bibInfoLabel:contains("Title")').next('td').text();
+		var author = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("Author")').next('td.bibInfoData').text();
+		var isbn = $('table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("ISBN")').next('td.bibInfoData').text();
+		var imprint = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("Imprint")').next('td.bibInfoData').text();
 		var imprintParts = imprint.split(" ");
 		// Get number of items in the imprintParts array
-		var ii = imprintParts.length;
-		var date = imprintParts[ii];
+		var ii = imprintParts.length - 1;
+		var pubDate = imprintParts[ii];
+		console.log(imprintParts);
+		console.log(pubDate);
+
+		// Get publisher
+		var pubparts = imprint.split(':');
+		var moreparts = pubparts[1].split(',');
+		var publisher = encodeURIComponent(moreparts[0]);
 
 
-		var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?ctx_ver=Z39.88-2004&amp;ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.genre=book&amp;rft.title=' + title + '&amp;rft.au=' + author + '&amp;rft.date=' + date + '&amp;rft.pub=DC+Comics&amp;rft.isbn=' + isbn;
 
+		var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?ctx_ver=Z39.88-2004&amp;ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.genre=book&amp;rft.title=' + encodeURIComponent(title) + '&amp;rft.au=' + encodeURIComponent(author) + '&amp;rft.date=' + encodeURIComponent(pubDate) + '&amp;rft.pub=' + /*publisher + */'&amp;rft.isbn=' + encodeURIComponent(isbn);
 
-		createModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat.during the transition.</p><p>If you need this item, you can request it through Document Delivery.</p>' , illLink, 'Request from Document Delivery', 'Search MeLCat Anyway', 'Requesting from MeLCat');
+		console.log('Setting click handler');
+		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat.during the transition.</p><p>If you need this item, you can request it through Document Delivery.</p>' , illLink, 'Request from Document Delivery', 'Search MeLCat Anyway', 'Requesting from MeLCat');
 
 	} else {
 
-		createModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat.during the transition.</p><p></p>' , null, null, 'Search MeLCat Anyway', 'Requesting from MeLCat');
+		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat.during the transition.</p><p></p>' , null, null, 'Search MeLCat Anyway', 'Requesting from MeLCat');
 
 	}
+}
+
+function createMeLModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
+
+	$('.' + triggerClass).parent('a').click(function(e) {
+		e.preventDefault();
+		console.log(title);
+		var link = $(this).attr("href"); // Get the URL of the ASRS request
+
+		if(altTitle === null) {
+		// Insert a modal dialog box to direct users to Document Delivery
+		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+
+		$(".close-button").click(function() {
+			$(".overlay").hide();
+		});
+		} else {
+			// Insert a modal dialog box to direct users to Document Delivery
+		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+
+		$(".close-button").click(function() {
+			$(".overlay").hide();
+		});
+		}
+		
+	});
 }
 
 // There are additional copies, make this less awful
