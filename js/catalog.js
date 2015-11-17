@@ -98,7 +98,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			console.log(journalIssn);
 		}
 		if($(content).find('tr td:first:contains("Microform")').length > 0) {
-			periodicals = true;
+			microform = true;
 			console.log('This is a microform');
 			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
 			journalTitle = journalTitle.replace(/\s/g, '+');
@@ -213,6 +213,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			if(periodicals === true) {
 
 				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
+
+					console.log()
 
 					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
 				
