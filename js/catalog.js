@@ -85,7 +85,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 		$('#bibDisplayContent center').hide();
 
-		var periodicals = false;
+		var periodicals = false, microform = false;
 		var content = $(this).find('table.bib_items tbody');
 		if($(content).find('tr td:first:contains("Periodicals")').length > 0) {
 			periodicals = true;
@@ -96,6 +96,13 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			var journalIssn = $("td.bibInfoLabel:contains('ISSN')").first().next("td").text();
 			journalIssn = journalIssn.replace(/\-/g,"");
 			console.log(journalIssn);
+		}
+		if($(content).find('tr td:first:contains("Microform")').length > 0) {
+			periodicals = true;
+			console.log('This is a microform');
+			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
+			journalTitle = journalTitle.replace(/\s/g, '+');
+			console.log(journalTitle);
 		}
 
 		$(this).find('tr.bibItemsEntry').each(function() {
@@ -209,6 +216,14 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
 				
+			}
+			if(microform === true) {
+				
+				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
+
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p>', illLink, 'Request an Article', 'Request the Microform', 'Requesting a microform');
+				
+
 			}
 
 	});
@@ -364,7 +379,7 @@ if($("#bibDisplayBody").length > 0) {
 if(reformatted === false) {
 		// Reformat the availability table
 
-		var periodicals = false;
+		var periodicals = false, microform = false;
 		var content = $('table.bib_items').find('tbody');
 		if($(content).find('tr td:first:contains("Periodicals")').length > 0) {
 			periodicals = true;
@@ -375,6 +390,14 @@ if(reformatted === false) {
 			var journalIssn = $("td.bibInfoLabel:contains('ISSN')").first().next("td").text();
 			journalIssn = journalIssn.replace(/\-/g,"");
 			console.log(journalIssn);
+		}
+		if($(content).find('tr td:first:contains("Microform")').length > 0) {
+			microform = true;
+			console.log('This is a microform');
+			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
+			journalTitle = journalTitle.replace(/\s/g, '+');
+			console.log(journalTitle);
+			
 		}
 
 		if($('table.bib_holdings').length > 0) { 
@@ -482,7 +505,15 @@ if(reformatted === false) {
 					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
 				
 
-		}
+	}
+	if(microform === true) {
+				
+				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
+
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p>', illLink, 'Request an Article', 'Request the Microform', 'Requesting a microform');
+				
+
+	}
 }
 
 function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
