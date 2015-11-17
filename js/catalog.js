@@ -205,10 +205,9 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 			if(periodicals === true) {
 
-				// Insert a modal dialog box to direct users to Document Delivery
-				var journalModal = '<div class="overlay"><div class="modal-box"><p><strong>Are you looking for a specific article?</strong> <a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p><div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=" class="btn btn-lg btn-primary">Request an Article</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">Request the Journal</a></p></div></div><div class="close-button">[x]</div></div></div>';
+				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
 
-					createModal('request-button', journalModal, 'Requesting a journal from the ASRS');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
 				
 			}
 
@@ -478,15 +477,15 @@ if(reformatted === false) {
 
 	if(periodicals === true) {
 				
-				// Insert a modal dialog box to direct users to Document Delivery
-				var journalModal = '<div class="overlay"><div class="modal-box"><p><strong>Are you looking for a specific article?</strong> <a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p><div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=" class="btn btn-lg btn-primary">Request an Article</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">Request the Journal</a></p></div></div><div class="close-button">[x]</div></div></div>';
+				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
 
-					createModal('request-button', journalModal, 'Requesting a journal from the ASRS');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
+				
 
 		}
 }
 
-function createModal(triggerClass, content, title) {
+function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
 	$('.' + triggerClass).click(function(e) {
 		e.preventDefault();
@@ -494,7 +493,7 @@ function createModal(triggerClass, content, title) {
 		var link = $(this).attr("href"); // Get the URL of the ASRS request
 
 		// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append(content);
+		$("body").append('<div class="overlay"><div class="modal-box"><h4>' + modalTitle + '></h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>';);
 
 		$(".close-button").click(function() {
 			$(".overlay").hide();
