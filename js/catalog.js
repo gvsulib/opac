@@ -74,11 +74,12 @@ if(now < 1449810095000){ // It's before December 11th
 		console.log(imprintParts);
 		console.log(pubDate);
 
-		// Get publisher
+		/*
+		// Get publisher - can't because MARC fields all display differently depending on field
 		var pubparts = imprint.split(':');
 		var moreparts = pubparts[1].split(',');
 		var publisher = encodeURIComponent(moreparts[0]);
-
+		*/
 
 
 		var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?ctx_ver=Z39.88-2004&amp;ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.genre=book&amp;rft.title=' + encodeURIComponent(title) + '&amp;rft.au=' + encodeURIComponent(author) + '&amp;rft.date=' + encodeURIComponent(pubDate) + '&amp;rft.pub=' + /*publisher + */'&amp;rft.isbn=' + encodeURIComponent(isbn);
