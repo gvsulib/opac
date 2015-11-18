@@ -11,6 +11,32 @@ $(document).ready(function() {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	};
 
+	function createMeLModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
+
+	$('.' + triggerClass).parent('a').click(function(e) {
+		e.preventDefault();
+		console.log(title);
+		var link = $(this).attr("href"); // Get the URL of the ASRS request
+
+		if(altTitle === null) {
+		// Insert a modal dialog box to direct users to Document Delivery
+		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+
+		$(".close-button").click(function() {
+			$(".overlay").hide();
+		});
+		} else {
+			// Insert a modal dialog box to direct users to Document Delivery
+		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+
+		$(".close-button").click(function() {
+			$(".overlay").hide();
+		});
+		}
+		
+	});
+}
+
 
 	//Helper function for recordBasicSearch()
 		function getSelectedText(elementId) {
@@ -581,31 +607,7 @@ if(reformatted === false) {
 	}
 }
 
-function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
-	$('.' + triggerClass).click(function(e) {
-		e.preventDefault();
-		console.log(title);
-		var link = $(this).attr("href"); // Get the URL of the ASRS request
-
-		if(altTitle === null) {
-		// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
-
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		} else {
-			// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
-
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		}
-		
-	});
-}
 
 
 	// If there is an ebook, record the provider info if someone uses it
