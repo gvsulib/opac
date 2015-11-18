@@ -298,6 +298,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			$('table.bib_items').hide();
 			$('#requestButton').hide();
 
+			console.log(periodicals);
 
 			if(periodicals === true) {
 
