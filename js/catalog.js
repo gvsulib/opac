@@ -115,7 +115,7 @@ if(now < 1449810095000){ // It's before December 11th
 
 	} else {
 
-		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat during the transition.</p><p>If you are looking for a specific item, you can request it through our Document Delivery Service.</p>' , 'http://gvsu.edu/library/docdel', 'Request from Document Delivery', 'Search MeLCat', 'Requesting from MeLCat');
+		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat during the transition.</p><p>If you are looking for a specific item, you can request it through our Document Delivery Service.</p>' , 'http://gvsu.edu/library/docdel', 'Request from Document Delivery', 'Search MeLCat Anyway', 'Requesting from MeLCat');
 
 	}
 }
