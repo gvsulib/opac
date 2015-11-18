@@ -11,7 +11,7 @@ $(document).ready(function() {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	};
 
-	function createMeLModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
+	function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
 	$('.' + triggerClass).parent('a').click(function(e) {
 		e.preventDefault();
