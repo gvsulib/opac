@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
-	$('.' + triggerClass).parent('a').click(function(e) {
+	$('.' + triggerClass).click(function(e) {
 		e.preventDefault();
 		console.log(title);
 		var link = $(this).attr("href"); // Get the URL of the ASRS request
