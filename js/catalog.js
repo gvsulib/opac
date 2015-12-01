@@ -272,6 +272,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				}
 			});
 
+
+
 			function addRequestButton(x) {
 
 				if(allHoldings[x].Requestable === true) {
@@ -297,6 +299,31 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			// Hide the old table and request button
 			$('table.bib_items').hide();
 			$('#requestButton').hide();
+
+			if($('table.bib_holdings').length > 0) { 
+
+					var holdingsLabels = new Array();
+					var holdingsData = new Array();
+					var newHoldingTable;
+
+					$('table.bib_holdings').find('.bibHoldingsLabel').each(function() {
+						holdingsLabels.push($(this).text());
+					});
+
+					$('table.bib_holdings').find('.bibHoldingsEntry').each(function() {
+						holdingsData.push($(this).html());
+					});
+
+					// Move the holdings info to the top:
+					var arrayLength = holdingsLabels.length;
+					for (var i = 0; i < arrayLength; i++) {
+				    	var newHoldings = '<div class="holding"><span class="holdingLabel">' + holdingsLabels[i] + '</span> <span class="holdingsEntry">' + holdingsData[i] + '</span></div>';
+				    	newHoldingTable = newHoldingTable + newHoldings;
+					}
+
+					$('.bib-record-details').append(newHoldingTable);
+					$('table.bib_holdings').hide();
+				}
 
 			console.log(periodicals);
 
