@@ -324,7 +324,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				    	newHoldingTable = newHoldingTable + newHoldings;
 					}
 
-					$('#top-results').prepend(newHoldingTable);
+					//$('#top-results').prepend(newHoldingTable);
 					$('table.bib_holdings').hide();
 				}
 
