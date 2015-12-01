@@ -304,7 +304,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 					var holdingsLabels = new Array();
 					var holdingsData = new Array();
-					var newHoldingTable;
+					var newHoldingTable = '';
 
 					$('table.bib_holdings').find('.bibHoldingsLabel').each(function() {
 						holdingsLabels.push($(this).text());
