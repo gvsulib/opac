@@ -317,7 +317,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					// Move the holdings info to the top:
 					var arrayLength = holdingsLabels.length;
 
-					console.log(holdingsLabels);
+					console.log(arrayLength);
 
 					for (var i = 0; i < arrayLength; i++) {
 				    	var newHoldings = '<div class="holding"><span class="holdingLabel">' + holdingsLabels[i] + '</span> <span class="holdingsEntry">' + holdingsData[i] + '</span></div>';
