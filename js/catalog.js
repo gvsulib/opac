@@ -321,7 +321,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				    	newHoldingTable = newHoldingTable + newHoldings;
 					}
 
-					$('.bib-record-details').append(newHoldingTable);
+					$('.bib-record-details').prepend(newHoldingTable);
 					$('table.bib_holdings').hide();
 				}
 
