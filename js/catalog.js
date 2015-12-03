@@ -226,7 +226,9 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			  	}
 
 			  	if(asrs === true) {
-			  		requestLink = asrsUrl;
+			  		if(availText.indexOf('AVAILABLE') > -1) {
+			  			requestLink = asrsUrl;
+					} 
 			  	}
 
 				if(periodicals === true) {
@@ -577,8 +579,15 @@ if(reformatted === false) {
 			  newCallNo.innerHTML = callno[0].trim();
 			  
 			  if($(this).find('td[width="38%"]:first').find('a').length > 0) {
-			    var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
 			    console.log('ASRS item');
+
+			    // Check to see if the item is available or not
+			    if(availability == 'AVAILABLE') {
+			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
+			    } else {
+			    	var requestURL = $('#requestButton').parent('a').attr('href');
+			    }
+
 			  } else {
 			  	console.log('Stacks item');
 			  	var requestURL = $('#requestButton').parent('a').attr('href');
