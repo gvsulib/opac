@@ -84,41 +84,6 @@ $(document).ready(function() {
 		var reformatted = false;
 
 var now = Date.now();
-console.log(now);
-if(now < 1449810095000){ // It's before December 11th
-
-	if($('#bibDisplayBody').length > 0) {
-
-		var title = $('.bib-record-details .bibInfoEntry').find('td.bibInfoLabel:contains("Title")').next('td').text();
-		var author = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("Author")').next('td.bibInfoData').text();
-		var isbn = $('table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("ISBN")').next('td.bibInfoData').text();
-		var imprint = $('.bib-record-details table.bib_detail tbody tr.bibInfoEntry td table[width="100%"]').find('tr td.bibInfoLabel:contains("Imprint")').next('td.bibInfoData').text();
-		var imprintParts = imprint.split(" ");
-		// Get number of items in the imprintParts array
-		var ii = imprintParts.length - 1;
-		var pubDate = imprintParts[ii];
-		console.log(imprintParts);
-		console.log(pubDate);
-
-		/*
-		// Get publisher - can't because MARC fields all display differently depending on field
-		var pubparts = imprint.split(':');
-		var moreparts = pubparts[1].split(',');
-		var publisher = encodeURIComponent(moreparts[0]);
-		*/
-
-
-		var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?ctx_ver=Z39.88-2004&amp;ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.genre=book&amp;rft.title=' + encodeURIComponent(title) + '&amp;rft.au=' + encodeURIComponent(author) + '&amp;rft.date=' + encodeURIComponent(pubDate) + '&amp;rft.pub=' + /*publisher + */'&amp;rft.isbn=' + encodeURIComponent(isbn);
-
-		console.log('Setting click handler');
-		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat.during the transition.</p><p>If you need this item, you can request it through Document Delivery.</p>' , illLink, 'Request from Document Delivery', 'Search MeLCat Anyway', 'Requesting from MeLCat');
-
-	} else {
-
-		createMeLModal('melbutton', 'MelCat Requesting is Currently Unavailable', '<p>MeLCat is upgrading its servers, and isn&#8217;t allowing requests until December 11th. You are still able to search MeLCat during the transition.</p><p>If you are looking for a specific item, you can request it through our Document Delivery Service.</p>' , 'http://gvsu.edu/library/docdel', 'Request from Document Delivery', 'Search MeLCat Anyway', 'Requesting from MeLCat');
-
-	}
-}
 
 function createMeLModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
@@ -415,91 +380,6 @@ if($("#bibDisplayBody").length > 0) {
 
 		var requestURL, requestable;
 
-		/*
-
-		// Create modal dialog for requesting journals
-		if(($(".bib_items:contains('PERIODICALS')").length > 0) || ($(".bib_items:contains('Periodicals')").length > 0)) {
-
-			console.log('This is a periodical.');
-
-			var journalTitle = encodeURIComponent($("td.bibInfoLabel:contains('Title')").first().next("td").text());
-			journalTitle = journalTitle.replace(/\s/g, '+');
-			console.log(journalTitle);
-			var journalIssn = $("td.bibInfoLabel:contains('ISSN')").first().next("td").text();
-			journalIssn = journalIssn.replace(/\-/g,"");
-			console.log(journalIssn);
-			// alert(link);
-
-			$(".bib_items").find("tr").find("td:first").find("a").click(function(e) {
-				e.preventDefault();
-				var link = $(this).attr("href"); // Get the URL of the ASRS request
-
-				// Insert a modal dialog box to direct users to Document Delivery
-				$("body").append('<div class="modal-box"><p><strong>Are you looking for a specific article?</strong> <a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p><div class="line"><div class="span2 unit left"><p><a href="https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=' + journalIssn + '&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=" class="lib-button-small">Request an Article</a></p></div><div class="span2 unit left lastUnit"><p><a href="' + link + '" class="lib-button-small-grey">Request the Journal</a></p></div></div><div class="close-button">[x]</div></div><style>.modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:39%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}.close-button{cursor:pointer;}@media screen and (max-width:700px){.modal-box{width:90%;left:0;}}</style>');
-
-				$(".close-button").click(function() {
-					$(".modal-box").hide();
-				});
-			});
-			// Close modal dialogs
-
-		}
-
-		// Get the URL for the top request button, then hide it
-		$(".navigationrow.bibScreen a").each(function() {
-
-			if($(this).find("img").attr("alt") == "Hold this item") {
-
-				requestURL = $(this).attr("href");
-				$(this).css('display','none');
-
-				requestable = true;
-
-			}
-
-		});
-
-		if(($("tr.bibItemsEntry").length > 0) && (requestable === true)) {
-
-			$("tr.bibItemsEntry").each(function() {
-
-				if(($(this).find("td:contains('AVAILABLE')")) || ($(this).find("td:contains('DUE')"))) {
-
-				// Item is requestable
-				// Get first two letters of status
-
-				var isAvailable = $(this).find("td[width='24%']").text().trim().substr(0,2);
-				var locationCode = $(this).find("td:first-child").text().trim();
-				console.log(locationCode);
-
-					if ($(this).find("td:first-child a").length > 0) {
-						// This is an ASRS item
-
-						if(isAvailable !== 'AV') { // Item is not available
-							$(this).find("td:first-child a").attr("href", requestURL);
-						}
-
-					} else {
-
-						// This is not an ASRS item
-						// Does it circulate?
-
-						// Note sure why this query is failing
-							if(locationCode.indexOf("Reference") >= 0 || locationCode.indexOf("Seidman") >= 0) {
-
-								console.log("This item does not circulate");
-								//$(this).css('color','red');
-							} else {
-								$(this).find("td:first").append('<a href="' + requestURL + '" class="top-row-buttons"><img src="/screens/asrsicon.gif" alt="ARS Request" border="0"></a>');
-							}
-					}
-				}
-			});
-
-		}
-
-*/
-
 if(reformatted === false) {
 		// Reformat the availability table
 
@@ -602,12 +482,7 @@ if(reformatted === false) {
 			  newLine.appendChild(newLocation);
 			  newLine.appendChild(newCallNo);
 
-			  console.log(locationText[0].indexOf('Reserve'));
-			  console.log(locationText[0].indexOf('Reference'));
-			  console.log(locationText[0].indexOf('Seidman'));
-			  console.log(availability.indexOf('BILLED'));
-
-			  // Don't show request button for Course Reserves, Special Collections, or Reference Materials
+			// Don't show request button for Course Reserves, Special Collections, or Reference Materials
 			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined')) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
@@ -650,23 +525,6 @@ console.log(periodicals);
 
 	}
 }
-
-
-
-
-	// If there is an ebook, record the provider info if someone uses it
-if($('.bib_links').find('a:contains("Access full text online")').length > 0) {
-	$('.bib_links').find('a:contains("Access full text online")').click(function(e) {
-		var eBookUrl = $(this).attr('href');
-		var provider = eBookUrl.split('/');
-		console.log(provider[5]);
-		var permalink = document.getElementById('recordnum').href;
-		var eBookTracker = document.createElement('img');
-		eBookTracker.src = '//labs.library.gvsu.edu/labs/ebooks/?source=catalog&prov=' + encodeURIComponent(provider[5] + '|||' + permalink);
-		document.body.appendChild(eBookTracker);
-	});
-}
-
 
 /* Move the MARC button */
 
