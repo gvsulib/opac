@@ -196,6 +196,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					} 
 			  	}
 
+			  	var melRequestLink = $('img.MeLIcon').parent('a').attr('href');
+
 				if(periodicals === true) {
 
 					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
@@ -207,7 +209,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 						availableHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 					} else {
 						// Add to unavailable object
-						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
+						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": melRequestLink, "ASRS": asrs});
 					}
 				}
 
@@ -438,6 +440,8 @@ if(reformatted === false) {
 			  locationText = location.split('<br>');
 			  console.log(availability);
 
+			  var melRequestLink = 
+
 			  /* Create Availability Span */
 			  availability = availability.trim();
 			  var newAvailability = document.createElement('span');
@@ -464,13 +468,21 @@ if(reformatted === false) {
 			    // Check to see if the item is available or not
 			    if(availability == 'AVAILABLE') {
 			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
+			    	var requestLabel = 'Request';
 			    } else {
-			    	var requestURL = $('#requestButton').parent('a').attr('href');
+			    	var requestURL = $('img.MeLIcon').parent('a').attr('href');
+			    	var requestLabel = 'Request from another library';
 			    }
 
 			  } else {
-			  	console.log('Stacks item');
-			  	var requestURL = $('#requestButton').parent('a').attr('href');
+			  	 if(availability == 'AVAILABLE') {
+			  		console.log('Stacks item');
+			  		var requestURL = $('#requestButton').parent('a').attr('href');
+			  		var requestLabel = 'Request';
+			  	} else {
+					var requestURL = $('img.MeLIcon').parent('a').attr('href');
+			    	var requestLabel = 'Request from another library';
+			  	}
 			  }
 			  console.log(requestURL);
 
@@ -487,7 +499,7 @@ if(reformatted === false) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
-			  	requestButton.innerHTML = 'Request';
+			  	requestButton.innerHTML = requestLabel;
 			  	requestButton.className = 'request-button btn btn-primary btn-sm';
 			  	newLine.appendChild(requestButton);
 			  } else {

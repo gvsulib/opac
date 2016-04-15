@@ -15,14 +15,14 @@ ul.library-list { margin-right: 1em;}
 #adv-link { display: inline-block; margin: 1em 0;}
 
 .browseSuperEntry { display: none;} /* hide the relevence headings */
-.browseSearchtool, .bibSearch { background: #88b3da !important; margin-top: 1em !important;}
+.browseSearchtool, .bibSearch { background: #88b3da !important; margin-top: 1em !important; color: #3f3f3f;}
 .melbutton { background-color: #fff;}
 td.browsePager {
     padding-top: 1em;
     font-weight: normal;
 }
 .browsePager a { border: 1px solid #88b3da;}
-.browsePager strong {border: 1px solid #88b3da !important;background: #88b3da !important; }
+.browsePager strong {border: 1px solid #88b3da !important;background: #0065a4 !important; }
 .browseHeader { background: #093a6d; }
 .browseHeaderData {font-weight:normal;    font-size: .8em;
     padding: .5em;}
@@ -219,6 +219,7 @@ span.text { display: inline;}
     border-radius: 4px;
     text-align: center;
 }
+.hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
 .modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}
 .close-button{cursor:pointer;    position: absolute;
