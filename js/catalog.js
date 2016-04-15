@@ -196,7 +196,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					} 
 			  	}
 
-			  	var melRequestLink = $('img.MeLIcon').parent('a').attr('href');
+			  	var melRequestLink = $('span.melbutton').parent('a').attr('href');
 
 				if(periodicals === true) {
 
@@ -470,7 +470,7 @@ if(reformatted === false) {
 			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
 			    	var requestLabel = 'Request';
 			    } else {
-			    	var requestURL = $('img.MeLIcon').parent('a').attr('href');
+			    	var requestURL = $('span.melbutton').parent('a').attr('href');
 			    	var requestLabel = 'Request from another library';
 			    }
 
@@ -480,7 +480,7 @@ if(reformatted === false) {
 			  		var requestURL = $('#requestButton').parent('a').attr('href');
 			  		var requestLabel = 'Request';
 			  	} else {
-					var requestURL = $('img.MeLIcon').parent('a').attr('href');
+					var requestURL = $('span.melbutton').parent('a').attr('href');
 			    	var requestLabel = 'Request from another library';
 			  	}
 			  }
