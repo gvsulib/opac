@@ -655,6 +655,11 @@ if(document.getElementById('renewfailmsg') != 'undefined' && document.getElement
 	accountTools.appendChild(renewalError);
 }
 
+if(document.getElementById('searchscope').value != 19) {
+	document.getElementById('searchscope').style.backgroundColor = '#006699';
+	document.getElementById('searchscope').style.color = '#ffffff';
+}
+
 /* Google Analytics Tracking Scripts */
 
 	var linkLabel;
