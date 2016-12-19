@@ -611,6 +611,13 @@ if($('.yourEntryWouldBeHere').length > 0) {
 	}
 }
 
+// Add Doc Del link to Account page
+if($('table.patfunc').length > 0) {
+	$('div.patFuncArea').find('table.patfunc').find('th.patFuncTitle').append(' from <span style="text-transform: uppercase !important;">GVSU</span>');
+	$('table.patfunc').before('<div class="alert alert-info" style="margin-top:1em;">Don&#8217;t see the book you&#8217;re looking for? Check your <a href="https://www.gvsu.edu/library/docdel">Document Delivery account</a> for books borrowed from other libraries!</div>');
+}
+
+
 /* Script to capture search terms */
 
 	var path = "//gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
