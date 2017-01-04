@@ -645,7 +645,7 @@ if($('table.bib_links').find('img').length > 0) {
 
 // Fix the poor display of the error on failed renewals
 
-if(document.getElementById('renewfailmsg') != 'undefined' && document.getElementById('renewfailmsg') != null) {
+if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none') {
 	// Renewal failed by III makes it hard to see
 
 	var renewalFailText = document.getElementById('renewfailmsg').innerText;
@@ -654,7 +654,7 @@ if(document.getElementById('renewfailmsg') != 'undefined' && document.getElement
 	// Get rid of the see details below part.
 	var renewalMessage = renewalFailText.split('. ');
 	var renewalError = document.createElement('div');
-	renewalError.className = 'lib-error';
+	renewalError.className = 'alert alert-danger';
 	renewalError.style.clear = 'both';
 	renewalError.style.marginTop = '3em';
 	renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, or you&#8217;ve renewed it several times already.)';
