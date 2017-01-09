@@ -657,7 +657,7 @@ if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElem
 	renewalError.className = 'alert alert-danger';
 	renewalError.style.clear = 'both';
 	renewalError.style.marginTop = '3em';
-	renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, or you&#8217;ve renewed it several times already.)';
+	renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
 	var accountTools = document.getElementById('myaccount-tools');
 	accountTools.appendChild(renewalError);
 }
