@@ -645,7 +645,7 @@ if($('table.bib_links').find('img').length > 0) {
 
 // Fix the poor display of the error on failed renewals
 
-if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none') {
+if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
 	// Renewal failed by III makes it hard to see
 
 	var renewalFailText = document.getElementById('renewfailmsg').innerText;
