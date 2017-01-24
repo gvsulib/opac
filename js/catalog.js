@@ -551,7 +551,7 @@ console.log(periodicals);
 
 // Add class to subject links for analytics tracking
 	if($('td.bibInfoLabel').length > 0) {
-		$('a[href*="search~S19/d"]')..addClass('subjectLink'); 
+		$('a[href*="search~S19/d"]').addClass('subjectLink'); 
 	}
 
 // Add Doc Del link to Account page
