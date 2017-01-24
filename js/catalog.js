@@ -584,20 +584,22 @@ console.log(periodicals);
 	}
 
 // Fix the poor display of the error on failed renewals
-	if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
-		// Renewal failed by III makes it hard to see
+	if($('#renewfail;msg').length > 0) {
+		if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
+			// Renewal failed by III makes it hard to see
 
-		var renewalFailText = document.getElementById('renewfailmsg').innerText;
-		console.log(renewalFailText);
+			var renewalFailText = document.getElementById('renewfailmsg').innerText;
+			console.log(renewalFailText);
 
-		// Get rid of the see details below part.
-		var renewalMessage = renewalFailText.split('. ');
-		var renewalError = document.createElement('div');
-		renewalError.className = 'alert alert-danger';
-		renewalError.style.clear = 'both';
-		renewalError.style.marginTop = '3em';
-		renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
-		$('.patronName').after(renewalError);
+			// Get rid of the see details below part.
+			var renewalMessage = renewalFailText.split('. ');
+			var renewalError = document.createElement('div');
+			renewalError.className = 'alert alert-danger';
+			renewalError.style.clear = 'both';
+			renewalError.style.marginTop = '3em';
+			renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
+			$('.patronName').after(renewalError);
+		}
 	}
 
 // Highlight search scope if not everything
