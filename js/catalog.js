@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+/****************Prototypes ***********************/
+
 	// Patch trim function for IE
 	if(typeof String.prototype.trim !== 'function') {
  	 String.prototype.trim = function() {
@@ -7,109 +9,43 @@ $(document).ready(function() {
 	  }
 	}
 
+	// Function to make text sentence case
 	String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+		return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	};
 
+/****************Functions*************************/
+
+	// Function to create modal windows in the catalog
 	function createModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
 
-	$('.' + triggerClass).click(function(e) {
-		e.preventDefault();
-		console.log(title);
-		var link = $(this).attr("href"); // Get the URL of the ASRS request
+		$('.' + triggerClass).click(function(e) {
+			e.preventDefault();
+			console.log(title);
+			var link = $(this).attr("href"); // Get the URL of the link that spawned the modal
 
-		if(altTitle === null) {
-		// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+			if(altTitle === null) {
+				// Insert a modal dialog box with an alternate title for a link
+				$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
 
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		} else {
-			// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
+				$(".close-button").click(function() {
+					$(".overlay").hide();
+				});
+			} else {
+			
+				// Insert a modal dialog box 
+				$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
 
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		}
-		
-	});
-}
-
-
-	//Helper function for recordBasicSearch()
-		function getSelectedText(elementId) {
-			var elt = document.getElementById(elementId);
-
-			if (elt.selectedIndex == -1)
-			return null;
-
-			return elt.options[elt.selectedIndex].text;
-		}
-
-	/************ Record the Basic search **********************/
-		function recordBasicSearch() {
-			// Get value of search field
-
-			if(document.getElementById("searcharg").value.length > 0) { // Keyword
-				searchQuery = document.getElementById("searcharg").value;
-				searchQuery = encodeURI(searchQuery);
-
-				// Get search type - could also grab from the URL and parse into readable value
-
-				var searchType = encodeURI(getSelectedText('searchtype'));
-				var searchScope = encodeURI(getSelectedText('searchscope'));
-				// Record the search and other details by doing a get request.
-
-				datastring = ts + "/" + searchType + "/" + searchScope + "/" + searchQuery;
-				datastring = path + datastring;
-
-				//if this is an advanced search, append an indicator to the datastring
-				if(document.URL.indexOf("X?") != -1){
-					datastring += "/advanced";
-				}
-
-				// Silly hack to play nice with any browser. (I'm looking at you, IE and your fincky support of Cross-domain requests).
-
-				var iFrame = document.createElement('iframe');
-				iFrame.src = datastring;
-				iFrame.width = '0';
-				iFrame.height = '0';
-
-				document.body.appendChild(iFrame);
+				$(".close-button").click(function() {
+					$(".overlay").hide();
+				});
 			}
-		}
+		});
+	}
 
-		var reformatted = false;
-
+// Define common variables
+var reformatted = false;
 var now = Date.now();
-
-function createMeLModal(triggerClass, modalTitle, modalContent, altLink, altTitle, defaultTitle, title) {
-
-	$('.' + triggerClass).parent('a').click(function(e) {
-		e.preventDefault();
-		console.log(title);
-		var link = $(this).attr("href"); // Get the URL of the ASRS request
-
-		if(altTitle === null) {
-		// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
-
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		} else {
-			// Insert a modal dialog box to direct users to Document Delivery
-		$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">' + modalTitle + '</h4>' + modalContent + '<div class="line"><div style="width:48%;padding-right:2%;float:left;"><p><a href="'+ altLink +'" class="btn btn-lg btn-primary">' + altTitle + '</a></p></div><div style="width:48%;padding-right:2%;float:left;"><p><a href="' + link + '" class="btn btn-lg btn-default">' + defaultTitle + '</a></p></div></div><div class="close-button">[x]</div></div></div>');
-
-		$(".close-button").click(function() {
-			$(".overlay").hide();
-		});
-		}
-		
-	});
-}
 
 // There are additional copies, make this less awful
 
@@ -379,7 +315,6 @@ if($('#return-to-browse').length > 0) {
 if($("#bibDisplayBody").length > 0) {
 
 		// There are holdings for this item
-
 		var requestURL, requestable;
 
 if(reformatted === false) {
@@ -538,6 +473,8 @@ console.log(periodicals);
 	}
 }
 
+/******************** Small UI Changes ********************************/
+
 /* Move the MARC button */
 
 	if($('#marc-button').length > 0) { 
@@ -550,6 +487,7 @@ console.log(periodicals);
 	}
 
 // If this is an eBook record, hide the call number
+
 	if($('table.bib_links').length > 0) {
 
 		console.log('Hiding eBook call numbers...');		
@@ -558,72 +496,74 @@ console.log(periodicals);
 
 }
 
-/* Script to make non-keyword results screens look better when no results */
+// Script to make non-keyword results screens look better when no results
 
-if($('.yourEntryWouldBeHere').length > 0) {
+	if($('.yourEntryWouldBeHere').length > 0) {
 
-	var invertSearchTxt, invertSearchUrl, newMelSearch, pageText, pageType, invertSearchPrefix, searchTips;
+		var invertSearchTxt, invertSearchUrl, newMelSearch, pageText, pageType, invertSearchPrefix, searchTips;
 
-	// Make a nice no results message
-	// First, get the links for MeL and for changing the search
+		// Make a nice no results message
+		// First, get the links for MeL and for changing the search
 
-	searchTerm = $('tr.yourEntryWouldBeHere td').find('font').text();
-	pageText = $('tr.msg').find('td').text();
+		searchTerm = $('tr.yourEntryWouldBeHere td').find('font').text();
+		pageText = $('tr.msg').find('td').text();
 
-	var pageWords = pageText.split(" ");
+		var pageWords = pageText.split(" ");
 
-	// Don't run this script on the "Nearby" results page, just on Not found pages
+		// Don't run this script on the "Nearby" results page, just on Not found pages
 
-	if(pageWords[0].trim() !== "Nearby") {
+		if(pageWords[0].trim() !== "Nearby") {
 
-		pageText = pageText.toLowerCase();
-		pageType = pageText.split("; ");
-		invertSearchText = $('tr.yourEntryWouldBeHere td').find('a:first').text();
-		invertSearchUrl = $('tr.yourEntryWouldBeHere td').find('a:first').attr('href');
-		newMelSearch = $('tr.yourEntryWouldBeHere td').find('a:last').attr('href');
+			pageText = pageText.toLowerCase();
+			pageType = pageText.split("; ");
+			invertSearchText = $('tr.yourEntryWouldBeHere td').find('a:first').text();
+			invertSearchUrl = $('tr.yourEntryWouldBeHere td').find('a:first').attr('href');
+			newMelSearch = $('tr.yourEntryWouldBeHere td').find('a:last').attr('href');
 
-		if(newMelSearch === undefined) {
+			if(newMelSearch === undefined) {
 				// Probably Journal Title Search
 				searchTips = '<ul class="bullet-list"><li><a href="#export_form">Show Similar Results</a></li></ul>';
-		} else {
-			// Title, subject, or author search
-			if(invertSearchText != 'Search as Words') {
-				// This is an author search
-				invertSearchPrefix = 'Change search to <span class="search-term">';
-				invertSearchText = invertSearchText + '</span>';
 			} else {
-				// This is probably a title or subject search
-				invertSearchPrefix = '';
-				invertSearchText = 'Search <span class="search-term">' + searchTerm + '</span> as keywords';
+				// Title, subject, or author search
+				if(invertSearchText != 'Search as Words') {
+					// This is an author search
+					invertSearchPrefix = 'Change search to <span class="search-term">';
+					invertSearchText = invertSearchText + '</span>';
+				} else {
+					// This is probably a title or subject search
+					invertSearchPrefix = '';
+					invertSearchText = 'Search <span class="search-term">' + searchTerm + '</span> as keywords';
+				}
+				// Set extra search terms
+
+				searchTips = '<ul class="bullet-list"><li><a href="#export_form">Show Similar Results</a></li><li>' + invertSearchPrefix + '<a href="' + invertSearchUrl + '">' + invertSearchText + '</a></li><li><a href="' + newMelSearch + '">Search other libraries for <span class="search-term">' + searchTerm + '</span></a></li><li>Revise your search and try again</li></ul>';
 			}
-			// Set extra search terms
 
-			searchTips = '<ul class="bullet-list"><li><a href="#export_form">Show Similar Results</a></li><li>' + invertSearchPrefix + '<a href="' + invertSearchUrl + '">' + invertSearchText + '</a></li><li><a href="' + newMelSearch + '">Search other libraries for <span class="search-term">' + searchTerm + '</span></a></li><li>Revise your search and try again</li></ul>';
+			// Write the new HTML
+			$('.msg').html('<div class="noResults alert alert-danger row" style="padding:.25em 0;margin-bottom:.5em;"><div class="span1"><h4 style="font-weight:bold;text-align:center;font-size:1.2em;">No matches Found.</h4></div><div class="span2" style="font-size:80%;">' + searchTips + '</div><div class="cms-clear"></div></div><p style="margin:0 !important;font-weight:bold;font-size:80%;text-transform:capitalize;">' + pageType[1] + '</p><style>.noResults ul li { padding-bottom:.4em;}.search-term{font-weight:bold;color:#333!important;}</style>');
+
+			// Hide the old weird links
+			$('tr.yourEntryWouldBeHere td').find('a').css('display', 'none');
+			$('tr.yourEntryWouldBeHere td').css('color', '#88B3DA').attr('align','left').css('background-color', '#88B3DA').css('border-color', '#6694cc')
+			$('tr.yourEntryWouldBeHere td').find('b').css('display','inline-block').css('color', '#333').css('padding','1em 0 1em 2.4em');
 		}
-
-		// Write the new HTML
-		$('.msg').html('<div class="noResults alert alert-danger row" style="padding:.25em 0;margin-bottom:.5em;"><div class="span1"><h4 style="font-weight:bold;text-align:center;font-size:1.2em;">No matches Found.</h4></div><div class="span2" style="font-size:80%;">' + searchTips + '</div><div class="cms-clear"></div></div><p style="margin:0 !important;font-weight:bold;font-size:80%;text-transform:capitalize;">' + pageType[1] + '</p><style>.noResults ul li { padding-bottom:.4em;}.search-term{font-weight:bold;color:#333!important;}</style>');
-
-		// Hide the old weird links
-		$('tr.yourEntryWouldBeHere td').find('a').css('display', 'none');
-		$('tr.yourEntryWouldBeHere td').css('color', '#88B3DA').attr('align','left').css('background-color', '#88B3DA').css('border-color', '#6694cc')
-		$('tr.yourEntryWouldBeHere td').find('b').css('display','inline-block').css('color', '#333').css('padding','1em 0 1em 2.4em');
 	}
-}
+
+// Add class to subject links for analytics tracking
+	if($('td.bibInfoLabel').length > 0) {
+		$('td.bibInfoLabel').each(function() { 
+			var label=$(this).text();  
+			if(label=='Subject' || label=='Subjects') { 
+				console.log('Setting click handlers on subject links.'); 
+				$(this).next('td.bibInfoData').find('a').addClass('subjectLink'); 
+			} 
+		});
+	}
 
 // Add Doc Del link to Account page
-if($('table.patfunc').length > 0) {
-	$('div.patFuncArea').find('table.patfunc').find('th.patFuncTitle').append(' from <span style="text-transform: uppercase !important;">GVSU</span>');
-	$('table.patfunc').before('<div class="alert alert-info" style="margin-top:1em;">Don&#8217;t see the book you&#8217;re looking for? Check your <a href="https://www.gvsu.edu/library/docdel">Document Delivery account</a> for books borrowed from other libraries!</div>');
-}
-
-
-/* Script to capture search terms */
-
-	var path = "//gvsuliblabs.com/labs/iiistats/", query = "", ts = Math.round((new Date()).getTime() / 1000), datastring = "", searchType, searchScope;
-
-	if(document.getElementById("searcharg") != 'undefined' && document.getElementById("searcharg") != null ) { 
-		recordBasicSearch();
+	if($('table.patfunc').length > 0) {
+		$('div.patFuncArea').find('table.patfunc').find('th.patFuncTitle').append(' from <span style="text-transform: uppercase !important;">GVSU</span>');
+		$('table.patfunc').before('<div class="alert alert-info" style="margin-top:1em;">Don&#8217;t see the book you&#8217;re looking for? Check your <a href="https://www.gvsu.edu/library/docdel">Document Delivery account</a> for books borrowed from other libraries!</div>');
 	}
 	
 // Try to head off syntax errors for Author searches
@@ -639,33 +579,32 @@ if($('table.patfunc').length > 0) {
 
 // Don't style puppet or other image links like buttons
 
-if($('table.bib_links').find('img').length > 0) {
-	$('table.bib_links').find('a').addClass('lib-puppets');
-}
+	if($('table.bib_links').find('img').length > 0) {
+		$('table.bib_links').find('a').addClass('lib-puppets');
+	}
 
 // Fix the poor display of the error on failed renewals
+	if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
+		// Renewal failed by III makes it hard to see
 
-if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
-	// Renewal failed by III makes it hard to see
+		var renewalFailText = document.getElementById('renewfailmsg').innerText;
+		console.log(renewalFailText);
 
-	var renewalFailText = document.getElementById('renewfailmsg').innerText;
-	console.log(renewalFailText);
+		// Get rid of the see details below part.
+		var renewalMessage = renewalFailText.split('. ');
+		var renewalError = document.createElement('div');
+		renewalError.className = 'alert alert-danger';
+		renewalError.style.clear = 'both';
+		renewalError.style.marginTop = '3em';
+		renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
+		$('.patronName').after(renewalError);
+	}
 
-	// Get rid of the see details below part.
-	var renewalMessage = renewalFailText.split('. ');
-	var renewalError = document.createElement('div');
-	renewalError.className = 'alert alert-danger';
-	renewalError.style.clear = 'both';
-	renewalError.style.marginTop = '3em';
-	renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
-	$('.patronName').after(renewalError);
-	// accountTools.appendChild(renewalError);
-}
-
-if(document.getElementById('searchscope').value != 19) {
-	document.getElementById('searchscope').style.backgroundColor = '#006699';
-	document.getElementById('searchscope').style.color = '#ffffff';
-}
+// Highlight search scope if not everything
+	if(document.getElementById('searchscope').value != 19) {
+		document.getElementById('searchscope').style.backgroundColor = '#006699';
+		document.getElementById('searchscope').style.color = '#ffffff';
+	}
 
 /* Google Analytics Tracking Scripts */
 
@@ -707,9 +646,26 @@ if(document.getElementById('searchscope').value != 19) {
 
 	// Analytics triggers
 
+	$('form#querybox').submit(function() {
+		// Get search type
+		var searchtype = $('select#searchtype option:selected').text();
+		_gaq.push(['_trackEvent','Search','Type',searchtype]);
+	});
+
+	$('form[name="searchtool"]').submit(function() {
+		// Get search type
+		var searchtype = $('select#searchtype option:selected').text();
+		_gaq.push(['_trackEvent','Search','Form',searchtype]);
+	});
+
+	$('a.subjectLink').click(function() {
+		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
+	})
+
 	$('img.MeLIcon').click(function() {
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', 'MeLCat']);
 	});
+
 	$('span.briefcitTitle').find('a').click(function() {
 		_gaq.push(['_trackEvent', 'Result Position', 'Click', $(this).attr("data-click")]);
 	});
@@ -739,15 +695,5 @@ if(document.getElementById('searchscope').value != 19) {
 		linkLabel = 'Go to page ' + $(this).text();
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
-
-
-	
-	/* Show alert that ASRS is down */
-	/*
-	if(($(".bibItemsEntry").find("a.top-row-buttons").length > 0) && ($(".bibItemsEntry").find("a.top-row-buttons").find('img').attr("alt") == "ARS Request")) {
-
-		$("table#bib_items").prepend('<tr><td colspan="3"><div style="display: block;line-height: 1.25em;margin: 1em 0;padding: 1em 2.5%;background: #ffff7f;border: 1px solid #cc6;text-align: left;color: #444;width:94%;font-size:.8125em;">The automated storage and retrieval system is down. Please call the library at 616-331-3500 if you need this item.</div></td></tr>');
-
-	}*/
 
 });
