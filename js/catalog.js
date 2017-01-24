@@ -552,7 +552,10 @@ console.log(periodicals);
 // Add class to subject links for analytics tracking
 	if($('td.bibInfoLabel').length > 0) {
 		$('td.bibInfoLabel').each(function() { 
-			var label=$(this).text();  
+			if($(this).text() !== '') {
+				var label=$(this).text();  
+			}
+			
 			if(label=='Subject' || label=='Subjects') { 
 				console.log('Setting click handlers on subject links.'); 
 				$(this).next('td.bibInfoData').find('a').addClass('subjectLink'); 
