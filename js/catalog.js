@@ -552,7 +552,7 @@ console.log(periodicals);
 // Add class to subject links for analytics tracking
 	if($('td.bibInfoLabel').length > 0) {
 		$('tr.bibInfoEntry table').find('td:first-child').each(function() { 
-			if($(this).text() != '') {
+			if(typeof $(this).text() !== 'undefined') {
 				var label=$(this).text();  
 			}
 
