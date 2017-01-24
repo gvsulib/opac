@@ -628,7 +628,7 @@ console.log(periodicals);
 	}
 	
 	// Add target_blank to MeL icon parent
-	$('img.MeLIcon').parent('a').attr("target", "_blank");
+	$('span.melbutton').parent('a').attr("target", "_blank");
 	
 	// Accessibility workarounds
 	$('input[name="availlim"]').attr('id', 'availlim');
@@ -661,6 +661,7 @@ console.log(periodicals);
 	});
 
 	$('a.subjectLink').click(function() {
+		console.log('Search term clicked');
 		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
 	})
 
