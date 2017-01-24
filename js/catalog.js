@@ -665,7 +665,7 @@ console.log(periodicals);
 		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
 	});
 
-	$('img.MeLIcon').click(function() {
+	$('span.melbutton').click(function() {
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', 'MeLCat']);
 	});
 
