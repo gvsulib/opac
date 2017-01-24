@@ -575,7 +575,7 @@ console.log(periodicals);
 	}
 
 // Fix the poor display of the error on failed renewals
-	if($('#renewfail;msg').length > 0) {
+	if($('#renewfailmsg').length > 0) {
 		if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
 			// Renewal failed by III makes it hard to see
 
