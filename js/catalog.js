@@ -551,18 +551,7 @@ console.log(periodicals);
 
 // Add class to subject links for analytics tracking
 	if($('td.bibInfoLabel').length > 0) {
-		$('tr.bibInfoEntry table').find('td:first-child').each(function() { 
-			if(typeof $(this).text() !== 'undefined') {
-				var label=$(this).text();  
-			}
-
-			console.log(label);
-			
-			if(label=='Subject' || label=='Subjects') { 
-				console.log('Setting click handlers on subject links.'); 
-				$(this).next('td.bibInfoData').find('a').addClass('subjectLink'); 
-			} 
-		});
+		$('a[href*="search~S19/d"]')..addClass('subjectLink'); 
 	}
 
 // Add Doc Del link to Account page
