@@ -549,10 +549,7 @@ console.log(periodicals);
 		}
 	}
 
-// Add class to subject links for analytics tracking
-	if($('td.bibInfoLabel').length > 0) {
-		$('a[href*="search~S19?/d"]').addClass('subjectLink'); 
-	}
+
 
 // Add Doc Del link to Account page
 	if($('table.patfunc').length > 0) {
@@ -634,11 +631,10 @@ console.log(periodicals);
 		$("div.browseResourceTable").closest('td[width="15%"]').css("display","none");
 	}
 
-	// Assign classes to some other buttons
-
-	$("div#bibDisplayBody a").each(function() {
-		$(this).addClass("top-row-buttons");
-	});
+// Add class to subject links for analytics tracking
+	if($(''a[href*="search~S19?/d').length > 0) {
+		$('a[href*="search~S19?/d"]').addClass('subjectLink'); 
+	}
 
 	// Analytics triggers
 
@@ -656,7 +652,7 @@ console.log(periodicals);
 
 	$('a.subjectLink').click(function() {
 		console.log('Search term clicked');
-		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
+		_gaq.push(['_trackEvent', 'Subject', 'Click','Subject']);
 	});
 
 	$('span.melbutton').click(function() {
@@ -666,8 +662,8 @@ console.log(periodicals);
 	$('span.briefcitTitle').find('a').click(function() {
 		_gaq.push(['_trackEvent', 'Result Position', 'Click', $(this).attr("data-click")]);
 	});
-	$('.top-row-buttons').click(function() {
-		linkLabel = 'Buttons: ' + $(this).find("img").attr("alt");
+	$('.navigationrow a').click(function() {
+		linkLabel = 'Buttons: ' + $(this).text();
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
 	$('.top-banner').click(function() {
