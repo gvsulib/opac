@@ -663,7 +663,7 @@ console.log(periodicals);
 	$('a.subjectLink').click(function() {
 		console.log('Search term clicked');
 		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
-	})
+	});
 
 	$('img.MeLIcon').click(function() {
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', 'MeLCat']);
