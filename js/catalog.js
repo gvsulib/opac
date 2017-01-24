@@ -631,10 +631,6 @@ console.log(periodicals);
 		$("div.browseResourceTable").closest('td[width="15%"]').css("display","none");
 	}
 
-// Add class to subject links for analytics tracking
-	if($(''a[href*="search~S19?/d').length > 0) {
-		$('a[href*="search~S19?/d"]').addClass('subjectLink'); 
-	}
 
 	// Analytics triggers
 
@@ -650,9 +646,19 @@ console.log(periodicals);
 		_gaq.push(['_trackEvent','Search','Form',searchtype]);
 	});
 
-	$('a.subjectLink').click(function() {
+	$('a[href*="search~S19?/d"]').click(function() {
 		console.log('Search term clicked');
-		_gaq.push(['_trackEvent', 'Subject', 'Click','Subject']);
+		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
+	});
+
+	$('a[href*="search~S19?/a"]').click(function() {
+		console.log('Search term clicked');
+		_gaq.push(['_trackEvent', 'Search', 'Click','Author']);
+	});
+
+	$('a[href*="search~S19?/t"]').click(function() {
+		console.log('Search term clicked');
+		_gaq.push(['_trackEvent', 'Search', 'Click','Title']);
 	});
 
 	$('span.melbutton').click(function() {
