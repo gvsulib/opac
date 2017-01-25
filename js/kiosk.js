@@ -34,7 +34,7 @@ $('#cms-footer-wrapper').find('a').click(function(e) {
 });
 
 // Don't show website navigation, but leave the chat button
-$('#cms-navigation').find('a').each(function() {
+$('#cms-navigation').find('li').each(function() {
 	if($(this).attr('id') != 'library-chat') {
 		$(this).hide();
 	}
