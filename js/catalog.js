@@ -575,13 +575,11 @@ console.log(periodicals);
 	}
 
 // Info to get IP address in case this is a kiosk computer
-	$('body').append('<div style="display: none;" id="kisok"></div>');
-
 	$.ajax({ url: 'https://gvsuliblabs.com/labs/opac/ip.php',
 			type: 'post',
 			success: function(output) {
-				$('#kiosk').text(output);
-				console.log(output);
+				$('body').append(output);
+				console.log('This is a catalog kiosk. Adding customization script.');
 			}
 	});
 			
