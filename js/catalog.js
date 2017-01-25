@@ -579,7 +579,6 @@ console.log(periodicals);
 			type: 'post',
 			success: function(output) {
 				$('body').append(output);
-				console.log('This is a catalog kiosk. Adding customization script.');
 			}
 	});
 			
