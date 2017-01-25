@@ -574,6 +574,18 @@ console.log(periodicals);
 		$('table.bib_links').find('a').addClass('lib-puppets');
 	}
 
+// Info to get IP address in case this is a kiosk computer
+	$('body').append('<div style="display: none;" id="kisok"></div>');
+
+	$.ajax({ url: 'https://gvsuliblabs.com/labs/opac/ip.php',
+			type: 'post',
+			success: function(output) {
+				$('#kiosk').text(output);
+				console.log(output);
+			}
+	});
+			
+
 // Fix the poor display of the error on failed renewals
 	if($('#renewfailmsg').length > 0) {
 		if((document.getElementById('renewfailmsg') != 'undefined') || (document.getElementById('renewfailmsg') != null) || (document.getElementById('renewfailmsg').style.display != 'none')) {
