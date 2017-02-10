@@ -102,7 +102,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 				console.log(aLocation);
 				//var splitLocation = newLocation.split('<br>');
 				//var aLocation = splitLocation[0];
-				var aCallNo = $(this).find('td:nth-child(2)').text().trim();
+				var aCallNo = $(this).find('td:nth-child(2)').html().trim();
 				// if ASRS item, grab ASRS URL
 				if($(this).find('td:first').find('a').length > 0) {
 					var asrs = true;
@@ -112,10 +112,6 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					var asrs = false;
 					var asrsUrl = '';
 					console.log('This is not an ASRS item');
-				}
-
-				if(aCallNo.indexOf('Browse Sim') > -1) {
-				  aCallNo = aCallNo.replace("Browse Similar", "");
 				}
 
 			  	if((aLocation.indexOf('Reference') == -1) && (aLocation.indexOf('Seidman') == -1) && (aLocation.indexOf('Resource') == -1) && (aLocation.indexOf('Reserves') == -1)  &&(availText.indexOf('BILLED') == -1)) {
@@ -266,8 +262,7 @@ if($('.searchResultsPage').length > 0) {
 	  
 	  var availability = $(this).find('td[width="24%"]').text();
 	  var location = $(this).find('td:nth-child(1)').text();
-	  var callno = $(this).find('td:nth-child(2)').text();
-	  var callnotext = callno.split('Browse Similar');
+	  var callnotext = $(this).find('td:nth-child(2)').html();
 	  locationText = location.split('<br>');
 	  //console.log(availability);
 
@@ -290,7 +285,7 @@ if($('.searchResultsPage').length > 0) {
 	  /* Create Call Number Span */
 	  var newCallNo = document.createElement('span');
 	  newCallNo.className = 'call-number';
-	  newCallNo.innerHTML = callnotext[0].trim();
+	  newCallNo.innerHTML = callnotext.trim();
 
 	  /* Create new availability line */
 	  var newLine = document.createElement('div');
@@ -370,8 +365,7 @@ if(reformatted === false) {
   
 			  var availability = $(this).find('td[width="24%"]').text();
 			  var location = $(this).find('td:nth-child(1)').text();
-			  var callnotext = $(this).find('td:nth-child(2)').text();
-			  var callno = callnotext.split('Browse Similar');
+			  var callnotext = $(this).find('td:nth-child(2)').html();
 			  locationText = location.split('<br>');
 			  console.log(availability);
 
@@ -395,7 +389,7 @@ if(reformatted === false) {
 			  /* Create Call Number Span */
 			  var newCallNo = document.createElement('span');
 			  newCallNo.className = 'call-number';
-			  newCallNo.innerHTML = callno[0].trim();
+			  newCallNo.innerHTML = callnotext.trim();
 			  
 			  if($(this).find('td[width="38%"]:first').find('a').length > 0) {
 			    console.log('ASRS item');
