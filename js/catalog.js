@@ -700,4 +700,17 @@ if($('#searchscope').length > 0) {
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
 
+
+	// Emergency reroute the ASRS button
+	if($('a[href*="asrsreq"]').click(function(e) {
+		e.preventDefault();
+		// Insert a modal dialog box 
+				$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">ASRS is down</h4><p>The library&#8217;s <a href="https://www.gvsu.edu/library/mary-idema-pew-library-21.htm#asrs">automated retrieval systems (ASRS)</a> at the Mary Idema Pew  and Steelcase Libraries are currently down. Items stored in the ASRS, like this one, are currently unavailable. We apologize for the inconvenience. For updates, check <a href="http://labs.library.gvsu.edu/status/detail.php?id=750">the library status page</a>.<div class="close-button">[x]</div></div></div>');
+
+				$(".close-button").click(function() {
+					$(".overlay").hide();
+				});
+	});
+
+
 });
