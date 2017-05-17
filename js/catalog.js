@@ -558,7 +558,7 @@ if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').len
 	// Hide the note about Document Delivery items
 	$('#docdelreminder').hide();
 	$('#checkoutbuttons0').hide();
-	$('.confirmationprompt').html('<p class="alert alert-warning">Checking renewals...</p>');
+	$('.confirmationprompt').html('<p class="alert alert-warning">Attempting to renew items...</p>');
 
 	// Renewal confirmation screen - should submit with first submit button
 	document.getElementById("checkout_form").submit();
