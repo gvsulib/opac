@@ -67,6 +67,11 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 	hiddenDiv.style.display = 'none';
 	document.body.appendChild(hiddenDiv);
 
+	// Fix terrible login error message
+	if($('#login-panel').length > 0) {
+		$('#user-error').html('<p class="alert alert-danger">Sorry, there was a problem with either your username or password. Can we help you <a href="http://www.gvsu.edu/it/helpdesk/student-network-password-reset-47.htm">reset your password</a>?</p>');
+	}
+
 	$('#additionalCopies').load(loadUrl + ' .bib_items', function() {
 
 		console.log('The element has loaded');
