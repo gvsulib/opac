@@ -220,6 +220,9 @@ span.text { display: inline;}
     text-align: center;
 }
 input[name="donothing"] {color: #333 !important; background: #FFF !important;border: 1px solid #999 !important;}
+.confirmationprompt { color: #333 !important; font-size: 1.2em; margin-bottom: 1em; font-weight: bold !important; }
+
+
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
 .modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}

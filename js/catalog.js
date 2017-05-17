@@ -67,10 +67,6 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 	hiddenDiv.style.display = 'none';
 	document.body.appendChild(hiddenDiv);
 
-	// Fix terrible login error message
-	if($('#login-panel').length > 0) {
-		$('#user-error').html('<p class="alert alert-danger">Sorry, there was a problem with either your username or password. Can we help you <a href="http://www.gvsu.edu/it/helpdesk/student-network-password-reset-47.htm">reset your password</a>?</p>');
-	}
 
 	$('#additionalCopies').load(loadUrl + ' .bib_items', function() {
 
@@ -553,8 +549,19 @@ console.log(periodicals);
 // Add Doc Del link to Account page
 	if($('table.patfunc').length > 0) {
 		$('div.patFuncArea').find('table.patfunc').find('th.patFuncTitle').append(' from <span style="text-transform: uppercase !important;">GVSU</span>');
-		$('table.patfunc').before('<div class="alert alert-info" style="margin-top:1em;">Don&#8217;t see the book you&#8217;re looking for? Check your <a href="https://www.gvsu.edu/library/docdel">Document Delivery account</a> for books borrowed from other libraries!</div>');
+		$('table.patfunc').before('<div class="alert alert-info" id="docdelreminder" style="margin-top:1em;">Don&#8217;t see the book you&#8217;re looking for? Check your <a href="https://www.gvsu.edu/library/docdel">Document Delivery account</a> for books borrowed from other libraries!</div>');
 	}
+
+// Auto submit renewl confirmation screen
+if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').length > 0)) {
+	
+	// Hide the note about Document Delivery items
+	$('#docdelreminder').hide();
+
+	// Renewal confirmation screen - should submit with first submit button
+	document.getElementById("checkout_form").submit();
+
+}
 	
 // Try to head off syntax errors for Author searches
 	if($('select[name="searchtype"]').length > 0) {
