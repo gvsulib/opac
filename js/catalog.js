@@ -564,6 +564,11 @@ if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').len
 	document.getElementById("checkout_form").submit();
 
 }
+
+// Highlight confirmed renewals
+if($('.patFuncStatus').find('em').find('b').length > 0) {
+	$('.patFuncStatus').find('em').find('b').parent().parent().parent('tr').css('background-color', '#dff0d8');
+}
 	
 // Try to head off syntax errors for Author searches
 	if($('select[name="searchtype"]').length > 0) {
