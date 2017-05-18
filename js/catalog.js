@@ -616,7 +616,7 @@ if($('.patFuncStatus').find('em').find('font').length > 0) {
 			renewalError.className = 'alert alert-danger';
 			renewalError.style.clear = 'both';
 			renewalError.style.marginTop = '3em';
-			renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
+			renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> This usually means that the item was from our popular reading collection, it was borrowed from another Michigan library, someone else has requested the book, or you owe too much in late fines or replacement fees. See below for details.';
 			$('.patronName').after(renewalError);
 
 			$('#renewfailmsg').hide();
