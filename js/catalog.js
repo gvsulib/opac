@@ -567,12 +567,12 @@ if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').len
 
 // Highlight confirmed renewals
 if($('.patFuncStatus').find('em').find('b').length > 0) {
-	$('.patFuncStatus').find('em').find('b').parent().parent().parent('tr').css('background-color', '#dff0d8');
+	$('.patFuncStatus').find('em').find('b').css('color','#3c763d').parent().parent().parent('tr').css('background-color', '#dff0d8');
 }
 
 // Highlight failed renewals
 if($('.patFuncStatus').find('em').find('font').length > 0) {
-	$('.patFuncStatus').find('em').find('font').css('display','block').css('font-weight','bold').parent().parent().parent('tr').css('background-color', '#f2dede');
+	$('.patFuncStatus').find('em').find('font').css('display','block').css('font-weight','bold').css('color','#a94442').parent().parent().parent('tr').css('background-color', '#f2dede');
 }
 	
 // Try to head off syntax errors for Author searches
