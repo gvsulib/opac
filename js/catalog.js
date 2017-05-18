@@ -567,12 +567,12 @@ if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').len
 
 // Highlight confirmed renewals
 if($('.patFuncStatus').find('em').find('b').length > 0) {
-	$('.patFuncStatus').find('em').find('b').css('color','#3c763d !important').parent().parent().parent('tr').css('background-color', '#dff0d8');
+	$('.patFuncStatus').find('em').find('b').parent().parent().parent('tr').css('background-color', '#dff0d8');
 }
 
 // Highlight failed renewals
 if($('.patFuncStatus').find('em').find('font').length > 0) {
-	$('.patFuncStatus').find('em').find('font').css('display','block').css('font-weight','bold').css('color','#a94442 !important').parent().parent().parent('tr').css('background-color', '#f2dede');
+	$('.patFuncStatus').find('em').find('font').css('display','block').css('font-weight','bold').parent().parent().parent('tr').css('background-color', '#f2dede');
 }
 	
 // Try to head off syntax errors for Author searches
@@ -604,7 +604,7 @@ if($('.patFuncStatus').find('em').find('font').length > 0) {
 // Fix the poor display of the error on failed renewals
 	if($('#renewfailmsg').length > 0) {
 		console.log('There is a failed renewal on this page.');
-		if($('#renewfailmsg').attr('display') == 'inline-block') {
+		if($('#renewfailmsg').is(':visible') {
 			// Renewal failed by III makes it hard to see
 
 			var renewalFailText = $('#renewfailmsg').text();
