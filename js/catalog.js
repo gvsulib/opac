@@ -569,6 +569,11 @@ if(($('input[name="renewsome"]').length > 0) || ($('input[name="renewall"]').len
 if($('.patFuncStatus').find('em').find('b').length > 0) {
 	$('.patFuncStatus').find('em').find('b').parent().parent().parent('tr').css('background-color', '#dff0d8');
 }
+
+// Highlight failed renewals
+if($('.patFuncStatus').find('em').find('font').length > 0) {
+	$('.patFuncStatus').find('em').find('font').css('display','block').css('font-weight','bold').parent().parent().parent('tr').css('background-color', '#f2dede');
+}
 	
 // Try to head off syntax errors for Author searches
 	if($('select[name="searchtype"]').length > 0) {
@@ -598,7 +603,8 @@ if($('.patFuncStatus').find('em').find('b').length > 0) {
 
 // Fix the poor display of the error on failed renewals
 	if($('#renewfailmsg').length > 0) {
-		if($('#renewfailmsg').is(':visible')) {
+		console.log('There is a failed renewal on this page.');
+		if($('#renewfailmsg').attr('display') == 'inline-block') {
 			// Renewal failed by III makes it hard to see
 
 			var renewalFailText = $('#renewfailmsg').text();
@@ -612,6 +618,8 @@ if($('.patFuncStatus').find('em').find('b').length > 0) {
 			renewalError.style.marginTop = '3em';
 			renewalError.innerHTML = '<b>' + renewalMessage[0] + '.</b> (This usually means that someone else has recalled the book, you&#8217;ve renewed it several times already, or you owe too much in late fines or replacement fees.)';
 			$('.patronName').after(renewalError);
+
+			$('#renewfailmsg').hide();
 		}
 	}
 

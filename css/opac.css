@@ -226,8 +226,11 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     color: #333 !important;
     display: block;
 }
-.patFuncTitle {
-    padding: .25em;
+.patFuncEntry td {
+    padding: .25em .5em;
+}
+.patFuncMark {
+    text-align: center !important;
 }
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
