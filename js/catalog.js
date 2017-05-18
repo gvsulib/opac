@@ -604,7 +604,7 @@ if($('.patFuncStatus').find('em').find('font').length > 0) {
 // Fix the poor display of the error on failed renewals
 	if($('#renewfailmsg').length > 0) {
 		console.log('There is a failed renewal on this page.');
-		if($('#renewfailmsg').is(':visible') {
+		if($('#renewfailmsg').is(':visible')) {
 			// Renewal failed by III makes it hard to see
 
 			var renewalFailText = $('#renewfailmsg').text();
