@@ -253,13 +253,27 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 	});
 }
 
+/* Code to improve keyword search results screen */
 
-
-/* Reformat the results page availability tables */
 if($('.searchResultsPage').length > 0) {
 
+	/* Add accessibility markup to keyword search results pages */
 
-		$('tr.bibItemsEntry').each(function() {
+	$('input[name="save"]').each(function() {
+
+		// Assign IDs because this is not the 1990s
+		var idValue = $(this).val();
+		$(this).attr('id', idValue)
+
+		// Add aria-label to the parent element
+		$(this).parent('div.briefcitEntryNum').wrap('<label for="' + idValue + '"></label>');
+
+	});
+
+
+	/* Reformat the results page availability tables */
+
+	$('tr.bibItemsEntry').each(function() {
 	  
 	  var availability = $(this).find('td[width="24%"]').text();
 	  var location = $(this).find('td:nth-child(1)').text();
