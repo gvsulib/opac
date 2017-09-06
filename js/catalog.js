@@ -258,7 +258,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 if($('.searchResultsPage').length > 0) {
 
 	/* Add accessibility markup to keyword search results pages */
-
+	/*
 	$('input[name="save"]').each(function() {
 
 		// Assign IDs because this is not the 1990s
@@ -267,6 +267,14 @@ if($('.searchResultsPage').length > 0) {
 
 		// Add aria-label to the parent element
 		$(this).parent('div.briefcitEntryNum').wrap('<label for="' + idValue + '"></label>');
+		console.log('Adding label markup to checkboxes to comply with accessibility standards.');
+	});
+	*/
+
+	/* Add aria role for presentation to book jacket images to hide them from screen readers */
+	$('.bookjacket').find('img').each(function() {
+
+		$(this).attr('role','presentation').attr('alt','');
 
 	});
 
