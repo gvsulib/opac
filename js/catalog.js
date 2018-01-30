@@ -613,14 +613,6 @@ if($('.patFuncStatus').find('em').find('font').length > 0) {
 	if($('table.bib_links').find('img').length > 0) {
 		$('table.bib_links').find('a').addClass('lib-puppets');
 	}
-
-// Info to get IP address in case this is a kiosk computer
-	$.ajax({ url: 'https://gvsuliblabs.com/labs/opac/ip.php',
-			type: 'post',
-			success: function(output) {
-				$('body').append(output);
-			}
-	});
 			
 
 // Fix the poor display of the error on failed renewals
