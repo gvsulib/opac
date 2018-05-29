@@ -1,4 +1,4 @@
-#cms-content a { color: #1F65A0;}
+
 .lib-horizontal-list ul,
 ul.library-list {
     list-style: none;
@@ -9,14 +9,13 @@ ul.library-list { margin-right: 1em;}
 .lib-horizontal-list ul li a { text-decoration: none;}
 .library-list li { padding: .5em 0; margin: .5em 0; border-bottom: 1px solid #eee; }
 .library-list li a { text-decoration: none;}
-/*#searcharg { width: 55%;}*/
 #querybox { margin: 1em auto; text-align: center;}
 #querybox input[type="submit"] {}
 #adv-link { display: inline-block; margin: 1em 0;}
 
 .browseSuperEntry { display: none;} /* hide the relevence headings */
 .browseSearchtool, .bibSearch { background: #88b3da !important; margin-top: 1em !important; color: #3f3f3f;}
-.melbutton { background-color: #fff;}
+.melbutton { background-color: #fff;height:33px !important;padding-left:2.1em !important;}
 td.browsePager {
     padding-top: 1em;
     font-weight: normal;
@@ -183,7 +182,7 @@ tr.browseEntry:nth-of-type(even) {
     background: #ddd;
 }
 tr.browseEntry td {
-    padding: .5em 0;
+    padding: .5em;
 }
 @media screen and (min-width: 600px) {
 	.bib_links { margin-left: 20%; width: 80%;}
@@ -197,7 +196,6 @@ a.request-button { display:inline-block;margin-top:0;}
 .bibSearchtoolMessage i { display: inline;}
 form[name="searchtool"] div br { display: none;}
 
-	#searcharg { width: 40%;}
 	select[name="HISTORY"] { display: inline-block; float: right;}
 	.briefcitItems div,
 	.bib_links div { margin-top: 1.5em; }
@@ -227,7 +225,7 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     display: block;
 }
 .patFuncEntry td {
-    padding: .25em .5em;
+    padding: .65em;
 }
 .patFuncMark {
     text-align: center !important;
