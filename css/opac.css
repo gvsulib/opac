@@ -5,7 +5,7 @@ ul.library-list {
     margin-left: 0 !important;
 }
 ul.library-list { margin-right: 1em;}
-.lib-horizontal-list ul li { display: inline-block; margin-left: 1.5em; float: right; font-size: .85em; }
+.lib-horizontal-list ul li { display: inline-block; margin-left: 1.5em; float: right; }
 .lib-horizontal-list ul li a { text-decoration: none;}
 .library-list li { padding: .5em 0; margin: .5em 0; border-bottom: 1px solid #eee; }
 .library-list li a { text-decoration: none;}
