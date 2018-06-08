@@ -231,7 +231,7 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     text-align: center !important;
 }
 #bibDisplayContent a, #bibDisplayContent .bibTabs a:link, #bibDisplayContent .bibTabs a:visited, #bibDisplayContent .bibTabs a:active {
-    color: #0039c5 !important;
+    color: #0039c5;
     text-decoration: underline !important;
 }
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
