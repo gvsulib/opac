@@ -230,6 +230,10 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
 .patFuncMark {
     text-align: center !important;
 }
+#bibDisplayContent a, #bibDisplayContent .bibTabs a:link, #bibDisplayContent .bibTabs a:visited, #bibDisplayContent .bibTabs a:active {
+    color: #0039c5 !important;
+    text-decoration: underline !important;
+}
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
 .modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}
