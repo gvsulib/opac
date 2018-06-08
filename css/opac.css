@@ -233,7 +233,7 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
 }
 #bibDisplayContent a, #bibDisplayContent .bibTabs a:link, #bibDisplayContent .bibTabs a:visited, #bibDisplayContent .bibTabs a:active {
     color: #0039c5;
-    text-decoration: underline !important;
+    text-decoration: underline;
 }
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
