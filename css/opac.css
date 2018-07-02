@@ -229,6 +229,11 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     color: #0039c5;
     text-decoration: underline;
 }
+ #searcharg { width: 80%; }
+@media screen and (min-width: 800px) {
+    #searcharg { width: 60%; }
+
+}
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
 .modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}
