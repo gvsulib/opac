@@ -179,6 +179,47 @@ tr.browseEntry:nth-of-type(even) {
 tr.browseEntry td {
     padding: .5em;
 }
+
+.rsrv_bibs tr td:nth-child(4) {
+
+    display: none;
+
+}
+.rsrv_bibs td {
+    padding: .4em 2%;
+}
+.rsrv_bibs tr td[scope="col"] {
+
+    background: #bbb;
+
+}
+.rsrv_bibs td[colspan="4"] {
+
+    background: #069 !important;
+    color: #fff !important  ;
+    
+
+}
+.rsrv_bibs, .rsrv_bibs td, .rsrv_bibs tr {
+
+    text-align: left !important;
+
+}
+
+.bibMain .bibContent .bibInfo .bib_detail {
+
+    text-align: left !important;
+    font-weight: normal !important;
+    margin-bottom: 2em;
+
+}
+
+.navSearchHistory {
+
+    display: inline-block;
+    clear: both;
+
+}
 @media screen and (min-width: 600px) {
 	.bib_links { margin-left: 20%; width: 80%;}
 .bibPager {
