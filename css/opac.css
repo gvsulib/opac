@@ -220,6 +220,11 @@ tr.browseEntry td {
     clear: both;
 
 }
+
+.navigation {
+    z-index: 9 !important;
+    
+}
 @media screen and (min-width: 600px) {
 	.bib_links { margin-left: 20%; width: 80%;}
 .bibPager {
