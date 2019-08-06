@@ -462,7 +462,11 @@ if(reformatted === false) {
 			  $('#requestButton').hide();
 
 			  // Add contextual note for ASRS Special Collections Items
-			  if($(locationText[0].indexOf('Archives') > 0)) {
+
+			  var locationSlug = locationText[0].trim();
+			  var asrsArchives = 'Archives & Special Collections';
+
+			  if(locationSlug.indexOf(asrsArchives) != -1) {
 			  	var context = document.createElement('p');
 			  	context.className = 'alert alert-info';
 			  	context.innerHTML = 'Contact Special Collections and University Archives at <a href="mailto:collections@gvsu.edu">collections@gvsu.edu</a> or (616) 331-2749 to see this item.';
