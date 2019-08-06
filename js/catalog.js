@@ -447,7 +447,7 @@ if(reformatted === false) {
 			  newLine.appendChild(newCallNo);
 
 			// Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined')) {
+			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined') && (locationText[0].indexOf('Archives') == -1)) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
@@ -460,6 +460,14 @@ if(reformatted === false) {
 			  
 			  console.log('Reformating the availability table');
 			  $('#requestButton').hide();
+
+			  // Add contextual note for ASRS Special Collections Items
+			  if($(locationText[0].indexOf('Archives') > 0)) {
+			  	var context = document.createElement('p');
+			  	context.className = 'alert alert-info';
+			  	context.innerHTML = 'Contact Special Collections and University Archives at <a href="mailto:collections@gvsu.edu">collections@gvsu.edu</a> or (616) 331-2749 to see this item.';
+			  	newLine.appendChild(context);
+			  }
 
 			  $('.bib-record-details').append(newLine);
 			  $(this).hide();
