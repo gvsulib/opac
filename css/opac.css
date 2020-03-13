@@ -1,3 +1,6 @@
+/* CORONAVIRUS STYLES */
+
+a.request-button.btn.btn-primary.btn-sm { display: none !important; }
 
 .lib-horizontal-list ul,
 ul.library-list {
