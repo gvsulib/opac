@@ -773,5 +773,10 @@ if($('#searchscope').length > 0) {
 				});
 	});*/
 
+	// Alert adding
+	var alertScript = document.createElement('script');
+alertScript.src = 'https://prod.library.gvsu.edu/labs/alert/alert.js';
+document.body.appendChild(alertScript);
+
 
 });
