@@ -169,8 +169,7 @@ form[name="searchtool"] { font-size: .9em;}
 h2.bareBreaker { margin-top: .2em; padding-top: .5em;}
 
 .availLimMessage{ font-size: .8em; margin-bottom: 1em;}
-a.request-button, a.frey-request-button { color: #fff; display:block;margin-top:1em; text-decoration: none !important;}
-a.request-button:hover, a.request-button:active, a.frey-request-button:hover, a.frey-request-button:active { color: #0039c5 !important;}
+
 .patFuncArea a:nth-child(5) {
     display: inline-block;
 }
@@ -234,7 +233,6 @@ tr.browseEntry td {
     text-align: right; 
     float: right; 
 }
-a.request-button,a.frey-request-button { display:inline-block;margin-top:0;}
 
 .bibSearchtoolMessage { margin-top: -1em; text-align: center;}
 .bibSearchtoolMessage i { display: inline;}
@@ -283,9 +281,15 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     #searcharg { width: 60%; }
 
 }
+a.request-button, a.frey-request-button { color: #fff; display:block;margin-top:1em; text-decoration: none !important;}
+a.request-button:hover, a.request-button:active, a.frey-request-button:hover, a.frey-request-button:active { color: #0039c5 !important;}
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
 .modal-box{font-size:1.2em;width:30em;background-color: #fff;padding:1em;position:fixed;top:20%;left:25%;z-index:1000;box-shadow:5px;border:2px solid #bbb;}
 .close-button{cursor:pointer;    position: absolute;
     top: -1em;
     right: 1em;}@media screen and (max-width:700px){.modal-box{width:90%;left:0;}}body {height:100%;position:relative;}.overlay{position:absolute;left:0;top:0;background: rgba(0,0,0,.5);z-index:500;width:100%;height:100%;}.line{margin-top:2em;}.line div { text-align:center;}.close-button{margin-top:1.5em;color:#575757;}
+
+@media screen and (min-width: 600px) {
+    a.request-button,a.frey-request-button { display:inline-block;margin-top:0;}
+}
