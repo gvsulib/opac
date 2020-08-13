@@ -283,7 +283,7 @@ input[name="donothing"] {color: #333 !important; background: #FFF !important;bor
     #searcharg { width: 60%; }
 
 }
-a.request-button, a.frey-request-button { color: #fff; display:block;margin-top:1em; text-decoration: none !important;}
+a.request-button, a.request-button:visited, a.frey-request-button, a.frey-request-button:visited { color: #fff; display:block;margin-top:1em; text-decoration: none !important;}
 a.request-button:hover, a.request-button:active, a.frey-request-button:hover, a.frey-request-button:active { color: #0039c5}
 .hide-accessible {position: absolute !important;clip: rect(1px, 1px, 1px, 1px);}
 .overlay p { margin-bottom: .6em; }
