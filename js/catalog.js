@@ -447,7 +447,7 @@ if(reformatted === false) {
 			  newLine.appendChild(newCallNo);
 
 			// Don't show request button for Course Reserves, Special Collections, or Reference Materials
-			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined') && (locationText[0].indexOf('Archives') == -1)) {
+			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined') && (locationText[0].indexOf('Archives') == -1) && (locationText[0].indexOf('FREY') == -1)) {
 			  	console.log('This item circulates: Adding request button');
 			  	var requestButton = document.createElement('a');
 			 	 requestButton.href = requestURL;
@@ -455,7 +455,33 @@ if(reformatted === false) {
 			  	requestButton.className = 'request-button btn btn-primary btn-sm';
 			  	newLine.appendChild(requestButton);
 			  } else {
-			  	console.log('This item does not circulate');
+			  	if(locationText[0].indexOf('FREY') == -1) {
+			  		console.log('This item does not circulate');
+			  	} else { // Item is at FREY
+			  		console.log('Item is at Frey');
+
+			  		var title = $('table.bib_detail table tr:first').find('td.bibInfoData').text();
+					var permaLink = $('a#recordnum').attr('href');
+					var recordNumber = permaLink.split('=');
+
+			  		var emailLink = 'mailto:acq@gvsu.edu?subject=Frey%20Materials%20Request%20' + recordNumber[1] + '&body=Please%20leave%20this%20information%20in%20the%20email,%20and%20make%20sure%20to%20add%20your%20name%20and%20email.%0D%0A%0D%0AYour Name:%20%0D%0AYour Email:%20%0D%0A%0D%0AThis%20is%20a%20request%20for%20an%20electronic%20version%20of%20the%20following%20title%20held%20at%20Frey:%20' + encodeURIComponent(title) + ' : https://library.catalog.gvsu.edu' + encodeURIComponent(permaLink) + '%0D%0A';
+
+			  		var requestButton = document.createElement('a');
+			 	 	requestButton.href = emailLink;
+			  		requestButton.innerHTML = 'Request Digital Version';
+			  		requestButton.className = 'frey-request-button btn btn-primary btn-sm';
+			  		newLine.appendChild(requestButton);
+
+			  		 // Add contextual note for Frey
+
+			  	var context = document.createElement('p');
+			  	context.className = 'alert alert-info';
+			  	context.innerHTML = 'Material at Frey is unavailable. You can request a digital version, and we will attempt to find one for you.';
+			  	newLine.appendChild(context);
+			  
+			  	}
+
+
 			  }
 			  
 			  console.log('Reformating the availability table');
@@ -475,9 +501,6 @@ if(reformatted === false) {
 
 			  $('.bib-record-details').append(newLine);
 			  $(this).hide();
-
-
-
 });
 
 console.log(periodicals);
