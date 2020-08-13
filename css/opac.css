@@ -170,7 +170,7 @@ h2.bareBreaker { margin-top: .2em; padding-top: .5em;}
 
 .availLimMessage{ font-size: .8em; margin-bottom: 1em;}
 a.request-button, a.frey-request-button { color: #fff !important; display:block;margin-top:1em; text-decoration: none !important;}
-a.request-button:hover, a.frey-request-button { color: #0039c5 !important; }
+a.request-button:hover, a.frey-request-button:hover { color: #0039c5 !important; }
 .patFuncArea a:nth-child(5) {
     display: inline-block;
 }
@@ -234,7 +234,7 @@ tr.browseEntry td {
     text-align: right; 
     float: right; 
 }
-a.request-button { display:inline-block;margin-top:0;}
+a.request-button,a.frey-request-button { display:inline-block;margin-top:0;}
 
 .bibSearchtoolMessage { margin-top: -1em; text-align: center;}
 .bibSearchtoolMessage i { display: inline;}
