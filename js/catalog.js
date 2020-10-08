@@ -717,8 +717,11 @@ if($('#searchscope').length > 0) {
 	$('.libicon-012').closest('a').click(function(e) {
 		e.preventDefault();
 		console.log('Add to lists');
+		var list_href = $(this).attr('href');
 		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/list_data.php" alt="" />');
-
+		setTimeout(function() {
+			window.location.assign(list_href);
+		}, 500);
 	});
 
 
