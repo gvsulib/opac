@@ -745,6 +745,11 @@ if($('#searchscope').length > 0) {
 		_gaq.push(['_trackEvent', 'Search', 'Click','Author']);
 	});
 
+	$('.libicon-012').click(function() {
+		console.log('Add to lists');
+		_gaq.push(['_trackEvent', 'Buttons', 'Click','Add to Lists']);
+	});
+
 	$('a[href*="search~S19?/t"]').click(function() {
 		console.log('Search term clicked');
 		_gaq.push(['_trackEvent', 'Search', 'Click','Title']);
