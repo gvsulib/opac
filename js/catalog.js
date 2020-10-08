@@ -716,7 +716,7 @@ if($('#searchscope').length > 0) {
 
 	$('.libicon-012').click(function(e) {
 		console.log('Add to lists');
-		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/mylists_data.php" alt="" />');
+		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/list_data.php" alt="" />');
 
 	});
 
