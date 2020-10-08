@@ -715,6 +715,7 @@ if($('#searchscope').length > 0) {
 	//Track add to lists
 
 	$('.libicon-012').click(function(e) {
+		e.preventDefault();
 		console.log('Add to lists');
 		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/list_data.php" alt="" />');
 
@@ -722,7 +723,7 @@ if($('#searchscope').length > 0) {
 
 
 	// Analytics triggers
-
+/*
 	$('form#querybox').submit(function() {
 		// Get search type
 		var searchtype = $('select#searchtype option:selected').text();
@@ -788,7 +789,7 @@ if($('#searchscope').length > 0) {
 		linkLabel = 'Go to page ' + $(this).text();
 		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
 	});
-
+*/
 	// Info to get IP address in case this is a kiosk computer
 	$.ajax({ url: 'https://prod.library.gvsu.edu/labs/opac/ip.php',
 			type: 'post',
