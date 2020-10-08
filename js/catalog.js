@@ -724,6 +724,13 @@ if($('#searchscope').length > 0) {
 		}, 500);
 	});
 
+	if($('.mylistsSavePage').length > 0) {
+		// Add note about lists going away
+
+		$('.mylistsSavePage').prepend('<div class="alert alert-info"><p><strong>The My Lists function will be removed from the Library Catalog on December 18, 2020.</strong> Our new Library Search launching in late December will include a robust lists feature that will allow you to save book information as well as journal articles and more. <a href="https://help.library.gvsu.edu/faq/328281">You can export your lists from the Library Catalog</a> to a citation manager if you wish to keep them.</p></div>');
+
+	}
+
 
 	// Analytics triggers
 /*
