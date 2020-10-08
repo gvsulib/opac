@@ -712,6 +712,14 @@ if($('#searchscope').length > 0) {
 		$("div.browseResourceTable").closest('td[width="15%"]').css("display","none");
 	}
 
+	//Track add to lists
+
+	$('.libicon-012').click(function(e) {
+		console.log('Add to lists');
+		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/mylists_data.php" alt="" />');
+
+	});
+
 
 	// Analytics triggers
 
