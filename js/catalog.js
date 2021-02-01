@@ -443,6 +443,8 @@ if(reformatted === false) {
 			  newLine.appendChild(newLocation);
 			  newLine.appendChild(newCallNo);
 
+			  console.log('Locaion Text: ' + locationText[0]);
+
 			// Don't show request button for Course Reserves, Special Collections, or Reference Materials
 			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined') && (locationText[0].indexOf('Archives') == -1) && (locationText[0].indexOf('FREY') == -1)) {
 			  	console.log('This item circulates: Adding request button');
