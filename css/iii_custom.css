@@ -244,11 +244,7 @@ table.patfunc {
 	font-size: 1.1em;
 	padding: .1em .75em;
 }
-.melbutton {
-	padding-left: 1.6em;
-	background: url('//library.catalog.gvsu.edu/screens/libicon-016.png') no-repeat 1% 30%;
-	height: 21px;
-}
+
 
 /* Better styles for the 856 field */
 table.bib_links {

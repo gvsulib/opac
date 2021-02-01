@@ -129,7 +129,6 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 					} 
 			  	}
 
-			  	var melRequestLink = $('span.melbutton').parent('a').attr('href');
 
 				if(periodicals === true) {
 
@@ -142,7 +141,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 						availableHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 					} else {
 						// Add to unavailable object
-						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": melRequestLink, "ASRS": asrs});
+						unavailableHoldings.push({"Availability": availText, "Classes": "avail unavailable", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
 					}
 				}
 
@@ -392,8 +391,6 @@ if(reformatted === false) {
 			  locationText = location.split('<br>');
 			  console.log(availability);
 
-			  var melRequestLink = 
-
 			  /* Create Availability Span */
 			  availability = availability.trim();
 			  var newAvailability = document.createElement('span');
@@ -422,8 +419,8 @@ if(reformatted === false) {
 			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
 			    	var requestLabel = 'Request';
 			    } else {
-			    	var requestURL = $('span.melbutton').parent('a').attr('href');
-			    	var requestLabel = 'Request from another library';
+			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
+			    	var requestLabel = 'Recall Item';
 			    }
 
 			  } else {
@@ -432,8 +429,8 @@ if(reformatted === false) {
 			  		var requestURL = $('#requestButton').parent('a').attr('href');
 			  		var requestLabel = 'Request';
 			  	} else {
-					var requestURL = $('span.melbutton').parent('a').attr('href');
-			    	var requestLabel = 'Request from another library';
+					var requestURL = $('#requestButton').parent('a').attr('href');
+			    	var requestLabel = 'Recall Item';
 			  	}
 			  }
 			  console.log(requestURL);
@@ -570,7 +567,7 @@ console.log(periodicals);
 			pageType = pageText.split("; ");
 			invertSearchText = $('tr.yourEntryWouldBeHere td').find('a:first').text();
 			invertSearchUrl = $('tr.yourEntryWouldBeHere td').find('a:first').attr('href');
-			newMelSearch = $('tr.yourEntryWouldBeHere td').find('a:last').attr('href');
+			newMelSearch = '';
 
 			if(newMelSearch === undefined) {
 				// Probably Journal Title Search
@@ -588,7 +585,7 @@ console.log(periodicals);
 				}
 				// Set extra search terms
 
-				searchTips = '<ul class="bullet-list"><li><a href="#export_form">Show Similar Results</a></li><li>' + invertSearchPrefix + '<a href="' + invertSearchUrl + '">' + invertSearchText + '</a></li><li><a href="' + newMelSearch + '">Search other libraries for <span class="search-term">' + searchTerm + '</span></a></li><li>Revise your search and try again</li></ul>';
+				searchTips = '<ul class="bullet-list"><li><a href="#export_form">Show Similar Results</a></li><li>' + invertSearchPrefix + '<a href="' + invertSearchUrl + '">' + invertSearchText + '</a></li><li><a href="https://gvsu.edu/library/docdel">Request a title we do not own through Document Delivery</a></li><li>Revise your search and try again</li></ul>';
 			}
 
 			// Write the new HTML
@@ -700,7 +697,7 @@ if($('#searchscope').length > 0) {
 	}
 	
 	// Add target_blank to MeL icon parent
-	$('span.melbutton').parent('a').attr("target", "_blank");
+	//$('span.melbutton').parent('a').attr("target", "_blank");
 	
 	// Accessibility workarounds
 	$('input[name="availlim"]').attr('id', 'availlim');
@@ -727,7 +724,7 @@ if($('#searchscope').length > 0) {
 	if($('.mylistsSavePage').length > 0) {
 		// Add note about lists going away
 
-		$('.mylistsSavePage').prepend('<div class="alert alert-info"><p><strong>The My Lists function will be removed from the Library Catalog on December 18, 2020.</strong> Our new Library Search launching in late December will include a robust lists feature that will allow you to save book information as well as journal articles and more. <a href="https://help.library.gvsu.edu/faq/328281">You can export your lists from the Library Catalog</a> to a citation manager if you wish to keep them.</p></div>');
+		$('.mylistsSavePage').prepend('<div class="alert alert-info"><p><strong>The My Lists function is no longer available.</strong> Our new Library Search includes a robust lists feature that will allow you to save book information as well as journal articles and more. <a href="https://help.library.gvsu.edu/faq/328281">You can export your lists from the Library Catalog</a> to a citation manager if you wish to keep them.</p></div>');
 
 	}
 

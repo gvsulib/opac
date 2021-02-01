@@ -18,7 +18,7 @@ ul.library-list { margin-right: 1em;}
 
 .browseSuperEntry { display: none;} /* hide the relevence headings */
 .browseSearchtool, .bibSearch { background: #88b3da !important; margin-top: 1em !important; color: #3f3f3f;}
-.melbutton { background-color: #fff;height:33px !important;padding-left:2.1em !important;}
+.melbutton { background-color: #fff;height:33px !important;}
 td.browsePager {
     padding-top: 1em;
     font-weight: normal;
