@@ -697,10 +697,7 @@ if($('#searchscope').length > 0) {
 		});
 
 	}
-	
-	// Add target_blank to MeL icon parent
-	//$('span.melbutton').parent('a').attr("target", "_blank");
-	
+		
 	// Accessibility workarounds
 	$('input[name="availlim"]').attr('id', 'availlim');
 
@@ -711,113 +708,8 @@ if($('#searchscope').length > 0) {
 		$("div.browseResourceTable").closest('td[width="15%"]').css("display","none");
 	}
 
-	//Track add to lists
-
-	$('.libicon-012').closest('a').click(function(e) {
-		e.preventDefault();
-		console.log('Add to lists');
-		var list_href = $(this).attr('href');
-		$('body').append('<img src="https://prod.library.gvsu.edu/labs/opac/list_data.php" alt="" />');
-		setTimeout(function() {
-			window.location.assign(list_href);
-		}, 500);
-	});
-
-	if($('.mylistsSavePage').length > 0) {
-		// Add note about lists going away
-
-		$('.mylistsSavePage').prepend('<div class="alert alert-info"><p><strong>The My Lists function is no longer available.</strong> Our new Library Search includes a robust lists feature that will allow you to save book information as well as journal articles and more. <a href="https://help.library.gvsu.edu/faq/328281">You can export your lists from the Library Catalog</a> to a citation manager if you wish to keep them.</p></div>');
-
-	}
 
 
-	// Analytics triggers
-/*
-	$('form#querybox').submit(function() {
-		// Get search type
-		var searchtype = $('select#searchtype option:selected').text();
-		_gaq.push(['_trackEvent','Search','Type',searchtype]);
-	});
-
-	$('form[name="searchtool"]').submit(function() {
-		// Get search type
-		var searchtype = $('select#searchtype option:selected').text();
-		_gaq.push(['_trackEvent','Search','Form',searchtype]);
-	});
-
-	$('a[href*="search~S19?/d"]').click(function() {
-		console.log('Search term clicked');
-		_gaq.push(['_trackEvent', 'Search', 'Click','Subject']);
-	});
-
-	$('a[href*="search~S19?/a"]').click(function() {
-		console.log('Search term clicked');
-		_gaq.push(['_trackEvent', 'Search', 'Click','Author']);
-	});
-
-	$('.libicon-012').click(function() {
-		console.log('Add to lists');
-		_gaq.push(['_trackEvent', 'Buttons', 'Click','Add to Lists']);
-	});
-
-	$('a[href*="search~S19?/t"]').click(function() {
-		console.log('Search term clicked');
-		_gaq.push(['_trackEvent', 'Search', 'Click','Title']);
-	});
-
-	$('span.melbutton').click(function() {
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', 'MeLCat']);
-	});
-
-	$('span.briefcitTitle').find('a').click(function() {
-		_gaq.push(['_trackEvent', 'Result Position', 'Click', $(this).attr("data-click")]);
-	});
-	$('.navigationrow a').click(function() {
-		linkLabel = 'Buttons: ' + $(this).text();
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
-	});
-	$('.top-banner').click(function() {
-		linkLabel = 'Banner Link: ' + $(this).text();
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
-	});
-	$('.sidebar').click(function() {
-		linkLabel = 'Sidebar Link: ' + $(this).text();
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
-	});
-	$('table.bibLinks').find('a').click(function() {
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', "Full Text Link"]);
-	});
-	$('td#coverImage').find('a').click(function() {
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', "Cover Image Syndetics"]);
-	});
-	$('.bibSearchtoolMessage').find('a').click(function() {
-		linkLabel = 'Sort by ' + $(this).text();
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
-	});
-	$('tr.browsePager').find('a').click(function() {
-		linkLabel = 'Go to page ' + $(this).text();
-		_gaq.push(['_trackEvent', 'Buttons', 'Click', linkLabel]);
-	});
-*/
-	// Info to get IP address in case this is a kiosk computer
-	$.ajax({ url: 'https://prod.library.gvsu.edu/labs/opac/ip.php',
-			type: 'post',
-			success: function(output) {
-				$('body').append(output);
-			}
-	});
-
-
-	// Emergency reroute the ASRS button
-	/*$('a[href*="asrsreq"]').click(function(e) {
-		e.preventDefault();
-		// Insert a modal dialog box 
-				$("body").append('<div class="overlay"><div class="modal-box"><h4 style="text-align:center;margin-bottom: 1em;">ASRS is down</h4><p>The library&#8217;s <a href="https://www.gvsu.edu/library/mary-idema-pew-library-21.htm#asrs">automated retrieval systems (ASRS)</a> at the Mary Idema Pew  and Steelcase Libraries are currently down. Items stored in the ASRS, like this one, are currently unavailable. We apologize for the inconvenience. For updates, check <a href="http://labs.library.gvsu.edu/status/detail.php?id=750">the library status page</a>.<div class="close-button">[x]</div></div></div>');
-
-				$(".close-button").click(function() {
-					$(".overlay").hide();
-				});
-	});*/
 
 	// Alert adding
 	var alertScript = document.createElement('script');
