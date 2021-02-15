@@ -25,6 +25,12 @@ td.browsePager {
 }
 .browsePager a { border: 1px solid #88b3da;}
 .browsePager strong {border: 1px solid #88b3da !important;background: #0065a4 !important; }
+.browsePager ul {
+    list-style: none;
+}
+.browsePager ul li {
+    display: inline-block;
+}
 .browseHeader { background: #093a6d; }
 .browseHeaderData {font-weight:normal;    font-size: .8em;
     padding: .5em;}
