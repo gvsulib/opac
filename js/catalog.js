@@ -130,6 +130,10 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 			  	}
 
 
+			
+			  	console.log(docdelLink);
+
+
 				if(periodicals === true) {
 
 					allHoldings.push({"Availability": availText, "Classes": "avail available", "Location": aLocation, "Callno": aCallNo, "Requestable": requestAble, "RequestURL": requestLink, "ASRS": asrs});
@@ -177,12 +181,12 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 			function addRequestButton(x) {
 
-				/*if(allHoldings[x].Requestable === true) {
+				if(allHoldings[x].Requestable === true) {
 					var requestButton = '<a href="' + allHoldings[x].RequestURL + '" class="request-button btn btn-primary btn-sm">Request</a>';
 					return requestButton;
 				} else {
 					return '';
-				}*/
+				}
 			}
 
 
@@ -420,7 +424,7 @@ if(reformatted === false) {
 			    	var requestLabel = 'Request';
 			    } else {
 			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
-			    	var requestLabel = 'Recall Item';
+			    	var requestLabel = 'Request from Another Library';
 			    }
 
 			  } else {
@@ -429,8 +433,47 @@ if(reformatted === false) {
 			  		var requestURL = $('#requestButton').parent('a').attr('href');
 			  		var requestLabel = 'Request';
 			  	} else {
-					var requestURL = $('#requestButton').parent('a').attr('href');
-			    	var requestLabel = 'Recall Item';
+			  		  	// Get attributes for OpenURL
+			  	var recordLink = $('a#recordnum').attr('href');
+			  	var recordNum = recordLink.split('=');
+
+			  	var bookAuthor = $('td.bibInfoLabel:contains("Author")').next('td').text();
+			  	var bookISBN = $('td.bibInfoLabel:contains("ISBN")').next('td').text();
+			  	var bookSOR = $('td.bibInfoLabel:contains("Title")').next('td').text();
+			  	if (typeof(bookSOR) !== 'undefined') {
+			  		var bookTitle = bookSOR.split(' / ');
+			  	} else {
+			  		var bookTitle = 'Check Library Catalog Record ' + recordNum[1];
+			  	}
+			  	var bookPubData = $('td.bibInfoLabel:contains("Publication Info.")').next('td').text();
+			  	if (typeof(bookPubData) !== 'undefined') {
+			  		var bookPubDataSplit = bookPubData.split(':');
+			  		var bookCity = bookPubDataSplit[0];
+			  		if (typeof(bookPubDataSplit[1]) !== 'undefined') {
+			  			var bookPubDataTwo = bookPubDataSplit[1].split(',');
+			  			var bookDate = bookPubDataTwo[1];
+			  			var bookPub = bookPubDataTwo[0];
+			  		} else {
+			  			var bookDate = 'N/A';
+			  			var bookPub = 'N/A';
+			  		}
+			  	}  else {
+			  		var bookDate = 'N/A';
+			  		var bookPub = 'N/A';
+			  		var bookCity = 'N/A';
+			  	}
+			  	if (typeof(bookAuthor) !== 'undefined') {
+			  		var bookAuthorNames = bookAuthor.split(',');
+			  		var bookAFirst = bookAuthorNames[1];
+			  		var bookALast = bookAuthorNames[0];
+			  	} else {
+					var bookAFirst = '';
+			  		var bookALast = 'None';
+			  	}
+
+
+			  	var requestURL = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=Unavailable%20Item%20Library%20Catalog%20Record%20' + encodeURIComponent(recordNum[1]) + '&genre=book&aufirst=' + encodeURIComponent(bookAuthorNames[1]) + '&aulast=' + encodeURIComponent(bookAuthorNames[0]) +'&isbn=' + encodeURIComponent(bookISBN) + '&title=' + encodeURIComponent(bookTitle[0]) + '&date=' + encodeURIComponent(bookDate) + '&rft.pub=' + encodeURIComponent(bookPub) + '&rft.place=' + encodeURIComponent(bookCity);
+			    	var requestLabel = 'Request from Another Library';
 			  	}
 			  }
 			  console.log(requestURL);
