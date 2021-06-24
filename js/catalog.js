@@ -117,7 +117,8 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 			  	if((aLocation.indexOf('Reference') == -1) && (aLocation.indexOf('Seidman') == -1) && (aLocation.indexOf('Resource') == -1) && (aLocation.indexOf('Reserves') == -1)  &&(availText.indexOf('BILLED') == -1)) {
 			  		var requestAble = true;
-			  		var requestLink = $('#requestButton').parent('a').attr('href');
+			  		//var requestLink = $('#requestButton').parent('a').attr('href');
+			  		var requestLink = '';
 			  	} else {
 			  		var requestAble = false;
 			  		var requestLink = '';
@@ -125,7 +126,7 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 			  	if(asrs === true) {
 			  		if(availText.indexOf('AVAILABLE') > -1) {
-			  			requestLink = asrsUrl;
+			  			requestLink = '';
 					} 
 			  	}
 
@@ -181,12 +182,12 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 			function addRequestButton(x) {
 
-				if(allHoldings[x].Requestable === true) {
+				/*if(allHoldings[x].Requestable === true) {
 					var requestButton = '<a href="' + allHoldings[x].RequestURL + '" class="request-button btn btn-primary btn-sm">Request</a>';
 					return requestButton;
 				} else {
 					return '';
-				}
+				}*/
 			}
 
 
@@ -241,14 +242,14 @@ if($('#bibDisplayContent center form').find('input[type="submit"]').val() == 'Vi
 
 					console.log('Adding periodical modal');
 
-					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><!--p>Need the whole journal? We can put it on hold for you.</p-->', illLink, 'Request an Article', '', '');
 				
 			}
 			if(microform === true) {
 				
 				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
 
-					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p>', illLink, 'Request an Article', 'Request the Microform', 'Requesting a microform');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><!--p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p-->', illLink, 'Request an Article', '', '');
 				
 
 			}
@@ -420,18 +421,22 @@ if(reformatted === false) {
 
 			    // Check to see if the item is available or not
 			    if(availability == 'AVAILABLE') {
-			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
-			    	var requestLabel = 'Request';
+			    	//var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
+			    	var requestURL = '';
+
+			    	var requestLabel = '';
 			    } else {
-			    	var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
-			    	var requestLabel = 'Request from Another Library';
+			    	//var requestURL = $(this).find('td[width="38%"]:first').find('a').attr('href');
+			    	var requestURL = '';
+			    	var requestLabel = '';
 			    }
 
 			  } else {
 			  	 if(availability == 'AVAILABLE') {
 			  		console.log('Stacks item');
-			  		var requestURL = $('#requestButton').parent('a').attr('href');
-			  		var requestLabel = 'Request';
+			  		//var requestURL = $('#requestButton').parent('a').attr('href');
+			  		var requestURL = '';
+			  		var requestLabel = '';
 			  	} else {
 			  		  	// Get attributes for OpenURL
 			  	var recordLink = $('a#recordnum').attr('href');
@@ -491,11 +496,6 @@ if(reformatted === false) {
 			// Don't show request button for Course Reserves, Special Collections, or Reference Materials
 			  if((locationText[0].indexOf('Reference') == -1) && (locationText[0].indexOf('Seidman') == -1) && (locationText[0].indexOf('Resource') == -1) && (locationText[0].indexOf('Reserve') == -1) && (availability.indexOf('BILLED') == -1) && (typeof requestURL != 'undefined') && (locationText[0].indexOf('Archives') == -1)) {
 			  	console.log('This item circulates: Adding request button');
-			  	var requestButton = document.createElement('a');
-			 	 requestButton.href = requestURL;
-			  	requestButton.innerHTML = requestLabel;
-			  	requestButton.className = 'request-button btn btn-primary btn-sm';
-			  	newLine.appendChild(requestButton);
 			  } else {
 			  	console.log('This item does not circulate');
 			  } 
@@ -527,7 +527,7 @@ console.log(periodicals);
 
 				console.log('Adding click handlers for request buttons');
 
-					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? We can put it on hold for you.</p>', illLink, 'Request an Article', 'Request the Journal', 'Requesting a journal from the ASRS');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><!--p>Need the whole journal? We can put it on hold for you.</p-->', illLink, 'Request an Article', '', '');
 				
 
 	}
@@ -535,7 +535,7 @@ console.log(periodicals);
 				
 				var illLink = 'https://gvsu.illiad.oclc.org/illiad/illiad.dll/OpenURL?sid=&genre=article&aulast=&aufirst=&issn=&title=' + journalTitle + '&atitle=&volume=&part=&issue=&spage=&epage=&date=';
 
-					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p>', illLink, 'Request an Article', 'Request the Microform', 'Requesting a microform');
+					createModal('request-button', 'Are you looking for a specific article?', '<p><a href="http://gvsu.edu/library/ill">Document Delivery</a> can send an electronic copy to you, free of charge.</p><!--p>Need the whole journal? This item has been scanned to <strong>microfilm</strong> and can only be read with a Microfilm reader. Readers are available at Steelcase and Mary Idema Pew Libraries only.</p-->', illLink, 'Request an Article', '', '');
 				
 
 	}
